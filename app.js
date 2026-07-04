@@ -81,7 +81,17 @@
           <div class="day-body"><h3>${day.title}</h3><p>${day.text}</p><div class="day-tags"><span class="pill">${day.pace}</span>${day.must ? '<span class="pill must">must-do</span>' : ""}</div></div>
           <span class="day-cost">${day.cost}</span>
         </article>`).join("")}</div>
-      <div class="section-head"><div><span class="section-label">Mapa</span><h2>Baza i miejsca</h2></div></div>
+      <div class="section-head" style="margin-top:48px"><div><span class="section-label">Polecane</span><h2>Tanie i świetne restauracje</h2><p>Miejsca z najlepszym stosunkiem jakości do ceny (oceny Google 4.0+).</p></div></div>
+      <div class="grid grid-2 restaurants-grid">${city.restaurants.map(rest => `
+        <article class="card rest-card">
+          <div class="rest-head">
+            <h3>${rest.name}</h3>
+            <span class="rest-rating">⭐ ${rest.rating} <small>(${rest.reviewCount})</small></span>
+          </div>
+          <span class="pill rest-type">${rest.type}</span>
+          <p>${rest.desc}</p>
+        </article>`).join("")}</div>
+      <div class="section-head" style="margin-top:48px"><div><span class="section-label">Mapa</span><h2>Baza i miejsca</h2></div></div>
       <div class="map-wrap"><div class="map-source-badge">OpenStreetMap</div><div class="map" id="map-${key}" aria-label="Mapa OpenStreetMap miejsc: ${city.name}"></div></div><p class="map-note">Standardowa mapa OpenStreetMap. Punkt noclegu jest orientacyjny. Kliknij marker, aby zobaczyć nazwę miejsca.</p>
       <article class="card"><h3>Opcje — jeszcze nie są częścią planu</h3><div class="options-list">${city.options.map(option => `<span class="option-chip">${option}</span>`).join("")}</div></article>`;
   }
