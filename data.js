@@ -105,6 +105,10 @@ window.TRIP_DATA = {
   destinations: {
     tokyo: {
       name: "Tokio", kicker: "Neony, topki i Disney", dates: "21–25 sierpnia · 4 noce", image: "assets/images/tokyo.webp", color: "#ff5a68",
+      history: {
+        title: "Tło: Od wioski do giganta",
+        content: "<p>Tokio, znane pierwotnie jako Edo, z małej wioski rybackiej przekształciło się w największą i najbardziej zamożną metropolię na świecie. Przez wieki było siedzibą szogunów Tokugawa, którzy w XVII wieku zjednoczyli i niemal całkowicie zamknęli Japonię przed światem (okres izolacji <em>Sakoku</em>).</p><p>Po restauracji Meiji w 1868 roku, cesarz przeniósł tu stolicę z Kioto, zmieniając nazwę na <strong>Tokio</strong> (Wschodnia Stolica). Miasto heroicznie podniosło się z popiołów trzęsienia ziemi w 1923 roku oraz zniszczeń z czasów II wojny światowej, stając się globalnym symbolem ultranowoczesności po Igrzyskach Olimpijskich w 1964 r.</p>"
+      },
       intro: "Cztery noce na klasyczne Tokio, jeden pełny dzień w Disneylandzie i spokojne wejście w podróż po długim locie.",
       map: { center: [35.682, 139.75], zoom: 11 },
       places: [
