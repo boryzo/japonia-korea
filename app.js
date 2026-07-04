@@ -68,7 +68,9 @@
     document.querySelector(`#view-${key}`).innerHTML = `
       <article class="destination-hero">
         <img src="${city.image}" alt="${city.name}">
-        <div class="destination-copy"><span class="section-label" style="color:${city.color}">${city.kicker}</span><h2>${city.name}</h2><p>${city.intro}</p><span class="destination-meta">${city.dates}</span></div>
+        <div class="destination-copy"><span class="section-label" style="color:${city.color}">${city.kicker}</span><h2>${city.name}</h2><p>${city.intro}</p><span class="destination-meta">${city.dates}</span>
+        <button class="pill history-btn" data-history="${key}" style="margin-top:12px; background:rgba(255,255,255,0.2); color:#fff; border:1px solid rgba(255,255,255,0.4); cursor:pointer">📖 Poznaj tło historyczne</button>
+        </div>
       </article>
       <div class="grid grid-2">
         <article class="card stay-card stay-card-photo"><img src="${stay.image}" alt="${stay.name}" loading="lazy"><div class="stay-details"><span class="section-label">Nasza baza</span><h3>${stay.name}</h3><p>${stay.address}</p><p>Zameldowanie / wymeldowanie: ${stay.check}</p><div class="hotel-links"><a href="${stay.mapUrl}" target="_blank" rel="noopener">Otwórz mapę ↗</a><a href="${stay.bookingUrl}" target="_blank" rel="noopener">Galeria obiektu ↗</a></div></div><div class="stay-price"><strong>${money.format(stay.price)}</strong><small>${money.format(stay.price / stay.nights)} / noc</small></div></article>
@@ -312,7 +314,30 @@
     });
   }
 
+  // History modal logic
+  const historyModal = document.querySelector("#history-modal");
+  document.querySelector("#history-close-btn").addEventListener("click", () => historyModal.close());
+  historyModal.addEventListener("click", e => {
+    const dialogDimensions = historyModal.getBoundingClientRect();
+    if (e.clientX < dialogDimensions.left || e.clientX > dialogDimensions.right || e.clientY < dialogDimensions.top || e.clientY > dialogDimensions.bottom) {
+      historyModal.close();
+    }
+  });
+
   document.addEventListener("click", event => {
+    // History btn click
+    const historyBtn = event.target.closest(".history-btn");
+    if (historyBtn) {
+      const key = historyBtn.dataset.history;
+      const historyData = key === "overview" ? data.meta.history : data.destinations[key].history;
+      if (historyData) {
+        document.querySelector("#history-title").textContent = historyData.title;
+        document.querySelector("#history-content").innerHTML = historyData.content;
+        historyModal.showModal();
+      }
+    }
+
+    // Day card click
     const dayCard = event.target.closest(".day.clickable");
     if (dayCard) {
       const cityKey = dayCard.dataset.city;

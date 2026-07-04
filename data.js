@@ -5,7 +5,11 @@ window.TRIP_DATA = {
     start: "2026-08-20T18:25:00+02:00",
     end: "2026-09-05T18:30:00+02:00",
     travelers: "2 dorosłych + dzieci 9 i 10 lat",
-    budgetLimit: 30000
+    budgetLimit: 30000,
+    history: {
+      title: "Tło: Japonia a Korea",
+      content: "<p>Japonia i Korea to kraje o fascynującej, ale bardzo skomplikowanej wspólnej historii. Japończycy to naród niezwykle uprzejmy, powściągliwy, w którym najważniejsza jest harmonia (<em>wa</em>) i dobro ogółu. Z kolei Koreańczycy z Południa słyną z kultury <em>palli-palli</em> (szybko-szybko) – są niezwykle dynamiczni, bardziej bezpośredni, a ich styl bycia jest pełen ekspresji.</p><p>Choć historyczne zaszłości bywały bardzo bolesne (w tym trudna japońska okupacja Półwyspu Koreańskiego w latach 1910–1945), dziś oba te rozwinięte technologicznie społeczeństwa wzajemnie napędzają się gospodarczo i fascynują swoją popkulturą.</p>"
+    }
   },
   route: [
     { code: "GDN", city: "Gdańsk", date: "20.08", status: "confirmed" },
@@ -134,6 +138,10 @@ window.TRIP_DATA = {
     },
     kansai: {
       name: "Osaka + Kansai", kicker: "Osaka, Kyoto, Nara i opcjonalnie Kobe", dates: "25–30 sierpnia · 5 nocy", image: "assets/images/osaka.webp", color: "#f6a23c",
+      history: {
+        title: "Tło: Kuchnia narodu",
+        content: "<p>Region Kansai to historyczne i kulturowe serce Japonii. Przez ponad tysiąc lat (do 1868 r.) to właśnie <strong>Kioto</strong> było siedzibą cesarza. To tutaj wykształciła się klasyczna japońska estetyka, ceremonia parzenia herbaty, teatr kabuki oraz wyrafinowana kuchnia <em>kaiseki</em>.</p><p>Osaka, nazywana „kuchnią narodu”, od zawsze była centrum handlu i wolnej myśli. W przeciwieństwie do powściągliwego Tokio, mieszkańcy Osaki słyną ze swojego otwarcia, humoru i luźniejszego podejścia do życia. Region ten zachował najwięcej autentycznego ducha dawnej Japonii, mimo że jego nowoczesne metropolie dynamicznie parły naprzód.</p>"
+      },
       intro: "Jedna niedroga baza w Osace. Z niej robimy wycieczki do Kyoto i Nary, a wieczory zostają na jedzenie i neony.",
       map: { center: [34.83, 135.55], zoom: 9 },
       places: [
@@ -167,8 +175,16 @@ window.TRIP_DATA = {
       options: ["Kobe Animal Kingdom", "Suma Beach", "Universal Studios Japan", "drugi dzień w Kyoto"]
     },
     seoul: {
-      name: "Seul", kicker: "K-pop, widoki i koreańskie jedzenie", dates: "30 sierpnia – 5 września · 6 nocy", image: "assets/images/seoul.webp", color: "#5b8cff",
-      intro: "Sześć nocy w jednej bazie blisko Dongdaemun. Plan łączy K-pop, tradycyjną Koreę, nowoczesne dzielnice i dzień bez pośpiechu.",
+      name: "Seul i okolice",
+      kicker: "K-pop, technologia i pałace",
+      dates: "30 sierpnia – 5 września (6 nocy)",
+      intro: "Hipernowoczesna stolica Korei Południowej. Szybkie życie, przepyszne jedzenie, wszechobecna kultura k-popowa i doskonale zachowane pałace dynastii Joseon.",
+      image: "assets/images/seoul.webp",
+      color: "var(--brand-teal)",
+      history: {
+        title: "Tło: Cud nad rzeką Han",
+        content: "<p>Seul to miasto-feniks. Przez 500 lat był potężną stolicą wielkiej dynastii <strong>Joseon</strong>, po której w samym sercu miasta zachowało się pięć wspaniałych pałaców królewskich (w tym słynny Gyeongbokgung). Na początku XX wieku miasto, jak i cała Korea, ucierpiało podczas ciężkiej japońskiej aneksji.</p><p>Prawdziwa tragedia nadeszła jednak w trakcie niszczycielskiej <strong>wojny koreańskiej</strong> (1950–1953). Seul został niemal całkowicie zrównany z ziemią, przechodząc z rąk do rąk walczących armii aż cztery razy. Od tego czasu Seul doświadczył tzw. <em>\"Cudu nad rzeką Han\"</em> – błyskawicznego, bezprecedensowego w skali świata wzrostu gospodarczego. Z wojennych zgliszcz narodziło się jedno z najbardziej technologicznie zaawansowanych, zamożnych i kulturotwórczych (K-Pop, K-Drama) miejsc na Ziemi.</p>"
+      },
       map: { center: [37.5665, 126.992], zoom: 11 },
       places: [
         { name: "Baza: Dongdaemun / Jung-gu", coords: [37.565, 127.012], type: "stay" },

@@ -66,18 +66,29 @@
     <div class="modal-content">
       <button class="modal-close" aria-label="Zamknij" id="modal-close-btn">✕</button>
       <div class="modal-header">
-        <img id="modal-image" src="" alt="">
+        <img id="modal-image" src="" alt="Zdjęcie poglądowe" loading="lazy">
         <div class="modal-title-box">
-          <span id="modal-date"></span>
-          <h2 id="modal-title"></h2>
+          <span class="section-label" id="modal-date"></span>
+          <h3 id="modal-title"></h3>
         </div>
       </div>
       <div class="modal-body">
         <p id="modal-desc"></p>
-        <div class="modal-transport">
-          <h3>🚇 Transport</h3>
+        <div class="modal-details">
+          <h4>🚇 Transport</h4>
           <p id="modal-transport-text"></p>
         </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="history-modal" class="modal history-modal">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Zamknij" id="history-close-btn">✕</button>
+      <div class="modal-body" style="padding-top: 32px">
+        <span class="section-label" style="color: var(--accent); margin-bottom: 8px; display: block">Ciekawostki i Tło</span>
+        <h3 id="history-title" style="margin-bottom: 16px; font-size: 24px;"></h3>
+        <div id="history-content" style="line-height: 1.6; color: var(--text-muted);"></div>
       </div>
     </div>
   </dialog>
