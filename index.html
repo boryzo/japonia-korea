@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c1222">
+  <meta name="description" content="Rodzinny plan podróży Japonia + Korea 2026">
+  <title>Japonia + Korea 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="styles.css?v=20260704-9">
+</head>
+<body>
+  <a class="skip-link" href="#main">Przejdź do treści</a>
+  <header class="site-header">
+    <a class="brand" href="#start" aria-label="Japonia i Korea 2026 — start">
+      <span class="brand-mark">旅</span>
+      <span><strong>Japonia + Korea</strong><small>rodzinna wyprawa · 2026</small></span>
+    </a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav id="main-nav" class="main-nav" aria-label="Główna nawigacja">
+      <button class="nav-link active" data-view="overview">Plan</button>
+      <button class="nav-link" data-view="tokyo">Tokio</button>
+      <button class="nav-link" data-view="kansai">Kansai</button>
+      <button class="nav-link" data-view="seoul">Seul</button>
+      <button class="nav-link" data-view="budget">Budżet</button>
+      <button class="nav-link" data-view="practical">Praktyczne</button>
+      <button class="nav-link" data-view="todo">Do ogarnięcia</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="start" class="hero">
+      <div class="hero-art" aria-hidden="true"></div>
+      <div class="hero-content shell">
+        <p class="eyebrow">20 sierpnia — 5 września 2026</p>
+        <h1>Jedna podróż.<br><span>Trzy światy.</span></h1>
+        <p class="hero-lead">Tokio, Kansai i Seul — wspólny plan 2+2, budżet i wszystkie decyzje w jednym miejscu.</p>
+        <div class="hero-actions">
+          <button class="button primary" data-jump-view="overview">Zobacz plan</button>
+          <button class="button ghost" data-jump-view="todo">Co trzeba kupić?</button>
+        </div>
+        <div class="countdown" id="countdown" aria-label="Odliczanie do wyjazdu"></div>
+      </div>
+    </section>
+
+    <div class="shell app-shell">
+      <section class="view active" id="view-overview" data-view-panel="overview"></section>
+      <section class="view" id="view-tokyo" data-view-panel="tokyo"></section>
+      <section class="view" id="view-kansai" data-view-panel="kansai"></section>
+      <section class="view" id="view-seoul" data-view-panel="seoul"></section>
+      <section class="view" id="view-budget" data-view-panel="budget"></section>
+      <section class="view" id="view-practical" data-view-panel="practical"></section>
+      <section class="view" id="view-todo" data-view-panel="todo"></section>
+    </div>
+  </main>
+
+  <footer class="site-footer shell">
+    <div><strong>Japonia + Korea 2026</strong><p>Żywy plan podróży — aktualizujemy go razem.</p></div>
+    <p class="footer-note">Kursy walut: NBP · Mapy: OpenStreetMap</p>
+  </footer>
+
+  <dialog id="day-modal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Zamknij" id="modal-close-btn">✕</button>
+      <div class="modal-header">
+        <img id="modal-image" src="" alt="">
+        <div class="modal-title-box">
+          <span id="modal-date"></span>
+          <h2 id="modal-title"></h2>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p id="modal-desc"></p>
+        <div class="modal-transport">
+          <h3>🚇 Transport</h3>
+          <p id="modal-transport-text"></p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="data.js?v=20260704-9"></script>
+  <script src="app.js?v=20260704-10"></script>
+</body>
+</html>
