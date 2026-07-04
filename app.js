@@ -87,7 +87,7 @@
       <div class="grid grid-2 restaurants-grid">${city.restaurants.map(rest => `
         <article class="card rest-card">
           <div class="rest-head">
-            <h3>${rest.name}</h3>
+            <h3><a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(rest.name + ' ' + (key === 'kansai' ? 'Osaka' : key === 'seoul' ? 'Seoul' : 'Tokyo'))}" target="_blank" rel="noopener" style="color: inherit; text-decoration: none; border-bottom: 1px dashed var(--accent); transition: color 0.2s;">${rest.name} ↗</a></h3>
             <span class="rest-rating">⭐ ${rest.rating} <small>(${rest.reviewCount})</small></span>
           </div>
           <span class="pill rest-type">${rest.type}</span>
