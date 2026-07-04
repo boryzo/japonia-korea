@@ -12,16 +12,16 @@ window.TRIP_DATA = {
     }
   },
   route: [
-    { code: "GDN", city: "Gdańsk", date: "20.08", status: "confirmed" },
-    { code: "WAW", city: "Warszawa", date: "20.08", status: "confirmed" },
-    { code: "NRT", city: "Tokio", date: "21.08", status: "confirmed" },
-    { code: "HND", city: "Tokio", date: "25.08", status: "decision" },
-    { code: "ITM", city: "Osaka", date: "25.08", status: "decision" },
-    { code: "KIX", city: "Osaka", date: "30.08", status: "planned" },
-    { code: "SEL", city: "Seul", date: "30.08", status: "planned" },
-    { code: "ICN", city: "Seul", date: "05.09", status: "confirmed" },
-    { code: "WAW", city: "Warszawa", date: "05.09", status: "confirmed" },
-    { code: "GDN", city: "Gdańsk", date: "05.09", status: "planned" }
+    { code: "GDN", city: "Gdańsk", date: "20.08", time: "wylot 18:25", duration: "lot 0h 55m", status: "confirmed" },
+    { code: "WAW", city: "Warszawa", date: "20.08", time: "wylot 22:50", duration: "lot 12h 35m", status: "confirmed" },
+    { code: "NRT", city: "Tokio", date: "21.08", time: "przylot 18:25", duration: "", status: "confirmed" },
+    { code: "HND", city: "Tokio", date: "25.08", time: "wylot 12:00", duration: "lot ~1h 10m", status: "decision" },
+    { code: "ITM", city: "Osaka", date: "25.08", time: "przylot 13:10", duration: "", status: "decision" },
+    { code: "KIX", city: "Osaka", date: "30.08", time: "wylot 12:00", duration: "lot ~1h 50m", status: "planned" },
+    { code: "SEL", city: "Seul", date: "30.08", time: "przylot 13:50", duration: "", status: "planned" },
+    { code: "ICN", city: "Seul", date: "05.09", time: "wylot 12:35", duration: "lot 12h 55m", status: "confirmed" },
+    { code: "WAW", city: "Warszawa", date: "05.09", time: "wylot 22:50", duration: "lot 0h 55m", status: "planned" },
+    { code: "GDN", city: "Gdańsk", date: "05.09", time: "przylot 23:45", duration: "", status: "planned" }
   ],
   flights: [
     { date: "20.08", route: "GDN → WAW", number: "LO3816", time: "18:25–19:20", status: "confirmed" },

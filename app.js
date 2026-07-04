@@ -28,6 +28,8 @@
     return `<div class="card route-card"><div class="route">${data.route.map(stop => `
       <div class="route-stop ${stop.status}">
         <span class="route-dot">${stop.code}</span><b>${stop.city}</b><small>${stop.date}</small>
+        ${stop.time ? `<small style="color:var(--text-muted); display:block; margin-top:2px;">${stop.time}</small>` : ""}
+        ${stop.duration ? `<small style="color:var(--accent); display:block;">${stop.duration}</small>` : ""}
       </div>`).join("")}</div></div>`;
   }
 
