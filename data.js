@@ -15,8 +15,8 @@ window.TRIP_DATA = {
     { code: "GDN", city: "Gdańsk", date: "20.08", time: "wylot 18:25", duration: "lot 0h 55m", status: "confirmed" },
     { code: "WAW", city: "Warszawa", date: "20.08", time: "wylot 22:50", duration: "lot 12h 35m", status: "confirmed" },
     { code: "NRT", city: "Tokio", date: "21.08", time: "przylot 18:25", duration: "", status: "confirmed" },
-    { code: "HND", city: "Tokio", date: "25.08", time: "wylot 12:00", duration: "lot ~1h 10m", status: "decision" },
-    { code: "ITM", city: "Osaka", date: "25.08", time: "przylot 13:10", duration: "", status: "decision" },
+    { code: "TYO", city: "Tokio", date: "25.08", time: "odjazd ~10:00", duration: "pociąg ~2.5h", status: "planned" },
+    { code: "OSA", city: "Osaka", date: "25.08", time: "przyjazd ~12:30", duration: "", status: "planned" },
     { code: "KIX", city: "Osaka", date: "30.08", time: "wylot 12:00", duration: "lot ~1h 50m", status: "planned" },
     { code: "SEL", city: "Seul", date: "30.08", time: "przylot 13:50", duration: "", status: "planned" },
     { code: "ICN", city: "Seul", date: "05.09", time: "wylot 12:35", duration: "lot 12h 55m", status: "confirmed" },
@@ -26,7 +26,7 @@ window.TRIP_DATA = {
   flights: [
     { date: "20.08", route: "GDN → WAW", number: "LO3816", time: "18:25–19:20", status: "confirmed" },
     { date: "20–21.08", route: "WAW → NRT", number: "LO79", time: "22:50–18:25 (+1)", status: "confirmed" },
-    { date: "25.08", route: "Tokio → Osaka", number: "Lot HND–ITM lub Shinkansen", time: "do decyzji", status: "decision" },
+    { date: "25.08", route: "Tokio → Osaka", number: "Shinkansen Nozomi", time: "~2.5h (Smart EX)", status: "planned" },
     { date: "30.08", route: "KIX → GMP/ICN", number: "lot bezpośredni", time: "najlepiej 11:00–15:00", status: "planned" },
     { date: "05.09", route: "ICN → WAW", number: "LO100", time: "12:35–18:30", status: "confirmed" }
   ],
@@ -124,7 +124,7 @@ window.TRIP_DATA = {
         { date: "22.08", day: "Sobota", title: "Nowoczesne Tokio", text: "Shibuya Crossing, Hachikō, Harajuku, Takeshita Street, Meiji Jingu i Shinjuku po zmroku.", cost: "¥", pace: "dużo chodzenia", details: { image: "assets/images/tokyo_days/shibuya.jpg", desc: "Zanurzamy się w nowoczesne i szalone Tokio! Zaczniemy od słynnego skrzyżowania Shibuya Crossing i pomnika psa Hachiko. Następnie przejdziemy do Harajuku – przejdziemy przez kolorową Takeshita Street pełną crêpes i szalonej mody, a potem odpoczniemy w leśnym kompleksie świątyni Meiji Jingu. Wieczór spędzimy w rozświetlonym neonami Shinjuku.", transport: "Poruszamy się głównie linią JR Yamanote (zielona pętla), która łączy Shibuyę, Harajuku i Shinjuku." } },
         { date: "23.08", day: "Niedziela", title: "Klasyka i popkultura", text: "Asakusa i Sensō-ji, Ueno oraz Akihabara. Wieczorem bezpłatny punkt widokowy w Tokyo Metropolitan Government Building.", cost: "¥", pace: "średnio", details: { image: "assets/images/tokyo_days/asakusa.jpg", desc: "Dzień pełen kontrastów. Rano odwiedzimy najstarszą świątynię w Tokio – Sensō-ji w historycznej dzielnicy Asakusa. Przejdziemy przez bramę Kaminarimon i uliczkę Nakamise. Następnie udamy się do Akihabary – mekki elektroniki, anime i gier wideo. Wieczorem wyjedziemy na 45. piętro Tokyo Metropolitan Government Building po darmowe widoki na panoramę miasta.", transport: "Do Asakusy dojedziemy metrem (linia Ginza lub Asakusa). Z Asakusy do Akihabary szybko dostaniemy się np. z przesiadką na stacji Ueno." } },
         { date: "24.08", day: "Poniedziałek", title: "Tokyo Disneyland", text: "Cały dzień w parku. Disneyland jest obowiązkowy; DisneySea zostaje poza planem bazowym.", cost: "¥¥¥", pace: "cały dzień", must: true, details: { image: "assets/images/tokyo_days/disney.jpg", desc: "Czeka nas magiczny, całodniowy pobyt w Tokyo Disneyland! Zobaczymy Zamek Kopciuszka, klasyczne parady i mnóstwo bajkowych atrakcji. To jeden z najchętniej odwiedzanych parków rozrywki na świecie. Warto być przed otwarciem, żeby wejść jako jedni z pierwszych.", transport: "Dojazd pociągiem JR linii Keiyo lub Musashino ze stacji Tokyo do stacji Maihama. Podróż ze stacji Tokyo trwa około 15 minut." } },
-        { date: "25.08", day: "Wtorek", title: "Tokio → Osaka", text: "Wymeldowanie, lekki poranek i przejazd na HND albo stację Shinkansenu. Wybór transportu pozostaje otwarty.", cost: "?", pace: "transfer", details: { image: "assets/images/tokyo_days/shinkansen.jpg", desc: "Opuszczamy Tokio i ruszamy na południe, do regionu Kansai! Rano spokojnie się wymeldujemy. Trasę Tokio-Osaka (około 500 km) pokonamy super-szybkim pociągiem Shinkansen, co potrwa około 2.5 godziny, lub samolotem z lotniska Haneda.", transport: "Jeśli wybierzemy pociąg: Shinkansen Nozomi ze stacji Tokyo lub Shinagawa bezpośrednio do stacji Shin-Osaka." } }
+        { date: "25.08", day: "Wtorek", title: "Tokio → Osaka", text: "Wymeldowanie, lekki poranek i przejazd na stację Shinkansenu.", cost: "¥¥¥", pace: "transfer", details: { image: "assets/images/tokyo_days/shinkansen.jpg", desc: "Opuszczamy Tokio i ruszamy na południe, do regionu Kansai! Rano spokojnie się wymeldujemy. Trasę Tokio-Osaka (około 500 km) pokonamy super-szybkim pociągiem Shinkansen Nozomi, co potrwa około 2.5 godziny.", transport: "Shinkansen Nozomi (kupiony przez Smart EX) ze stacji Tokyo lub Shinagawa bezpośrednio do stacji Shin-Osaka." } }
       ],
       restaurants: [
         { name: "Ichiran Shibuya", type: "Ramen", rating: "4.5", reviewCount: "7000+", desc: "Kultowy ramen jedzony w prywatnych boksach. Doświadczenie samo w sobie." },
@@ -229,7 +229,7 @@ window.TRIP_DATA = {
       { label: "Nocleg Tokio · 4 noce", amount: 1462, status: "reserved" },
       { label: "Nocleg Osaka · 5 nocy", amount: 680.27, status: "reserved" },
       { label: "Nocleg Seul · 6 nocy", amount: 1981, status: "reserved" },
-      { label: "Tokio → Osaka", amount: 1026.15, status: "decision", note: "budżet wg Shinkansenu Nozomi: 44 160 JPY dla 2+2; lot HND–ITM około 833 zł" },
+      { label: "Tokio → Osaka", amount: 1012, status: "planned", note: "budżet wg Shinkansenu Nozomi (Smart EX): 43 540 ¥ dla 2+2" },
       { label: "KIX → Seul", amount: 1700, status: "planned", note: "maksymalny budżet" },
       { label: "2 × regionalna eSIM · Japonia + Korea", amount: 46.40, status: "planned", note: "2 × 6,20 USD · każda: 10 GB / 15 dni · kurs NBP 3,7420 PLN/USD z 03.07.2026" },
       { label: "Pociąg WAW → GDN po powrocie", amount: 200, status: "planned", note: "05.09 · cel: odjazd około 20:29/20:30" }
@@ -242,7 +242,7 @@ window.TRIP_DATA = {
     ]
   },
   todos: [
-    { title: "Wybrać: lot czy Shinkansen", detail: "Tokio → Osaka · 25.08", priority: "high", category: "transport" },
+    { title: "Kupić bilety Tokio → Osaka", detail: "25.08 · Shinkansen Nozomi (Smart EX) · 43 540 ¥", priority: "high", category: "transport" },
     { title: "Kupić lot KIX → Seul", detail: "30.08 · najlepiej 11:00–15:00 · limit 1 700 zł", priority: "high", category: "transport" },
     { title: "Kupić Tokyo Disneyland", detail: "24.08 · bilety 2+2", priority: "high", category: "attractions" },
     { title: "Zaplanować bagaż kabinowy", detail: "Bilety LOT mają 0PC bagażu rejestrowanego", priority: "high", category: "logistics" },
