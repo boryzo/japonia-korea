@@ -55,7 +55,7 @@
       <article class="card decision-banner">
         <div class="decision-title"><span class="section-label">Otwarta decyzja</span><h3>Tokio → Osaka<br>25 sierpnia</h3><p>Obie wersje zostają w planie do czasu zakupu.</p></div>
         <div class="decision-option"><strong>✈️ Lot HND → ITM</strong><ul><li>roboczo około 833 zł za 4 osoby</li><li>więcej transferów lotniskowych</li><li>przylot blisko centrum Osaki</li></ul></div>
-        <div class="decision-option"><strong>🚄 Shinkansen Nozomi</strong><ul><li>44 160 JPY za 2+2 z rezerwacją miejsc</li><li>około 1 026,15 zł po kursie NBP</li><li>centrum → centrum, około 2,5 godziny</li></ul></div>
+        <div class="decision-option"><strong>🚄 Shinkansen Nozomi</strong><ul><li>43 540 JPY za 2+2 z rezerwacją miejsc</li><li>około 1 012 zł po kursie NBP</li><li>centrum → centrum, około 2,5 godziny</li></ul></div>
       </article>
       <div class="section-head" style="margin-top:50px"><div><span class="section-label">Powrót i ochrona</span><h2>Ważne organizacyjnie</h2></div></div>
       <div class="grid grid-2">

@@ -17,17 +17,17 @@ window.TRIP_DATA = {
     { code: "NRT", city: "Tokio", date: "21.08", time: "przylot 18:25", duration: "", status: "confirmed" },
     { code: "TYO", city: "Tokio", date: "25.08", time: "odjazd ~10:00", duration: "pociąg ~2.5h", status: "planned" },
     { code: "OSA", city: "Osaka", date: "25.08", time: "przyjazd ~12:30", duration: "", status: "planned" },
-    { code: "KIX", city: "Osaka", date: "30.08", time: "wylot 12:00", duration: "lot ~1h 50m", status: "planned" },
-    { code: "SEL", city: "Seul", date: "30.08", time: "przylot 13:50", duration: "", status: "planned" },
+    { code: "KIX", city: "Osaka", date: "30.08", time: "wylot 12:50", duration: "lot 2h 10m", status: "planned" },
+    { code: "SEL", city: "Seul", date: "30.08", time: "przylot 15:00", duration: "", status: "planned" },
     { code: "ICN", city: "Seul", date: "05.09", time: "wylot 12:35", duration: "lot 12h 55m", status: "confirmed" },
-    { code: "WAW", city: "Warszawa", date: "05.09", time: "wylot 22:50", duration: "lot 0h 55m", status: "planned" },
-    { code: "GDN", city: "Gdańsk", date: "05.09", time: "przylot 23:45", duration: "", status: "planned" }
+    { code: "WAW", city: "Warszawa", date: "05.09", time: "odjazd ~20:30", duration: "pociąg ~2.5h", status: "planned" },
+    { code: "GDN", city: "Gdańsk", date: "05.09", time: "przyjazd ~23:00", duration: "", status: "planned" }
   ],
   flights: [
     { date: "20.08", route: "GDN → WAW", number: "LO3816", time: "18:25–19:20", status: "confirmed" },
     { date: "20–21.08", route: "WAW → NRT", number: "LO79", time: "22:50–18:25 (+1)", status: "confirmed" },
     { date: "25.08", route: "Tokio → Osaka", number: "Shinkansen Nozomi", time: "~2.5h (Smart EX)", status: "planned" },
-    { date: "30.08", route: "KIX → GMP/ICN", number: "lot bezpośredni", time: "najlepiej 11:00–15:00", status: "planned" },
+    { date: "30.08", route: "KIX → ICN", number: "BX 171 (rozważany)", time: "12:50–15:00", status: "planned" },
     { date: "05.09", route: "ICN → WAW", number: "LO100", time: "12:35–18:30", status: "confirmed" }
   ],
   returnTrain: {
