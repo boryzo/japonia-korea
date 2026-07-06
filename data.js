@@ -152,12 +152,12 @@ window.TRIP_DATA = {
   freeTours: {
     intro: "Zarówno w Tokio, jak i w Seulu można skorzystać z opcji darmowego zwiedzania z przewodnikami (najczęściej po angielsku).",
     tokyo: [
-      "<b>Wolontariusze (TFWT / TFG):</b> Organizacje takie jak Tokyo Free Walking Tour lub Tokyo Free Guide. Prowadzane przez pasjonatów. Nie płacisz za samą usługę, ale dobrym tonem jest pokrycie kosztów przewodnika (np. jego bilety na przejazd, wejściówki czy ewentualny lunch).",
-      "<b>Tip-based (np. GuruWalk):</b> Klasyczne free walking tours. Rezerwujesz miejsce, a na końcu dajesz przewodnikowi napiwek (tip) zależny od tego, jak bardzo podobała Ci się wycieczka (np. Asakusa, Shibuya)."
+      "<b>Wolontariusze (TFWT / TFG):</b> Organizacje takie jak <a href=\"https://www.tfwt.jp/\" target=\"_blank\" rel=\"noopener\" style=\"color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--accent);\">Tokyo Free Walking Tour</a> lub <a href=\"https://www.tokyofreeguide.org/\" target=\"_blank\" rel=\"noopener\" style=\"color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--accent);\">Tokyo Free Guide</a>. Prowadzane przez pasjonatów. Nie płacisz za samą usługę, ale dobrym tonem jest pokrycie kosztów przewodnika (np. jego bilety na przejazd, wejściówki czy ewentualny lunch).",
+      "<b>Tip-based (np. <a href=\"https://www.guruwalk.com/\" target=\"_blank\" rel=\"noopener\" style=\"color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--accent);\">GuruWalk</a>):</b> Klasyczne free walking tours. Rezerwujesz miejsce, a na końcu dajesz przewodnikowi napiwek (tip) zależny od tego, jak bardzo podobała Ci się wycieczka (np. Asakusa, Shibuya)."
     ],
     seoul: [
-      "<b>Oficjalne zwiedzanie miasta:</b> Rządowy program (Seoul Cultural Tourism Volunteer Guides). Oferują około 40 tras (w tym pałace). Jest w 100% darmowy, płacisz tylko za swoje bilety wstępu. <b>Wymagana rezerwacja z min. 3-dniowym wyprzedzeniem</b> (dobo.visitseoul.net).",
-      "<b>Tip-based (np. GuruWalk / Freetour):</b> Wycieczki prowadzone przez lokalsów. Zazwyczaj zostawia się około 10-15 USD napiwku od osoby po zakończeniu spaceru."
+      "<b>Oficjalne zwiedzanie miasta:</b> Rządowy program (Seoul Cultural Tourism Volunteer Guides). Oferują około 40 tras (w tym pałace). Jest w 100% darmowy, płacisz tylko za swoje bilety wstępu. <b>Wymagana rezerwacja z min. 3-dniowym wyprzedzeniem</b> (<a href=\"https://dobo.visitseoul.net/\" target=\"_blank\" rel=\"noopener\" style=\"color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--accent);\">dobo.visitseoul.net</a>).",
+      "<b>Tip-based (np. <a href=\"https://www.guruwalk.com/\" target=\"_blank\" rel=\"noopener\" style=\"color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--accent);\">GuruWalk</a> / <a href=\"https://www.freetour.com/\" target=\"_blank\" rel=\"noopener\" style=\"color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--accent);\">Freetour</a>):</b> Wycieczki prowadzone przez lokalsów. Zazwyczaj zostawia się około 10-15 USD napiwku od osoby po zakończeniu spaceru."
     ]
   },
   stays: {
