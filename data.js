@@ -97,6 +97,53 @@ window.TRIP_DATA = {
       { name: "KorailTalk", purpose: "Tylko jeśli zdecydujemy się na daleki przejazd koleją poza Seul.", priority: "optional", url: "https://www.letskorail.com/" }
     ]
   },
+  shopping: {
+    intro: "Zasady zakupów: Japonia = Life/Gyomu/OK/Seiyu + konbini, Korea = No Brand/Lotte Mart/E-mart/Homeplus + CU/GS25.",
+    tips: [
+      "Dzień przyjazdu: konbini — woda, coś dla dzieci, śniadanie na rano.",
+      "Następnego dnia: normalny supermarket — zakupy na 2–3 dni.",
+      "Wieczorem: supermarket po przecenione bento/sushi/gotowce.",
+      "Przed wylotem z Seulu: Lotte Mart albo E-mart na rameny, słodycze, algi, kawy instant, przekąski do Polski."
+    ],
+    equivalents: [
+      { pl: "Biedronka / Lidl", jp: "Gyomu Super, OK Store, Seiyu, czasem Aeon", kr: "No Brand, Lotte Mart, E-mart, Homeplus" },
+      { pl: "Mercadona", jp: "Life, Maruetsu, KOHYO, Aeon, MaxValu", kr: "Lotte Super, GS The Fresh, E-mart Everyday" },
+      { pl: "Żabka (konbini)", jp: "7-Eleven, Lawson, FamilyMart", kr: "CU, GS25, 7-Eleven, emart24" },
+      { pl: "Tanie / Drogeria", jp: "Matsumoto Kiyoshi, Don Quijote, Daiso", kr: "Olive Young, Daiso, No Brand, Lotte Mart" }
+    ],
+    cities: {
+      tokyo: {
+        name: "Tokio",
+        supermarkets: "Life supermarket, Maruetsu, Seiyu, OK Store, Gyomu Super, Aeon My Basket",
+        details: [
+          "<b>Konbini:</b> 7-Eleven, Lawson, FamilyMart na szybkie śniadanie / wodę / onigiri / kawę.",
+          "<b>Koszyk rodzinny:</b> Life, Maruetsu, Seiyu, Aeon/MaxValu.",
+          "<b>Taniej:</b> Gyomu Super (dobre na mrożonki, napoje, makarony, duże paczki) albo OK Store.",
+          "<b>Gotowce:</b> Idź po 19:00-20:00. Bento i sushi mają naklejki z rabatami 20-50%."
+        ]
+      },
+      kansai: {
+        name: "Osaka",
+        supermarkets: "Life, KOHYO, MaxValu, Aeon, Gyomu Super, Super Tamade",
+        details: [
+          "<b>Codziennie:</b> Life (najbezpieczniejszy wybór), KOHYO (często przy stacjach), MaxValu / Aeon.",
+          "<b>Taniej pod rodzinę:</b> Gyomu Super, Super Tamade (bardzo osakowy, tani, lekki chaos).",
+          "<b>Pamiątki/Słodycze:</b> Don Quijote (świetny na nocne zakupy).",
+          "Wpisuj w mapy \"supermarket near me\". Konbini z 4-osobową rodziną wychodzi drogo."
+        ]
+      },
+      seoul: {
+        name: "Seul",
+        supermarkets: "Lotte Mart, E-mart, Homeplus, No Brand",
+        details: [
+          "<b>Duży market:</b> Lotte Mart (Zettaplex Seoul Station świetny pod zakupy do Polski - ma tax refund > 30k KRW), E-mart, Homeplus.",
+          "<b>Dyskonty:</b> No Brand (Lidl/Aldi vibes, np. w DOOTA Mall).",
+          "<b>Konbini:</b> CU, GS25, 7-Eleven (śniadania, woda, ramen, mleko bananowe).",
+          "<b>UWAGA:</b> Duże markety bywają obowiązkowo zamknięte (np. 2. i 4. środa/niedziela). Zawsze sprawdzaj hasło <em>휴무일</em> w Naver Map."
+        ]
+      }
+    }
+  },
   stays: {
     tokyo: { name: "7House", dates: "21–25.08", nights: 4, price: 1462, area: "Adachi-ku, Tokio", address: "〒120-0015 東京都足立区足立3-8-5", check: "15:00 / 11:00", image: "assets/images/hotels/7house.webp", bookingUrl: "https://www.booking.com/hotel/jp/narita-haneda-airport-is-convenient-quiet-homestay.html", mapUrl: "https://www.google.com/maps/search/?api=1&query=東京都足立区足立3-8-5" },
     kansai: { name: "SunriseHouse TD501", dates: "25–30.08", nights: 5, price: 680.27, area: "Teradacho, Tennoji-ku, Osaka", address: "〒543-0052 大阪府大阪市天王寺区大道4丁目9-3 エスタピア寺田町 TD501", check: "16:00 / 10:00", image: "assets/images/hotels/sunrisehouse.webp", bookingUrl: "https://www.booking.com/hotel/jp/nearest-jr-teradacho-station-3-minutes-on-foot-direct-access-to-umeda-osaka-cast.html", mapUrl: "https://www.google.com/maps/search/?api=1&query=大阪府大阪市天王寺区大道4丁目9-3" },

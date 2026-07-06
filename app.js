@@ -132,6 +132,32 @@
         <article class="card"><span class="section-label">🇰🇷 Korea</span><h3>Aplikacje na Seul</h3><div class="app-list">${data.travelApps.korea.map(app => `<a class="app-item" href="${app.url}" target="_blank" rel="noopener"><span class="app-letter">${app.name[0]}</span><span><strong>${app.name}</strong><small>${app.purpose}</small></span><em class="app-priority ${app.priority}">${app.priority === "must" ? "konieczna" : app.priority === "recommended" ? "warto" : "opcjonalna"}</em></a>`).join("")}</div></article>
       </div>
 
+      <div class="section-head" style="margin-top:50px"><div><span class="section-label">Zakupy i markety</span><h2>Gdzie robić zakupy z rodziną</h2><p>${data.shopping.intro}</p></div></div>
+      <div class="grid grid-2">
+        <article class="card">
+          <span class="section-label">Odpowiedniki z Polski / Hiszpanii</span>
+          <div class="budget-row" style="margin-top: 15px;"><strong>Typ sklepu</strong><span>Japonia 🇯🇵</span><span>Korea 🇰🇷</span></div>
+          ${data.shopping.equivalents.map(eq => `<div class="budget-row" style="border-top:1px solid rgba(255,255,255,0.1); padding-top: 10px;"><div><strong>${eq.pl}</strong></div><small style="width:30%; padding:0 10px; color:var(--text);">${eq.jp}</small><small style="width:30%; color:var(--text);">${eq.kr}</small></div>`).join("")}
+        </article>
+        <article class="card">
+          <span class="section-label">Prosty plan dla Was</span>
+          <ul class="packing-list" style="margin-top: 15px;">
+            ${data.shopping.tips.map(tip => `<li>${tip}</li>`).join("")}
+          </ul>
+        </article>
+      </div>
+      <div class="grid grid-3" style="margin-top:20px;">
+        ${Object.values(data.shopping.cities).map(city => `
+        <article class="card">
+          <span class="section-label">${city.name}</span>
+          <h3>${city.supermarkets.split(',')[0]} i inne</h3>
+          <p style="margin-bottom:15px; font-size:13px; color:var(--text-muted);">${city.supermarkets}</p>
+          <ul class="packing-list" style="gap:10px;">
+            ${city.details.map(det => `<li style="font-size:14px; line-height:1.4">${det}</li>`).join("")}
+          </ul>
+        </article>`).join("")}
+      </div>
+
       <div class="section-head" style="margin-top:50px"><div><span class="section-label">Bagaż</span><h2>Jak pakujemy 4 osoby</h2><p>${data.baggage.allowance}</p></div></div>
       <article class="card baggage-hero"><div><span class="baggage-size">55<small>×</small>40<small>×</small>20</span><span>cm · rozważany plecak</span></div><div><h3>Tak, ten rozmiar pasuje do LOT</h3><p>Oficjalny limit LOT to 55×40×23 cm i 8 kg na osobę. Plecak będzie wygodniejszy na schodach i w transporcie, ale musi trzymać kształt po zapakowaniu.</p><p class="warning-note">${data.baggage.warning}</p></div></article>
       <div class="grid grid-4 bag-grid">${data.baggage.bags.map(bag => `<article class="card bag-card"><span class="bag-icon">🎒</span><h3>${bag.name}</h3><p>${bag.load}</p><strong>${bag.target}</strong></article>`).join("")}</div>
