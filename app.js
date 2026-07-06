@@ -159,6 +159,22 @@
         </article>`).join("")}
       </div>
 
+      <div class="section-head" style="margin-top:50px"><div><span class="section-label">Zwiedzanie</span><h2>Free Walking Tours</h2><p>${data.freeTours.intro}</p></div></div>
+      <div class="grid grid-2">
+        <article class="card">
+          <span class="section-label">Japonia (Tokio) 🇯🇵</span>
+          <ul class="packing-list" style="margin-top: 15px; gap: 10px;">
+            ${data.freeTours.tokyo.map(tour => `<li style="font-size:14px; line-height:1.4">${tour}</li>`).join("")}
+          </ul>
+        </article>
+        <article class="card">
+          <span class="section-label">Korea Południowa (Seul) 🇰🇷</span>
+          <ul class="packing-list" style="margin-top: 15px; gap: 10px;">
+            ${data.freeTours.seoul.map(tour => `<li style="font-size:14px; line-height:1.4">${tour}</li>`).join("")}
+          </ul>
+        </article>
+      </div>
+
       <div class="section-head" style="margin-top:50px"><div><span class="section-label">Bagaż</span><h2>Jak pakujemy 4 osoby</h2><p>${data.baggage.allowance}</p></div></div>
       <article class="card baggage-hero"><div><span class="baggage-size">55<small>×</small>40<small>×</small>20</span><span>cm · rozważany plecak</span></div><div><h3>Tak, ten rozmiar pasuje do LOT</h3><p>Oficjalny limit LOT to 55×40×23 cm i 8 kg na osobę. Plecak będzie wygodniejszy na schodach i w transporcie, ale musi trzymać kształt po zapakowaniu.</p><p class="warning-note">${data.baggage.warning}</p></div></article>
       <div class="grid grid-4 bag-grid">${data.baggage.bags.map(bag => `<article class="card bag-card"><span class="bag-icon">🎒</span><h3>${bag.name}</h3><p>${bag.load}</p><strong>${bag.target}</strong></article>`).join("")}</div>

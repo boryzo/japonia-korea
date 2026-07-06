@@ -149,6 +149,17 @@ window.TRIP_DATA = {
       }
     }
   },
+  freeTours: {
+    intro: "Zarówno w Tokio, jak i w Seulu można skorzystać z opcji darmowego zwiedzania z przewodnikami (najczęściej po angielsku).",
+    tokyo: [
+      "<b>Wolontariusze (TFWT / TFG):</b> Organizacje takie jak Tokyo Free Walking Tour lub Tokyo Free Guide. Prowadzane przez pasjonatów. Nie płacisz za samą usługę, ale dobrym tonem jest pokrycie kosztów przewodnika (np. jego bilety na przejazd, wejściówki czy ewentualny lunch).",
+      "<b>Tip-based (np. GuruWalk):</b> Klasyczne free walking tours. Rezerwujesz miejsce, a na końcu dajesz przewodnikowi napiwek (tip) zależny od tego, jak bardzo podobała Ci się wycieczka (np. Asakusa, Shibuya)."
+    ],
+    seoul: [
+      "<b>Oficjalne zwiedzanie miasta:</b> Rządowy program (Seoul Cultural Tourism Volunteer Guides). Oferują około 40 tras (w tym pałace). Jest w 100% darmowy, płacisz tylko za swoje bilety wstępu. <b>Wymagana rezerwacja z min. 3-dniowym wyprzedzeniem</b> (dobo.visitseoul.net).",
+      "<b>Tip-based (np. GuruWalk / Freetour):</b> Wycieczki prowadzone przez lokalsów. Zazwyczaj zostawia się około 10-15 USD napiwku od osoby po zakończeniu spaceru."
+    ]
+  },
   stays: {
     tokyo: { name: "7House", dates: "21–25.08", nights: 4, price: 1462, area: "Adachi-ku, Tokio", address: "〒120-0015 東京都足立区足立3-8-5", check: "15:00 / 11:00", image: "assets/images/hotels/7house.webp", bookingUrl: "https://www.booking.com/hotel/jp/narita-haneda-airport-is-convenient-quiet-homestay.html", mapUrl: "https://www.google.com/maps/search/?api=1&query=東京都足立区足立3-8-5" },
     kansai: { name: "SunriseHouse TD501", dates: "25–30.08", nights: 5, price: 680.27, area: "Teradacho, Tennoji-ku, Osaka", address: "〒543-0052 大阪府大阪市天王寺区大道4丁目9-3 エスタピア寺田町 TD501", check: "16:00 / 10:00", image: "assets/images/hotels/sunrisehouse.webp", bookingUrl: "https://www.booking.com/hotel/jp/nearest-jr-teradacho-station-3-minutes-on-foot-direct-access-to-umeda-osaka-cast.html", mapUrl: "https://www.google.com/maps/search/?api=1&query=大阪府大阪市天王寺区大道4丁目9-3" },
