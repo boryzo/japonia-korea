@@ -201,6 +201,17 @@ window.TRIP_DATA = {
         { name: "Fuunji Shinjuku", type: "Tsukemen", rating: "4.3", reviewCount: "4000+", desc: "Gęsty bulion rybno-wieprzowy, w którym macza się zimny makaron (tsukemen)." },
         { name: "Sometaro Asakusa", type: "Okonomiyaki", rating: "4.2", reviewCount: "1200+", desc: "Tradycyjne placki okonomiyaki przygotowywane w bardzo klimatycznym, starym drewnianym domu." }
       ],
+      shoppingTips: {
+        title: "Oryginalne japońskie ubrania i T-shirty",
+        intro: "Zamiast tandetnych pamiątek z napisem 'I ❤️ Japan', warto kupić graficzne T-shirty lub rzeczy z japońskich sieciówek (szukajcie w okolicach Harajuku i Shibuya). <b>Ważne: noś paszport!</b> Zakupy powyżej 5 500 JPY (z podatkiem) w jednym sklepie uprawniają do tax-free. (Przebitka: 1000 JPY ≈ 23 zł).",
+        places: [
+          { name: "Graniph", desc: "Mój nr 1. Świetne grafiki, fajna jakość, kolaboracje z anime, popkulturą i artystami. T-shirt: ~2900 JPY (ok. 67 zł)." },
+          { name: "UNIQLO UT", desc: "Tanie, oficjalne koszulki z mangą/anime/popkulturą. Często ok. 1990 JPY (ok. 46 zł)." },
+          { name: "GU", desc: "Tańsza siostra Uniqlo. Basicowe T-shirty potrafią być od 590 JPY, czapki unisex za ok. 990 JPY. Dobra jakość za grosze." },
+          { name: "WEGO", desc: "Ulubieniec młodzieży z Harajuku: czapki, streetwear, oversize, dużo tanich akcesoriów." },
+          { name: "2nd Street / Vintage", desc: "Świetny japoński second-hand. Używane ubrania często w bardzo dobrym stanie, ceny od 300-1000 JPY, idealne na polowanie." }
+        ]
+      },
       options: ["teamLab Borderless", "Odaiba", "Tokyo Skytree", "Ueno Zoo"]
     },
     kansai: {
@@ -239,6 +250,16 @@ window.TRIP_DATA = {
         { name: "Yakitori no Meimon Akiyoshi", type: "Yakitori", rating: "4.3", reviewCount: "1500+", desc: "Tanie i przepyszne szaszłyki z kurczaka, perfekcyjne jako przekąska do zimnego piwa." },
         { name: "Chibo Dotonbori", type: "Okonomiyaki", rating: "4.0", reviewCount: "3000+", desc: "Wielka, kilkupiętrowa restauracja serwująca okonomiyaki i yakisobę – klasyk Dotonbori." }
       ],
+      shoppingTips: {
+        title: "Oryginalne japońskie ubrania i T-shirty",
+        intro: "Osaka może być nawet lepsza cenowo niż Tokio! Najlepszym rejonem na modowe zakupy jest Shinsaibashi oraz Amerikamura (młodzieżowa dzielnica pełna second-handów i streetwearu). <b>Pamiętaj o paszporcie</b> do zakupów tax-free powyżej 5 500 JPY z podatkiem.",
+        places: [
+          { name: "Graniph (Shinsaibashi)", desc: "Koszulki graficzne i anime z oryginalnym, świetnym designem (ok. 2900 JPY)." },
+          { name: "WEGO (Amerikamura)", desc: "Ogromny wybór taniego streetwearu, czapek i oversize'owych ubrań dla nastolatków." },
+          { name: "2nd Street (różne lokacje)", desc: "W Osace perełki vintage można wyłowić znacznie taniej niż w Tokio. Ceny startują często już od 300 JPY." },
+          { name: "UNIQLO / GU", desc: "Klasyki na szybkie zakupy basiców i tanich czapek (od 590-990 JPY)." }
+        ]
+      },
       options: ["Kobe Animal Kingdom", "Suma Beach", "Universal Studios Japan", "drugi dzień w Kyoto"]
     },
     seoul: {
@@ -283,6 +304,16 @@ window.TRIP_DATA = {
         { name: "Yoogane Dakgalbi", type: "Dakgalbi", rating: "4.1", reviewCount: "2500+", desc: "Smażony z ostrym sosem kurczak, kapusta i warzywa. Wymieszane na patelni i przykryte serem." },
         { name: "Wangbijib Myeongdong", type: "K-BBQ", rating: "4.4", reviewCount: "3500+", desc: "Wysokiej jakości koreański grill (K-BBQ) przyjazny obcokrajowcom. Warto zjeść tanie zestawy lunchowe." }
       ],
+      shoppingTips: {
+        title: "Gdzie po albumy K-pop (np. ILLIT)?",
+        intro: "Wasza baza przy Dongdaemun to idealne miejsce wypadowe do Myeongdong – zagłębia k-popowego. Orientacyjne ceny: album ok. 43–47 zł, mniejsza wersja (np. GLLIT) 25–34 zł, lightstick ~109 zł. (Przebitka: 10 000 KRW ≈ 24-25 zł).<br>W sklepie możesz zapytać: <b>'아일릿 앨범 있어요?'</b> (Czy macie album ILLIT?).",
+        places: [
+          { name: "WITHMUU Myeongdong", desc: "Najlepszy pierwszy strzał (16 Myeongdong 7-gil). Zazwyczaj 11:00-21:00. Dużo albumów, oficjalne gadżety, czasem eventy i lucky draws." },
+          { name: "MusicKorea Myeongdong 2nd Branch", desc: "Świetny sklep stricte z albumami. (134 Toegye-ro, blisko popularnego Daiso)." },
+          { name: "Myeongdong Underground / C.T.Record / K-MECCA", desc: "Podziemia przy stacji Myeongdong to raj na tańsze albumy, breloczki i setki photocardów dla fanów." },
+          { name: "Ktown4u COEX", desc: "Gigantyczny kompleks K-pop, jeśli akurat zwiedzacie Gangnam/COEX. Adres: 513 Yeongdong-daero." }
+        ]
+      },
       options: ["Suwon i Hwaseong", "Lotte World", "hanbok", "płatny wjazd na N Seoul Tower"]
     }
   },

@@ -95,6 +95,15 @@
           <span class="pill rest-type">${rest.type}</span>
           <p>${rest.desc}</p>
         </article>`).join("")}</div>
+      ${city.shoppingTips ? `
+      <div class="section-head" style="margin-top:48px"><div><span class="section-label">Zakupy</span><h2>${city.shoppingTips.title}</h2><p>${city.shoppingTips.intro}</p></div></div>
+      <div class="grid grid-2">
+        ${city.shoppingTips.places.map(place => `
+        <article class="card">
+          <h3>${place.name}</h3>
+          <p style="margin-top: 10px; font-size: 14px; color: var(--text-muted);">${place.desc}</p>
+        </article>`).join("")}
+      </div>` : ''}
       <div class="section-head" style="margin-top:48px"><div><span class="section-label">Mapa</span><h2>Baza i miejsca</h2></div></div>
       <div class="map-wrap"><div class="map-source-badge">OpenStreetMap</div><div class="map" id="map-${key}" aria-label="Mapa OpenStreetMap miejsc: ${city.name}"></div></div><p class="map-note">Standardowa mapa OpenStreetMap. Punkt noclegu jest orientacyjny. Kliknij marker, aby zobaczyć nazwę miejsca.</p>
       <article class="card"><h3>Opcje — jeszcze nie są częścią planu</h3><div class="options-list">${city.options.map(option => `<span class="option-chip">${option}</span>`).join("")}</div></article>`;
