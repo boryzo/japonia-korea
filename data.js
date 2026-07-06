@@ -105,6 +105,11 @@ window.TRIP_DATA = {
       "Wieczorem: supermarket po przecenione bento/sushi/gotowce.",
       "Przed wylotem z Seulu: Lotte Mart albo E-mart na rameny, słodycze, algi, kawy instant, przekąski do Polski."
     ],
+    discounts: [
+      "<b>Too Good To Go (Japonia):</b> Aplikacja wystartowała w Tokio w 2026 r. (działa m.in. w Shibuya/Shinjuku). Alternatywą jest popularna japońska aplikacja <b>TABETE</b> (pokazuje konkretne jedzenie, nie tylko niespodzianki).",
+      "<b>Aplikacje w Korei:</b> Użyj <b>Lucky Meal (럭키밀)</b> (odpowiednik TGTG dla piekarni/kawiarni) lub <b>Last Order (라스트오더)</b> z rabatami 30–70% na koniec dnia.",
+      "<b>Naklejki rabatowe (w obu krajach):</b> Prawdziwym hitem wciąż pozostają wieczorne wizyty (po 19:00-20:00) w supermarketach (i konbini). Pracownicy przyklejają naklejki z procentowym lub kwotowym rabatem (nawet 50%) na gotowe bento, sushi, kanapki, by sprzedać je przed zamknięciem."
+    ],
     equivalents: [
       { pl: "Biedronka / Lidl", jp: "Gyomu Super, OK Store, Seiyu, czasem Aeon", kr: "No Brand, Lotte Mart, E-mart, Homeplus" },
       { pl: "Mercadona", jp: "Life, Maruetsu, KOHYO, Aeon, MaxValu", kr: "Lotte Super, GS The Fresh, E-mart Everyday" },

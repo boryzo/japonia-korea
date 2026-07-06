@@ -133,11 +133,17 @@
       </div>
 
       <div class="section-head" style="margin-top:50px"><div><span class="section-label">Zakupy i markety</span><h2>Gdzie robić zakupy z rodziną</h2><p>${data.shopping.intro}</p></div></div>
-      <div class="grid grid-1">
+      <div class="grid grid-2">
         <article class="card">
           <span class="section-label">Prosty plan dla Was</span>
           <ul class="packing-list" style="margin-top: 15px;">
             ${data.shopping.tips.map(tip => `<li>${tip}</li>`).join("")}
+          </ul>
+        </article>
+        <article class="card">
+          <span class="section-label">Too Good To Go & Zniżki</span>
+          <ul class="packing-list" style="margin-top: 15px; gap: 10px;">
+            ${data.shopping.discounts.map(disc => `<li style="font-size:14px; line-height:1.4">${disc}</li>`).join("")}
           </ul>
         </article>
       </div>
