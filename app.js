@@ -133,12 +133,7 @@
       </div>
 
       <div class="section-head" style="margin-top:50px"><div><span class="section-label">Zakupy i markety</span><h2>Gdzie robić zakupy z rodziną</h2><p>${data.shopping.intro}</p></div></div>
-      <div class="grid grid-2">
-        <article class="card">
-          <span class="section-label">Odpowiedniki z Polski / Hiszpanii</span>
-          <div class="budget-row" style="margin-top: 15px;"><strong>Typ sklepu</strong><span>Japonia 🇯🇵</span><span>Korea 🇰🇷</span></div>
-          ${data.shopping.equivalents.map(eq => `<div class="budget-row" style="border-top:1px solid rgba(255,255,255,0.1); padding-top: 10px;"><div><strong>${eq.pl}</strong></div><small style="width:30%; padding:0 10px; color:var(--text);">${eq.jp}</small><small style="width:30%; color:var(--text);">${eq.kr}</small></div>`).join("")}
-        </article>
+      <div class="grid grid-1">
         <article class="card">
           <span class="section-label">Prosty plan dla Was</span>
           <ul class="packing-list" style="margin-top: 15px;">
