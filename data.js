@@ -225,6 +225,18 @@ window.TRIP_DATA = {
           ]
         }
       ],
+      trivia: {
+        title: "Czy wiesz, że...?",
+        intro: "Kilka fascynujących faktów, które ubarwią zwiedzanie.",
+        facts: [
+          { name: "Tokyo Skytree", desc: "Mierzy 634 m, a jej stalowa konstrukcja ma nawet 10 cm grubości. Przed piorunami chroni ją cewka Rogowskiego zainstalowana na wysokości 497 m." },
+          { name: "Shibuya Crossing i Hachiko", desc: "Przez skrzyżowanie przechodzą tysiące osób (choć z perspektywy przechodnia wydaje się mniejsze). Pomnik wiernego psa Hachiko to kopia z 1948 r. – oryginał przetopiono na wojnie." },
+          { name: "Tajemnica Meiji Jingu", desc: "Zbudowana w 1920 r. świątynia otoczona jest wspaniałym, gęstym lasem. Nie jest on naturalny – to około 100 tysięcy drzew sprowadzonych i zasadzonych z całej Japonii." },
+          { name: "teamLab Planets", desc: "Interaktywne muzeum, które zwiedza się na boso. Przechodzi się przez brodziki z wodą (z cyfrowymi karpiami) oraz niesamowity pływający ogród z żywych kwiatów." },
+          { name: "Kawiarnie ze zwierzętami", desc: "W Harajuku znajdziesz kawiarnie z sowami, świnkami czy psami. Ze względów etycznych coraz więcej osób omija je, bo dzikie ptaki nie są zwierzętami domowymi." },
+          { name: "Mekka driftu (Ebisu)", desc: "W Prefekturze Fukushima (północ Japonii) znajduje się Ebisu Circuit. To absolutna mekka driftu z torem naśladującym górskie serpentyny i dziesiątkami driftujących tam aut." }
+        ]
+      },
       options: ["teamLab Borderless", "Odaiba", "Tokyo Skytree", "Ueno Zoo"]
     },
     kansai: {
@@ -275,6 +287,19 @@ window.TRIP_DATA = {
           ]
         }
       ],
+      trivia: {
+        title: "Mity, sekrety i historia",
+        intro: "Kansai pełne jest niesamowitych historii i detali.",
+        facts: [
+          { name: "Magia Fushimi Inari", desc: "Tysiące bram Torii ufundowały firmy w podziękowaniu za biznesowy sukces. Na miejscu jest też kamień 'Omokaru' – jeśli podnosząc go okaże się lekki, Twoje życzenie łatwo się spełni." },
+          { name: "Kim są Gejsze?", desc: "W Kioto gejsze to Geiko i Maiko – wysoko wykwalifikowane artystki (taniec, śpiew, parzenie herbaty), a nie prostytutki. Przyjmują gości w herbaciarniach, do których wstęp mają tylko wybrani." },
+          { name: "Kiyomizu-dera bez gwoździ", desc: "Nazwa oznacza 'czystą wodę'. Co ciekawe, jej olbrzymi drewniany taras, zawieszony kilkanaście metrów nad ziemią, został złożony bez użycia ani jednego gwoździa!" },
+          { name: "Spalony Złoty Pawilon", desc: "Budynek Kinkaku-ji pokryty jest płatkami szczerego złota. Obecna forma to jednak rekonstrukcja – w 1950 roku zabytek został spalony przez chorego psychicznie mnicha." },
+          { name: "Kryzys miedziany", desc: "Budowa gigantycznego posągu Wielkiego Buddy z brązu w świątyni Todai-ji w Narze w VIII wieku pochłonęła niemal 90% rezerw miedzi, powodując ogólnokrajowy kryzys gospodarczy." },
+          { name: "Dawniej święte jelonki", desc: "Dzisiejsze jelonki w Narze uroczo kłaniają się za krakersy. W dawnej Japonii uważano je za święte wysłanniki bogów, a za ich skrzywdzenie lub zabicie groziła kara śmierci." },
+          { name: "Otagi Nenbutsu-ji", desc: "Unikalna, mniej zatłoczona świątynia w Kioto, kryjąca 1200 małych, kamiennych posągów. Wyrzeźbili je lokalni amatorzy w latach 80., przez co każdy posąg ma inną, często zabawną twarz." }
+        ]
+      },
       options: ["Kobe Animal Kingdom", "Suma Beach", "Universal Studios Japan", "drugi dzień w Kyoto"]
     },
     seoul: {

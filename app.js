@@ -104,6 +104,15 @@
           <p style="margin-top: 10px; font-size: 14px; color: var(--text-muted);">${place.desc}</p>
         </article>`).join("")}
       </div>`).join("") : ''}
+      ${city.trivia ? `
+      <div class="section-head" style="margin-top:48px"><div><span class="section-label">Ciekawostki</span><h2>${city.trivia.title}</h2><p>${city.trivia.intro}</p></div></div>
+      <div class="grid grid-3">
+        ${city.trivia.facts.map(fact => `
+        <article class="card">
+          <h3>${fact.name}</h3>
+          <p style="margin-top: 10px; font-size: 14px; color: var(--text-muted);">${fact.desc}</p>
+        </article>`).join("")}
+      </div>` : ''}
       <div class="section-head" style="margin-top:48px"><div><span class="section-label">Mapa</span><h2>Baza i miejsca</h2></div></div>
       <div class="map-wrap"><div class="map-source-badge">OpenStreetMap</div><div class="map" id="map-${key}" aria-label="Mapa OpenStreetMap miejsc: ${city.name}"></div></div><p class="map-note">Standardowa mapa OpenStreetMap. Punkt noclegu jest orientacyjny. Kliknij marker, aby zobaczyć nazwę miejsca.</p>
       <article class="card"><h3>Opcje — jeszcze nie są częścią planu</h3><div class="options-list">${city.options.map(option => `<span class="option-chip">${option}</span>`).join("")}</div></article>`;
