@@ -369,9 +369,9 @@ window.TRIP_DATA = {
     ],
     envelopes: [
       { label: "Jedzenie", amount: 5900, icon: "🍜" },
-      { label: "Transport lokalny", amount: 2100, icon: "🚇" },
-      { label: "Atrakcje", amount: 1600, icon: "🎟️" },
-      { label: "Pamiątki + 1 album K-pop", amount: 500, icon: "🛍️" }
+      { label: "Transport lokalny", amount: 1950, icon: "🚇" },
+      { label: "Atrakcje", amount: 2000, icon: "🎟️" },
+      { label: "Pamiątki + 1 album K-pop", amount: 900, icon: "🛍️" }
     ]
   },
   todos: [
