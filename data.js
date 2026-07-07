@@ -383,7 +383,7 @@ window.TRIP_DATA = {
     { title: "Kupić Tokyo Disneyland", detail: "24.08 · bilety 2+2", priority: "high", category: "attractions" },
     { title: "Zaplanować bagaż kabinowy", detail: "Bilety LOT mają 0PC bagażu rejestrowanego", priority: "high", category: "logistics" },
     { title: "Wybrać 4 plecaki kabinowe", detail: "Rozważany rozmiar 55×40×20 cm; zważyć każdy po próbnym pakowaniu", priority: "medium", category: "logistics" },
-    { title: "Kupić i aktywować 2 regionalne eSIM", detail: "Każda: 10 GB · 15 dni · Japonia i Korea · 6,20 USD", priority: "medium", category: "logistics" },
+    { title: "Kupić i aktywować 3 regionalne eSIM", detail: "Każda: 10 GB · 15 dni · Japonia i Korea · 6,20 USD", priority: "medium", category: "logistics" },
     { title: "Ubezpieczenie podróżne", detail: "Japonia + Korea · cała rodzina", priority: "medium", category: "logistics" },
     { title: "Transfer NRT → nocleg", detail: "Dopiąć po potwierdzeniu dokładnej lokalizacji", priority: "medium", category: "transport" },
     { title: "Transfer nocleg → KIX", detail: "Sprawdzić trasę i godzinę po zakupie lotu", priority: "medium", category: "transport" },
