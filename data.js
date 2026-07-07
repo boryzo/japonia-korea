@@ -368,7 +368,7 @@ window.TRIP_DATA = {
       { label: "Pociąg WAW → GDN po powrocie", amount: 200, status: "planned", note: "05.09 · cel: odjazd około 20:29/20:30" }
     ],
     envelopes: [
-      { label: "Jedzenie", amount: 6800, icon: "🍜" },
+      { label: "Jedzenie", amount: 5900, icon: "🍜" },
       { label: "Transport lokalny", amount: 2100, icon: "🚇" },
       { label: "Atrakcje", amount: 1600, icon: "🎟️" },
       { label: "Pamiątki + 1 album K-pop", amount: 500, icon: "🛍️" }
