@@ -6,6 +6,14 @@
   const mapInstances = {};
 
   const sum = items => items.reduce((total, item) => total + item.amount, 0);
+
+  // Single Source of Truth: automatyczne zaciąganie cen noclegów z obiektu stays do budżetu
+  data.budget.fixed.splice(1, 0, 
+    { label: "Nocleg Tokio · " + data.stays.tokyo.nights + " noce", amount: data.stays.tokyo.price, status: "reserved" },
+    { label: "Nocleg Osaka · " + data.stays.kansai.nights + " nocy", amount: data.stays.kansai.price, status: "reserved" },
+    { label: "Nocleg Seul · " + data.stays.seoul.nights + " nocy", amount: data.stays.seoul.price, status: "reserved" }
+  );
+
   const fixedTotal = sum(data.budget.fixed);
   const envelopeTotal = sum(data.budget.envelopes);
   const forecastTotal = fixedTotal + envelopeTotal;

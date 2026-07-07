@@ -362,9 +362,6 @@ window.TRIP_DATA = {
   budget: {
     fixed: [
       { label: "Loty główne 2+2", amount: 13114.64, status: "paid", note: "dorośli 2 × 3 539,66 zł; dzieci 2 × 3 017,66 zł" },
-      { label: "Nocleg Tokio · 4 noce", amount: 1462, status: "reserved" },
-      { label: "Nocleg Osaka · 5 nocy", amount: 680.27, status: "reserved" },
-      { label: "Nocleg Seul · 6 nocy", amount: 1981, status: "reserved" },
       { label: "Tokio → Osaka", amount: 1012, status: "planned", note: "budżet wg Shinkansenu Nozomi (Smart EX): 43 540 ¥ dla 2+2" },
       { label: "KIX → GMP", amount: 1542, status: "paid", note: "Peach Aviation, opłacone dla 2+2 (w tym 1 bagaż rejestrowany)" },
       { label: "3 × regionalna eSIM · Japonia + Korea", amount: 69.60, status: "planned", note: "3 × 6,20 USD · każda: 10 GB / 15 dni · kurs NBP 3,7420 PLN/USD z 03.07.2026" },
