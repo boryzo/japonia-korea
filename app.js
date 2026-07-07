@@ -83,7 +83,7 @@
         </div>
       </article>
       <div class="grid grid-2">
-        <article class="card stay-card stay-card-photo"><img src="${stay.image}" alt="${stay.name}" loading="lazy"><div class="stay-details"><span class="section-label">Nasza baza</span><h3>${stay.name}</h3><p>${stay.address}</p><p>Zameldowanie / wymeldowanie: ${stay.check}</p><div class="hotel-links"><a href="${stay.mapUrl}" target="_blank" rel="noopener">Otwórz mapę ↗</a><a href="${stay.bookingUrl}" target="_blank" rel="noopener">Galeria obiektu ↗</a></div></div><div class="stay-price"><strong>${money.format(stay.price)}</strong><small>${money.format(stay.price / stay.nights)} / noc</small></div></article>
+        <article class="card stay-card stay-card-photo"><img src="${stay.image}" alt="${stay.name}" loading="lazy"><div class="stay-details"><span class="section-label">Nasza baza${stay.rating ? ` · ⭐ ${stay.rating}` : ""}</span><h3>${stay.name}</h3><p>${stay.address}</p><p>Zameldowanie / wymeldowanie: ${stay.check}</p><div class="hotel-links"><a href="${stay.mapUrl}" target="_blank" rel="noopener">Otwórz mapę ↗</a><a href="${stay.bookingUrl}" target="_blank" rel="noopener">Galeria obiektu ↗</a></div></div><div class="stay-price"><strong>${money.format(stay.price)}</strong><small>${money.format(stay.price / stay.nights)} / noc</small></div></article>
         <article class="card"><span class="section-label">Założenie</span><h3>Jedna baza, zero przenoszenia walizek</h3><p>Plan jest elastyczny. Atrakcje opcjonalne można wymieniać bez zmiany noclegu.</p></article>
       </div>
       <div class="section-head" style="margin-top:48px"><div><span class="section-label">Dzień po dniu</span><h2>Plan pobytu</h2></div></div>
