@@ -367,7 +367,7 @@ window.TRIP_DATA = {
       { label: "Nocleg Seul · 6 nocy", amount: 1981, status: "reserved" },
       { label: "Tokio → Osaka", amount: 1012, status: "planned", note: "budżet wg Shinkansenu Nozomi (Smart EX): 43 540 ¥ dla 2+2" },
       { label: "KIX → GMP", amount: 1542, status: "paid", note: "Peach Aviation, opłacone dla 2+2 (w tym 1 bagaż rejestrowany)" },
-      { label: "2 × regionalna eSIM · Japonia + Korea", amount: 46.40, status: "planned", note: "2 × 6,20 USD · każda: 10 GB / 15 dni · kurs NBP 3,7420 PLN/USD z 03.07.2026" },
+      { label: "3 × regionalna eSIM · Japonia + Korea", amount: 69.60, status: "planned", note: "3 × 6,20 USD · każda: 10 GB / 15 dni · kurs NBP 3,7420 PLN/USD z 03.07.2026" },
       { label: "Pociąg WAW → GDN po powrocie", amount: 200, status: "planned", note: "05.09 · cel: odjazd około 20:29/20:30" }
     ],
     envelopes: [
