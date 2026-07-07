@@ -17,8 +17,8 @@ window.TRIP_DATA = {
     { code: "NRT", city: "Tokio", date: "21.08", time: "przylot 18:25", duration: "", status: "confirmed" },
     { code: "TYO", city: "Tokio", date: "25.08", time: "odjazd ~10:00", duration: "pociąg ~2.5h", status: "planned" },
     { code: "OSA", city: "Osaka", date: "25.08", time: "przyjazd ~12:30", duration: "", status: "planned" },
-    { code: "KIX", city: "Osaka", date: "30.08", time: "wylot 12:50", duration: "lot 2h 10m", status: "planned" },
-    { code: "SEL", city: "Seul", date: "30.08", time: "przylot 15:00", duration: "", status: "planned" },
+    { code: "KIX", city: "Osaka", date: "30.08", time: "wylot 14:20", duration: "lot 1h 55m", status: "confirmed" },
+    { code: "GMP", city: "Seul", date: "30.08", time: "przylot 16:15", duration: "", status: "confirmed" },
     { code: "ICN", city: "Seul", date: "05.09", time: "wylot 12:35", duration: "lot 12h 55m", status: "confirmed" },
     { code: "WAW", city: "Warszawa", date: "05.09", time: "odjazd ~20:30", duration: "pociąg ~2.5h", status: "planned" },
     { code: "GDN", city: "Gdańsk", date: "05.09", time: "przyjazd ~23:00", duration: "", status: "planned" }
@@ -27,7 +27,7 @@ window.TRIP_DATA = {
     { date: "20.08", route: "GDN → WAW", number: "LO3816", time: "18:25–19:20", status: "confirmed" },
     { date: "20–21.08", route: "WAW → NRT", number: "LO79", time: "22:50–18:25 (+1)", status: "confirmed" },
     { date: "25.08", route: "Tokio → Osaka", number: "Shinkansen Nozomi", time: "~2.5h (Smart EX)", status: "planned" },
-    { date: "30.08", route: "KIX → ICN", number: "BX 171 (rozważany)", time: "12:50–15:00", status: "planned" },
+    { date: "30.08", route: "KIX → GMP", number: "Peach MM739", time: "14:20–16:15", status: "confirmed" },
     { date: "05.09", route: "ICN → WAW", number: "LO100", time: "12:35–18:30", status: "confirmed" }
   ],
   returnTrain: {
@@ -261,7 +261,7 @@ window.TRIP_DATA = {
         { date: "27.08", day: "Czwartek", title: "Osaka: jedzenie i neony", text: "Kuromon Market, Namba, Dotonbori, Den Den Town i salony arcade. Osaka Castle opcjonalnie z zewnątrz.", cost: "¥¥", pace: "średnio", details: { image: "assets/images/osaka_days/dotonbori.jpg", desc: "Dzień pełen jedzenia i miejskiego zgiełku (tzw. Kuidaore - jedz aż padniesz). Odwiedzimy targ Kuromon po uliczne przekąski, a następnie uderzymy w okolice Namby i kultowego kanału Dotonbori. Wieczorem zobaczymy wielkiego kraba i słynny neon Glico Man. Odwiedzimy też pobliskie salony gier arcade.", transport: "W obrębie Osaki korzystamy z metra (np. linia Midosuji). Z Teradacho do Namby jest to bardzo szybki i bezpośredni dojazd linią JR lub metrem z Tennoji." } },
         { date: "28.08", day: "Piątek", title: "Nara i jelonki", text: "Nara Park, Todai-ji i spokojny rodzinny spacer. Karmimy jelonki wyłącznie specjalnymi krakersami.", cost: "¥¥", pace: "średnio", must: true, details: { image: "assets/images/osaka_days/nara.jpg", desc: "Wycieczka poza miasto do dawnej stolicy – Nary. Główną atrakcją jest ogromny park, po którym swobodnie wędrują setki oswojonych jelonków sika. Zobaczymy też olbrzymią świątynię Todai-ji z wielkim pomnikiem Buddy (Daibutsu).", transport: "Najwygodniej dojechać pociągiem Kintetsu Nara Line z Namby bezpośrednio do stacji Kintetsu Nara. Podróż zajmuje zaledwie około 40 minut." } },
         { date: "29.08", day: "Sobota", title: "Bufor: Osaka albo Kobe", text: "Tani dzień w Osace. Opcjonalnie Kobe Animal Kingdom, Suma Beach albo dodatkowy dzień w Kyoto.", cost: "¥ / ¥¥¥", pace: "elastycznie", details: { image: "assets/images/osaka_days/castle.jpg", desc: "Dzień do naszej dyspozycji. Możemy zostać w Osace i obejrzeć zamek w Osace z pięknymi ogrodami, pójść na zakupy, lub pojechać pociągiem do Kobe, aby spróbować wołowiny i odwiedzić wspaniały park Kobe Animal Kingdom, gdzie zwierzęta chodzą bez klatek (świetne dla dzieci!).", transport: "Jeśli jedziemy do zamku w Osace – JR Osaka Loop Line do stacji Osakajokoen. Jeśli do Kobe – linia JR Kobe Line ze stacji Osaka." } },
-        { date: "30.08", day: "Niedziela", title: "Osaka → Seul", text: "Wymeldowanie do 10:00, dojazd na KIX i bezpośredni lot do GMP lub ICN. Limit lotu: 1 700 zł za rodzinę.", cost: "do 1 700 zł", pace: "transfer", details: { image: "assets/images/osaka_days/kix.jpg", desc: "Żegnamy się z Japonią. Rano musimy sprawnie się spakować i zostawić nasz dom w Teradacho. Przejedziemy na lotnisko Kansai (KIX) pociągiem i udamy się do hali odlotów. Po około 2-godzinnym locie wylądujemy w Seulu, gotowi na koreański rozdział podróży!", transport: "Z Tennoji (najbliższy hub przy Teradacho) łapiemy bezpośredni pociąg JR Haruka Airport Express lub tańszy JR Kansai Airport Rapid Service bezpośrednio na KIX." } }
+        { date: "30.08", day: "Niedziela", title: "Osaka → Seul", text: "Wymeldowanie do ok. 10:00, dojazd na KIX (Terminal 2) i lot do Gimpo (GMP). Lot opłacony (Peach Aviation).", cost: "opłacone", pace: "transfer", details: { image: "assets/images/osaka_days/kix.jpg", desc: "Żegnamy się z Japonią. Rano spakujemy się i opuścimy dom w Teradacho. Z kierunku Tennoji udamy się pociągiem na lotnisko Kansai (KIX). Pamiętajmy, że Peach odlatuje z Terminala 2 (dojazd darmowym autobusem ze stacji kolejowej na lotnisku). Lądujemy na lotnisku Gimpo (GMP) o 16:15.", transport: "Z Tennoji łapiemy pociąg JR Haruka lub JR Kansai Airport Rapid Service na KIX. Na stacji KIX wsiadamy w darmowy autobus jadący pod Terminal 2." } }
       ],
       restaurants: [
         { name: "Okonomiyaki Mizuno", type: "Okonomiyaki", rating: "4.3", reviewCount: "3500+", desc: "Jedne z najstarszych i najlepszych okonomiyaki wprost na kultowym Dotonbori." },
@@ -366,7 +366,7 @@ window.TRIP_DATA = {
       { label: "Nocleg Osaka · 5 nocy", amount: 680.27, status: "reserved" },
       { label: "Nocleg Seul · 6 nocy", amount: 1981, status: "reserved" },
       { label: "Tokio → Osaka", amount: 1012, status: "planned", note: "budżet wg Shinkansenu Nozomi (Smart EX): 43 540 ¥ dla 2+2" },
-      { label: "KIX → Seul", amount: 1700, status: "planned", note: "maksymalny budżet" },
+      { label: "KIX → GMP", amount: 1542, status: "paid", note: "Peach Aviation, opłacone dla 2+2 (w tym 1 bagaż rejestrowany)" },
       { label: "2 × regionalna eSIM · Japonia + Korea", amount: 46.40, status: "planned", note: "2 × 6,20 USD · każda: 10 GB / 15 dni · kurs NBP 3,7420 PLN/USD z 03.07.2026" },
       { label: "Pociąg WAW → GDN po powrocie", amount: 200, status: "planned", note: "05.09 · cel: odjazd około 20:29/20:30" }
     ],
@@ -379,7 +379,7 @@ window.TRIP_DATA = {
   },
   todos: [
     { title: "Kupić bilety Tokio → Osaka", detail: "25.08 · Shinkansen Nozomi (Smart EX) · 43 540 ¥", priority: "high", category: "transport" },
-    { title: "Kupić lot KIX → Seul", detail: "30.08 · najlepiej 11:00–15:00 · limit 1 700 zł", priority: "high", category: "transport" },
+    { title: "Odprawa Peach (Osaka → Seul)", detail: "Lot MM739 z KIX (T2). Odprawa min. 50 minut przed lotem w kioskach (QR lub rezerwacja).", priority: "normal", category: "transport" },
     { title: "Kupić Tokyo Disneyland", detail: "24.08 · bilety 2+2", priority: "high", category: "attractions" },
     { title: "Zaplanować bagaż kabinowy", detail: "Bilety LOT mają 0PC bagażu rejestrowanego", priority: "high", category: "logistics" },
     { title: "Wybrać 4 plecaki kabinowe", detail: "Rozważany rozmiar 55×40×20 cm; zważyć każdy po próbnym pakowaniu", priority: "medium", category: "logistics" },
