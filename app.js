@@ -135,7 +135,7 @@
       </article>
       <div class="grid grid-2">
         <article class="card"><span class="section-label">Koszty znane i planowane</span><h3>${money.format(fixedTotal)}</h3>${data.budget.fixed.map(item => `<div class="budget-row"><div><strong>${item.label}</strong>${item.note ? `<small>${item.note}</small>` : ""}</div><span class="amount">${money.format(item.amount)}</span><span class="status ${item.status}">${statusLabels[item.status]}</span></div>`).join("")}</article>
-        <div><article class="card"><span class="section-label">Budżet na miejscu</span><h3>${money.format(envelopeTotal)}</h3>${data.budget.envelopes.map(item => `<div class="budget-row envelope"><span>${item.icon}</span><div><strong>${item.label}</strong></div><b>${money.format(item.amount)}</b></div>`).join("")}</article><article class="card" style="margin-top:18px"><h3>Jak czytać liczby?</h3><p>Rezerwacje są ostateczne. Tokio → Osaka pozostaje kwotą roboczą, a lot do Seulu ma twardy limit 1 700 zł. Prognoza zmieni się po podjęciu tych decyzji.</p></article></div>
+        <div><article class="card"><span class="section-label">Budżet na miejscu</span><h3>${money.format(envelopeTotal)}</h3>${data.budget.envelopes.map(item => `<div class="budget-row envelope"><span>${item.icon}</span><div><strong>${item.label}</strong></div><b>${money.format(item.amount)}</b></div>`).join("")}</article><article class="card" style="margin-top:18px"><h3>Jak czytać liczby?</h3><p>Hotele, główne loty oraz przelot Peach do Seulu są ostateczne i opłacone. Z dużych pozycji do "zablokowania" pozostał jedynie pociąg Tokio → Osaka, którego kwota pozostaje robocza. Twoja prognoza może się jeszcze z tego tytułu nieznacznie zmienić.</p></article></div>
       </div>`;
   }
 
