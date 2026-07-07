@@ -59,7 +59,7 @@
         </button>`).join("")}</div>
       <div class="section-head" style="margin-top:50px"><div><span class="section-label">Noclegi</span><h2>Nasze trzy bazy</h2></div></div>
       <div class="grid grid-3">${Object.values(data.stays).map(stay => `
-        <article class="card hotel-card"><img src="${stay.image}" alt="${stay.name}" loading="lazy"><div class="hotel-card-copy"><span class="section-label">${stay.dates} · ${stay.nights} nocy</span><h3>${stay.name}</h3><p>${stay.address}</p><strong>${money.format(stay.price)}</strong><div class="hotel-links"><a href="${stay.mapUrl}" target="_blank" rel="noopener">Mapa ↗</a><a href="${stay.bookingUrl}" target="_blank" rel="noopener">Zdjęcia i rezerwacja ↗</a></div></div></article>`).join("")}</div>
+        <article class="card hotel-card"><img src="${stay.image}" alt="${stay.name}" loading="lazy"><div class="hotel-card-copy"><span class="section-label">${stay.dates} · ${stay.nights} nocy${stay.rating ? ` · ⭐ ${stay.rating}` : ""}</span><h3>${stay.name}</h3><p>${stay.address}</p><strong>${money.format(stay.price)}</strong><div class="hotel-links"><a href="${stay.mapUrl}" target="_blank" rel="noopener">Mapa ↗</a><a href="${stay.bookingUrl}" target="_blank" rel="noopener">Zdjęcia i rezerwacja ↗</a></div></div></article>`).join("")}</div>
       <article class="card decision-banner">
         <div class="decision-title"><span class="section-label">Otwarta decyzja</span><h3>Tokio → Osaka<br>25 sierpnia</h3><p>Obie wersje zostają w planie do czasu zakupu.</p></div>
         <div class="decision-option"><strong>✈️ Lot HND → ITM</strong><ul><li>roboczo około 833 zł za 4 osoby</li><li>więcej transferów lotniskowych</li><li>przylot blisko centrum Osaki</li></ul></div>
