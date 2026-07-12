@@ -61,9 +61,8 @@
       <div class="grid grid-3">${Object.values(data.stays).map(stay => `
         <article class="card hotel-card"><img src="${stay.image}" alt="${stay.name}" loading="lazy"><div class="hotel-card-copy"><span class="section-label">${stay.dates} · ${stay.nights} nocy${stay.rating ? ` · ⭐ ${stay.rating}` : ""}</span><h3>${stay.name}</h3><p>${stay.address}</p><strong>${money.format(stay.price)}</strong><div class="hotel-links"><a href="${stay.mapUrl}" target="_blank" rel="noopener">Mapa ↗</a><a href="${stay.bookingUrl}" target="_blank" rel="noopener">Zdjęcia i rezerwacja ↗</a></div></div></article>`).join("")}</div>
       <article class="card decision-banner">
-        <div class="decision-title"><span class="section-label">Otwarta decyzja</span><h3>Tokio → Osaka<br>25 sierpnia</h3><p>Obie wersje zostają w planie do czasu zakupu.</p></div>
-        <div class="decision-option"><strong>✈️ Lot HND → ITM</strong><ul><li>roboczo około 833 zł za 4 osoby</li><li>więcej transferów lotniskowych</li><li>przylot blisko centrum Osaki</li></ul></div>
-        <div class="decision-option"><strong>🚄 Shinkansen Nozomi</strong><ul><li>43 540 JPY za 2+2 z rezerwacją miejsc</li><li>około 1 012 zł po kursie NBP</li><li>centrum → centrum, około 2,5 godziny</li></ul></div>
+        <div class="decision-title"><span class="section-label">Decyzja zamknięta</span><h3>Tokio → Osaka<br>25 sierpnia</h3><p>Aktualny plan to Shinkansen Nozomi; wariant lotniczy usunięty z dashboardu.</p></div>
+        <div class="decision-option"><strong>🚄 Shinkansen Nozomi</strong><ul><li>43 540 JPY za 2+2 z rezerwacją miejsc</li><li>około 1 012 zł po kursie NBP</li><li>centrum → centrum, około 2,5 godziny</li><li>zakup przez Smart EX</li></ul></div>
       </article>
       <div class="section-head" style="margin-top:50px"><div><span class="section-label">Powrót i ochrona</span><h2>Ważne organizacyjnie</h2></div></div>
       <div class="grid grid-2">
@@ -135,7 +134,7 @@
       </article>
       <div class="grid grid-2">
         <article class="card"><span class="section-label">Koszty znane i planowane</span><h3>${money.format(fixedTotal)}</h3>${data.budget.fixed.map(item => `<div class="budget-row"><div><strong>${item.label}</strong>${item.note ? `<small>${item.note}</small>` : ""}</div><span class="amount">${money.format(item.amount)}</span><span class="status ${item.status}">${statusLabels[item.status]}</span></div>`).join("")}</article>
-        <div><article class="card"><span class="section-label">Budżet na miejscu</span><h3>${money.format(envelopeTotal)}</h3>${data.budget.envelopes.map(item => `<div class="budget-row envelope"><span>${item.icon}</span><div><strong>${item.label}</strong></div><b>${money.format(item.amount)}</b></div>`).join("")}</article><article class="card" style="margin-top:18px"><h3>Jak czytać liczby?</h3><p>Hotele, główne loty oraz przelot Peach do Seulu są ostateczne i opłacone. Z dużych pozycji do "zablokowania" pozostał jedynie pociąg Tokio → Osaka, którego kwota pozostaje robocza. Twoja prognoza może się jeszcze z tego tytułu nieznacznie zmienić.</p></article></div>
+        <div><article class="card"><span class="section-label">Budżet na miejscu</span><h3>${money.format(envelopeTotal)}</h3>${data.budget.envelopes.map(item => `<div class="budget-row envelope"><span>${item.icon}</span><div><strong>${item.label}</strong></div><b>${money.format(item.amount)}</b></div>`).join("")}</article><article class="card" style="margin-top:18px"><h3>Jak czytać liczby?</h3><p>Hotele, główne loty oraz przelot Peach do Seulu są ostateczne i opłacone. Shinkansen Tokio → Osaka jest przyjętym planem budżetowym. Zapas do 30 000 zł jest niewielki, więc warto trzymać dodatkowy bufor 1 500–2 500 zł poza limitem na kursy walut, Disneyland, walizkę, taksówki i atrakcje na miejscu.</p></article></div>
       </div>`;
   }
 
@@ -202,7 +201,7 @@
       </div>
 
       <div class="section-head" style="margin-top:50px"><div><span class="section-label">Bagaż</span><h2>Jak pakujemy 4 osoby</h2><p>${data.baggage.allowance}</p></div></div>
-      <article class="card baggage-hero"><div><span class="baggage-size">55<small>×</small>40<small>×</small>20</span><span>cm · rozważany plecak</span></div><div><h3>Tak, ten rozmiar pasuje do LOT</h3><p>Oficjalny limit LOT to 55×40×23 cm i 8 kg na osobę. Plecak będzie wygodniejszy na schodach i w transporcie, ale musi trzymać kształt po zapakowaniu.</p><p class="warning-note">${data.baggage.warning}</p></div></article>
+      <article class="card baggage-hero"><div><span class="baggage-size">55<small>×</small>40<small>×</small>20</span><span>cm · rozważany plecak</span></div><div><h3>Tak, ten rozmiar pasuje do LOT</h3><p>Oficjalny limit LOT to 55×40×23 cm i 8 kg na osobę. Na Peach pilnujemy łącznego limitu kabinowego 7 kg na osobę oraz jednej opłaconej walizki rejestrowanej. Plecak będzie wygodniejszy na schodach i w transporcie, ale musi trzymać kształt po zapakowaniu.</p><p class="warning-note">${data.baggage.warning}</p></div></article>
       <div class="grid grid-4 bag-grid">${data.baggage.bags.map(bag => `<article class="card bag-card"><span class="bag-icon">🎒</span><h3>${bag.name}</h3><p>${bag.load}</p><strong>${bag.target}</strong></article>`).join("")}</div>
       <div class="grid grid-2 packing-grid"><article class="card"><span class="section-label">Strategia</span><h3>${data.baggage.targetWeight}</h3><p>Pakujemy ubrania na 5–6 dni i korzystamy z prania. Cztery plecaki wypchane do 8 kg byłyby męczące przy zmianach transportu.</p></article><article class="card"><span class="section-label">Lista pakowania</span><ul class="packing-list">${data.baggage.checklist.map(item => `<li>${item}</li>`).join("")}</ul></article></div>`;
   }

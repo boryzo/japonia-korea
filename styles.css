@@ -1,11 +1,13 @@
 :root {
   --ink: #101525;
   --muted: #687087;
+  --text-muted: var(--muted);
   --paper: #f6f5f1;
   --card: #fff;
   --line: #e5e6ea;
   --navy: #0c1222;
   --coral: #ff5a68;
+  --accent: var(--coral);
   --blue: #5b8cff;
   --amber: #f6a23c;
   --green: #36a875;
