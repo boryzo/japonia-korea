@@ -87,20 +87,16 @@
     "esim": {
       "label": "3 × regionalna eSIM · Japonia + Korea",
       "kind": "fixed",
-      "currency": "USD",
-      "unitAmount": 6,
+      "currency": "PLN",
+      "amount": 66.45,
+      "status": "paid",
       "quantity": 3,
-      "exchangeRatePln": 3.7644,
-      "exchangeRateDate": "2026-07-30",
-      "status": "planned",
-      "discountPercent": 5,
-      "promoCode": "ESIMDB26",
       "dataGb": 10,
       "validityDays": 30,
       "minimumRequiredDays": 16,
       "throttledKbps": 128,
       "network": "5G",
-      "note": "Potrzebujemy minimum 16 dni kalendarzowych (21.08–05.09). Najtańsza pasująca oferta: ASIMGO · {{cost:esim}} po kodzie ESIMDB26 ({{discount:esim}} rabatu) · każda: 10 GB / 30 dni / 5G, potem 128 kb/s · kurs NBP 3,7644 PLN/USD z 30.07.2026"
+      "note": "ASIMGO · opłacone 3 × 10 GB / 30 dni / 5G, potem 128 kb/s · łącznie {{cost:esim}}"
     },
     "returnTrain": {
       "label": "Pociąg do Gdańska po powrocie",
@@ -1666,7 +1662,7 @@
       "attractionsEnvelope",
       "souvenirsEnvelope"
     ],
-    "explanation": "Noclegi są zarezerwowane i wliczone do prognozy w pełnej kwocie, ale nie są jeszcze opłacone. Loty główne, Peach i pociąg do Gdańska są opłacone; Shinkansen pozostaje do kupienia. Koperta atrakcji zawiera Disneyland za {{cost:disney}} oraz DMZ za {{cost:dmz}}, które kupimy po dotarciu do Azji. Niepewnego rabatu {{discount:disney}} na Disneyland nie odejmujemy. Opcjonalny bagaż LOT nie jest jeszcze w prognozie: {{cost:lotCheckedBag}}."
+    "explanation": "Noclegi są zarezerwowane i wliczone do prognozy w pełnej kwocie, ale nie są jeszcze opłacone. Loty główne, Peach, eSIM i pociąg do Gdańska są opłacone; Shinkansen pozostaje do kupienia. Koperta atrakcji zawiera Disneyland za {{cost:disney}} oraz DMZ za {{cost:dmz}}, które kupimy po dotarciu do Azji. Niepewnego rabatu {{discount:disney}} na Disneyland nie odejmujemy. Opcjonalny bagaż LOT nie jest jeszcze w prognozie: {{cost:lotCheckedBag}}."
   },
   "todos": [
     {
@@ -1703,8 +1699,8 @@
       "category": "logistics"
     },
     {
-      "title": "Kupić i aktywować 3 regionalne eSIM ASIMGO",
-      "detail": "Internet jest potrzebny przez 16 dni kalendarzowych: 21.08–05.09. Najtańszy pasujący plan ma 30 dni: Japonia + Korea · 10 GB / 5G, potem 128 kb/s · kod ESIMDB26.",
+      "title": "Przed wyjazdem: zainstalować 3 regionalne eSIM ASIMGO",
+      "detail": "Karty są opłacone. Zainstalować eSIM na telefonach przed wyjazdem; pakiet Japonia + Korea obejmuje 10 GB / 30 dni / 5G, potem 128 kb/s.",
       "url": "https://esimdb.com/south-korea/asimgo",
       "linkLabel": "Otwórz ofertę w eSIMDB ↗",
       "priority": "medium",

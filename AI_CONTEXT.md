@@ -23,7 +23,7 @@ Aplikacja została napisana całkowicie w czystym frontendzie (Vanilla HTML, CSS
 *   Podróż trwa od 20 sierpnia do 5 września 2026 r.; internet mobilny jest potrzebny przez 16 dni kalendarzowych od przylotu do Japonii do wylotu z Korei.
 *   Trasa prowadzi przez Tokio, Osakę i region Kansai oraz Seul. Przejazd Tokio–Osaka odbędzie się Shinkansenem, a trzy kolejne dni Kyoto–Nara–Kobe obejmuje planowany WEST-QR Kansai Mini Pass.
 *   Noclegi są zarezerwowane, jeszcze nieopłacone i uwzględnione w prognozie budżetu w pełnej wysokości.
-*   Loty główne, lot Peach oraz powrotny pociąg z Warszawy do Gdańska są opłacone. Shinkansen, Disneyland, DMZ, eSIM i Kansai Mini Pass pozostają do kupienia.
+*   Loty główne, lot Peach, 3 regionalne eSIM oraz powrotny pociąg z Warszawy do Gdańska są opłacone. Shinkansen, Disneyland, DMZ i Kansai Mini Pass pozostają do kupienia.
 *   Rezerwacja Peach zawiera jedną wspólną walizkę rejestrowaną. LOT ma obecnie 0 PC; jedna walizka na oba kierunki pozostaje opcjonalna i nie jest doliczona do podstawowej prognozy.
 *   Plan zakłada trzy regionalne eSIM Japonia + Korea o ważności 30 dni. Dokładna cena i parametry oferty znajdują się wyłącznie w rekordzie `costs.esim`.
 *   Wszystkie aktualne kwoty, kursy, rabaty i status wliczenia do prognozy należy odczytywać z `trip-data.json`, nie z dokumentacji Markdown.
