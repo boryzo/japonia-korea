@@ -33,11 +33,11 @@ window.TRIP_DATA = {
   returnTrain: {
     date: "05.09",
     route: "Warszawa Centralna → Gdańsk Główny",
-    recommended: "około 20:29/20:30",
+    recommended: "20:29 (kupiony)",
     alternative: "około 21:01 lub późniejszy — plan awaryjny",
     rejected: "",
-    status: "timetable-check",
-    note: "Lądowanie o 18:30, brak bagażu rejestrowanego. Zakładamy sprawne przejście granicy i dojazd z Lotniska Chopina na dworzec. Potwierdzić dokładną godzinę w oficjalnym rozkładzie na 05.09.2026."
+    status: "paid",
+    note: "Lądowanie o 18:30, brak bagażu rejestrowanego. Bilet na pociąg z 20:29 został zakupiony."
   },
   travelProtection: [
     { title: "Revolut Metal", detail: "Ubezpieczenie podróżne — potwierdzić zakres ochrony całej rodziny, limity i warunki aktywacji.", icon: "🛡️" },
@@ -365,7 +365,7 @@ window.TRIP_DATA = {
       { label: "Tokio → Osaka", amount: 1012, status: "planned", note: "Shinkansen Nozomi (Smart EX): 43 540 ¥ dla 2+2; decyzja zamknięta — bez wariantu lotniczego" },
       { label: "KIX → GMP", amount: 1542, status: "paid", note: "Peach Aviation, opłacone dla 2+2 (w tym 1 bagaż rejestrowany)" },
       { label: "3 × regionalna eSIM · Japonia + Korea", amount: 69.60, status: "planned", note: "3 × 6,20 USD · każda: 10 GB / 15 dni · kurs NBP 3,7420 PLN/USD z 03.07.2026" },
-      { label: "Pociąg WAW → GDN po powrocie", amount: 200, status: "planned", note: "05.09 · cel: odjazd około 20:29/20:30" }
+      { label: "Pociąg WAW → GDN po powrocie", amount: 242.42, status: "paid", note: "05.09 · odjazd 20:29" }
     ],
     envelopes: [
       { label: "Jedzenie", amount: 4580, icon: "🍜" },
@@ -387,7 +387,6 @@ window.TRIP_DATA = {
     { title: "Transfer NRT → 7House", detail: "Keisei Main Line do Keisei-Sekiya, przejście na Ushida i Tobu Skytree Line do Gotanno. Wariant budżetowy — sprawdzić po opóźnieniach i z dziećmi.", priority: "high", category: "transport" },
     { title: "Transfer Teradacho → KIX", detail: "Pociąg JR Kansai Airport Rapid Service bezpośrednio ze stacji Tennoji, unikać drogiego Haruka.", priority: "medium", category: "transport" },
     { title: "Transfer Seul → ICN", detail: "LO100 odlatuje 05.09 o 12:35. Wziąć All-Stop Train ze stacji Seoul Station.", priority: "medium", category: "transport" },
-    { title: "Kupić pociąg WAW → Gdańsk", detail: "05.09 · celować w odjazd około 20:29/20:30; późniejszy pociąg jako awaryjny", priority: "high", category: "transport" },
     { title: "Zweryfikować zakres obu ubezpieczeń", detail: "Revolut Metal + karta Żubr: osoby objęte ochroną, limity, warunki i sporty", priority: "medium", category: "logistics" },
     { title: "Sprawdzić Priority Pass", detail: "Salony na trasie, wejścia dla dzieci i gości oraz ewentualne opłaty", priority: "low", category: "logistics" },
     { title: "Zainstalować aplikacje podróżne", detail: "Japonia: Maps, Translate, Disney; Korea: Naver Map, Papago, Kakao T", priority: "medium", category: "logistics" },
