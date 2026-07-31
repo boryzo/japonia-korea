@@ -100,10 +100,10 @@ window.TRIP_DATA = {
   finance: {
     intro: "Japonia i Korea w wielu miejscach (szczególnie małe świątynie, rynki i uliczny street food) nadal bywają mocno gotówkowe. Posiadanie zapasu lokalnej waluty (JPY/KRW) jest bardzo ważne.",
     tips: [
-      "Najpewniejsze i najczęściej polecane bankomaty (International ATM) dla zagranicznych kart (np. Revolut) znajdują się w sklepach 7-Eleven (Seven Bank) oraz na japońskich pocztach (JP Post).",
-      "Działają też bez problemu bankomaty w sieciach FamilyMart, Lawson oraz AEON Bank.",
-      "Lokalny operator bankomatu doliczy niemal zawsze drobną prowizję, około 200–220 JPY (5–6 PLN) za transakcję. Traktuj to jako normalny koszt i opłaca się wypłacać rzadziej większe kwoty.",
-      "Gdy bankomat zapyta o własne przewalutowanie (DCC), ZAWSZE odrzucaj tę propozycję i wybieraj obciążenie w walucie lokalnej (JPY / KRW). Twój bank zaoferuje znacznie lepszy kurs przeliczenia."
+      "<b>AEON Bank (najlepsza opcja):</b> Bankomaty AEON (znajdziesz je w marketach Aeon, MaxValu czy na stacjach) bardzo często **nie pobierają żadnej prowizja (0 JPY)** dla zagranicznych kart!",
+      "<b>7-Eleven (Seven Bank):</b> Pobiera symboliczną opłatę w zależności od kwoty: **110 JPY (~3 zł)** przy wypłacie do 10 000 JPY oraz **220 JPY (~5,50 zł)** przy kwotach wyższych.",
+      "<b>Masz Revolut Metal:</b> Twój limit darmowych wypłat bez prowizji ze strony Revolut wynosi aż **3200 PLN miesięcznie** (w planie Standard jest to tylko 800 zł). Dzięki temu płacisz ewentualnie tylko opłatę japońskiego bankomatu.",
+      "<b>Zasada DCC:</b> Gdy bankomat zapyta o przewalutowanie (DCC) lub rozliczenie w PLN, ZAWSZE wybieraj walutę lokalną (JPY / KRW). Odrzucenie DCC gwarantuje przeliczenie po kursie Revolut."
     ]
   },
   shopping: {
