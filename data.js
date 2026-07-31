@@ -4,7 +4,7 @@ window.TRIP_DATA = {
     title: "Japonia + Korea 2026",
     start: "2026-08-20T18:25:00+02:00",
     end: "2026-09-05T18:30:00+02:00",
-    travelers: "2 dorosłych + dzieci 9 i 10 lat",
+    travelers: "2 dorosłych + dzieci 8 i 10 lat",
     budgetLimit: 30000,
     history: {
       title: "Tło: Japonia a Korea",
