@@ -97,6 +97,15 @@ window.TRIP_DATA = {
       { name: "KorailTalk", purpose: "Tylko jeśli zdecydujemy się na daleki przejazd koleją poza Seul.", priority: "optional", url: "https://www.letskorail.com/" }
     ]
   },
+  finance: {
+    intro: "Japonia i Korea w wielu miejscach (szczególnie małe świątynie, rynki i uliczny street food) nadal bywają mocno gotówkowe. Posiadanie zapasu lokalnej waluty (JPY/KRW) jest bardzo ważne.",
+    tips: [
+      "Najpewniejsze i najczęściej polecane bankomaty (International ATM) dla zagranicznych kart (np. Revolut) znajdują się w sklepach 7-Eleven (Seven Bank) oraz na japońskich pocztach (JP Post).",
+      "Działają też bez problemu bankomaty w sieciach FamilyMart, Lawson oraz AEON Bank.",
+      "Lokalny operator bankomatu doliczy niemal zawsze drobną prowizję, około 200–220 JPY (5–6 PLN) za transakcję. Traktuj to jako normalny koszt i opłaca się wypłacać rzadziej większe kwoty.",
+      "Gdy bankomat zapyta o własne przewalutowanie (DCC), ZAWSZE odrzucaj tę propozycję i wybieraj obciążenie w walucie lokalnej (JPY / KRW). Twój bank zaoferuje znacznie lepszy kurs przeliczenia."
+    ]
+  },
   shopping: {
     intro: "Zasady zakupów: Japonia = Life/Gyomu/OK/Seiyu + konbini, Korea = No Brand/Lotte Mart/E-mart/Homeplus + CU/GS25.",
     tips: [
@@ -390,6 +399,7 @@ window.TRIP_DATA = {
     { title: "Zweryfikować zakres obu ubezpieczeń", detail: "Revolut Metal + karta Żubr: osoby objęte ochroną, limity, warunki i sporty", priority: "medium", category: "logistics" },
     { title: "Sprawdzić Priority Pass", detail: "Salony na trasie, wejścia dla dzieci i gości oraz ewentualne opłaty", priority: "low", category: "logistics" },
     { title: "Zainstalować aplikacje podróżne", detail: "Japonia: Maps, Translate, Disney; Korea: Naver Map, Papago, Kakao T", priority: "medium", category: "logistics" },
+    { title: "Gotówka i wypłaty", detail: "Zasilić Revolut i pamiętać o odrzucaniu DCC w bankomatach (wypłacać z 7-Eleven).", priority: "high", category: "logistics" },
     { title: "Zarezerwować wypożyczalnię Hanboków", detail: "Poszukać rekomendowanej wypożyczalni przy pałacu Gyeongbokgung i ewentualnie zarezerwować.", priority: "medium", category: "attractions" },
     { title: "Pranie podczas podróży", detail: "Ważne przy małym bagażu i sierpniowym upale", priority: "low", category: "logistics" }
   ],

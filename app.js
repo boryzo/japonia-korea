@@ -157,6 +157,13 @@
         <article class="card"><span class="section-label">🇰🇷 Korea</span><h3>Aplikacje na Seul</h3><div class="app-list">${data.travelApps.korea.map(app => `<a class="app-item" href="${app.url}" target="_blank" rel="noopener"><span class="app-letter">${app.name[0]}</span><span><strong>${app.name}</strong><small>${app.purpose}</small></span><em class="app-priority ${app.priority}">${app.priority === "must" ? "konieczna" : app.priority === "recommended" ? "warto" : "opcjonalna"}</em></a>`).join("")}</div></article>
       </div>
 
+      <div class="section-head" style="margin-top:50px"><div><span class="section-label">Finanse i Gotówka</span><h2>Wypłaty z bankomatów i karty</h2><p>${data.finance.intro}</p></div></div>
+      <article class="card">
+        <ul class="packing-list" style="margin-top: 15px; gap: 10px;">
+          ${data.finance.tips.map(tip => `<li style="font-size:14px; line-height:1.4">${tip}</li>`).join("")}
+        </ul>
+      </article>
+
       <div class="section-head" style="margin-top:50px"><div><span class="section-label">Zakupy i markety</span><h2>Gdzie robić zakupy z rodziną</h2><p>${data.shopping.intro}</p></div></div>
       <div class="grid grid-2">
         <article class="card">
