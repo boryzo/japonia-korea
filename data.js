@@ -41,6 +41,7 @@ window.TRIP_DATA = {
   },
   travelProtection: [
     { title: "Revolut Metal", detail: "Ubezpieczenie podróżne — potwierdzić zakres ochrony całej rodziny, limity i warunki aktywacji.", icon: "🛡️" },
+    { title: "Karta ZEN Pro", detail: "Ochrona płatności (ZEN Care), brak prowizji na przewalutowania i bezprowizyjne wypłaty z bankomatów.", icon: "💎" },
     { title: "Karta kredytowa Żubr", detail: "Ubezpieczony właściciel karty + 1 osoba dodatkowa. Sprawdzić, kogo obejmuje oraz czy wymagane jest opłacenie podróży kartą.", icon: "💳" },
     { title: "Priority Pass", detail: "Dostęp do saloników. Przed podróżą sprawdzić dostępne lotniska, liczbę bezpłatnych wejść i zasady dla dzieci/gości.", icon: "✦" }
   ],
@@ -100,10 +101,10 @@ window.TRIP_DATA = {
   finance: {
     intro: "Japonia i Korea w wielu miejscach (szczególnie małe świątynie, rynki i uliczny street food) nadal bywają mocno gotówkowe. Posiadanie zapasu lokalnej waluty (JPY/KRW) jest bardzo ważne.",
     tips: [
-      "<b>AEON Bank (najlepsza opcja):</b> Bankomaty AEON (znajdziesz je w marketach Aeon, MaxValu czy na stacjach) bardzo często **nie pobierają żadnej prowizja (0 JPY)** dla zagranicznych kart!",
+      "<b>AEON Bank (najlepsza opcja):</b> Bankomaty AEON (znajdziesz je w marketach Aeon, MaxValu czy na stacjach) bardzo często **nie pobierają żadnej prowizji (0 JPY)** dla zagranicznych kart!",
       "<b>7-Eleven (Seven Bank):</b> Pobiera symboliczną opłatę w zależności od kwoty: **110 JPY (~3 zł)** przy wypłacie do 10 000 JPY oraz **220 JPY (~5,50 zł)** przy kwotach wyższych.",
-      "<b>Masz Revolut Metal:</b> Twój limit darmowych wypłat bez prowizji ze strony Revolut wynosi aż **3200 PLN miesięcznie** (w planie Standard jest to tylko 800 zł). Dzięki temu płacisz ewentualnie tylko opłatę japońskiego bankomatu.",
-      "<b>Zasada DCC:</b> Gdy bankomat zapyta o przewalutowanie (DCC) lub rozliczenie w PLN, ZAWSZE wybieraj walutę lokalną (JPY / KRW). Odrzucenie DCC gwarantuje przeliczenie po kursie Revolut."
+      "<b>Revolut Metal + ZEN Pro:</b> Masz idealny duet płatniczy! Revolut Metal daje Ci aż 3200 zł/mies. darmowych wypłat bez prowizji fintechu, a ZEN Pro dokładne około 2600 zł (600 EUR/mies.). Razem to prawie 6000 zł darmowego limitu wypłat!",
+      "<b>Zasada DCC:</b> Zarówno na karcie Revolut, jak i ZEN – gdy bankomat zapyta o przewalutowanie (DCC) lub rozliczenie w PLN, ZAWSZE wybieraj walutę lokalną (JPY / KRW). Odrzucenie DCC gwarantuje przeliczenie po kursie wielowalutowym."
     ]
   },
   shopping: {
