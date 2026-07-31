@@ -1223,14 +1223,14 @@
         {
           "date": "30.08",
           "day": "Niedziela",
-          "title": "Osaka → Seul",
-          "text": "Wymeldowanie do ok. 10:00, pociąg na KIX i lot do Gimpo (GMP). Lot opłacony (Peach Aviation).",
+          "title": "Osaka → Seul · ważne: Terminal 2",
+          "text": "Wymeldowanie do ok. 10:00, pociąg na KIX i lot do Gimpo (GMP). ⚠️ Peach MM739 odlatuje z Terminalu 2 International — stacja Kansai-airport jest przy Terminalu 1, więc po wyjściu jedziemy bezpłatnym autobusem do T2. Lot opłacony (Peach Aviation).",
           "cost": "opłacone",
           "pace": "transfer",
           "details": {
             "image": "assets/images/osaka_days/kix.jpg",
             "desc": "Żegnamy się z Japonią. Rano spakujemy się i opuścimy dom w Teradacho. Z kierunku Tennoji udamy się bezpośrednim pociągiem na lotnisko Kansai (KIX). Pamiętajmy o dojeździe autobusem do T2.",
-            "transport": "Z pobliskiej stacji Tennoji bierzemy Kansai Airport Rapid Service bezpośrednio na KIX (ok. 50 minut jazdy). Omijamy drogie i wymagające rezerwacji pociągi typu Haruka."
+            "transport": "Z pobliskiej stacji Tennoji bierzemy Kansai Airport Rapid Service bezpośrednio na KIX (ok. 50 minut jazdy). Stacja Kansai-airport jest przy Terminalu 1 / Aeroplaza, a Peach MM739 odprawia się w Terminalu 2 International: po wyjściu ze stacji kierujemy się do bezpłatnego autobusu do T2. Omijamy drogie i wymagające rezerwacji pociągi typu Haruka."
           }
         }
       ],
@@ -1452,13 +1452,13 @@
           "date": "30.08",
           "day": "Niedziela",
           "title": "Pierwszy wieczór w Korei",
-          "text": "Przylot, transfer, karty T-Money dla dzieci. Krótki wieczór w Dongdaemun.",
+          "text": "Przylot → zwykła kolejka do kontroli granicznej dla całej rodziny → transfer metrem i karty T-Money dla dzieci. Krótki wieczór w Dongdaemun.",
           "cost": "₩₩",
           "pace": "lekko",
           "details": {
             "image": "assets/images/seoul_days/dongdaemun.jpg",
-            "desc": "Z lotniska Gimpo dojedziemy metrem lub AREX All-Stop w stronę centrum. Najważniejsze po wylądowaniu: idziemy do małego sklepu (CU/GS25) na lotnisku i pokazując paszporty, wyrabiamy zniżkowe karty T-Money dla dzieci! Potem zameldujemy się w hotelu i ruszymy na kolację.",
-            "transport": "Z GMP bierzemy metro/AREX All-Stop do centrum, dalej przesiadka w stronę Dongdaemun według Naver Map."
+            "desc": "Po przylocie cała rodzina idzie do zwykłej kolejki dla paszportów zagranicznych — nie planujemy bramek SES/e-gates. Z oficjalnych zasad wynika, że zagraniczni użytkownicy SES muszą mieć co najmniej 17 lat i spełniać warunki rejestracji; dzieci w wieku 8 i 10 lat nie mogą z niej skorzystać. Przygotowujemy paszport każdego podróżnego oraz dane e-Arrival Card (jeśli nie mamy ważnej K-ETA): adres i kontakt do noclegu, numery lotów oraz termin wyjazdu z Korei. Po kontroli i odbiorze bagażu idziemy do CU/GS25 na lotnisku i, pokazując paszporty, wyrabiamy zniżkowe karty T-Money dla dzieci. Potem jedziemy do noclegu i ruszamy na kolację.",
+            "transport": "Z GMP idziemy do stacji Gimpo Airport i bierzemy metro linię 5 bezpośrednio do Dongdaemun History & Culture Park. Ostatni odcinek do noclegu w okolicy Dongdaemun sprawdzamy w Naver Map po wyjściu ze stacji."
           }
         },
         {
@@ -1535,8 +1535,8 @@
         {
           "date": "05.09",
           "day": "Sobota",
-          "title": "ICN → Warszawa",
-          "text": "Wyjazd z noclegu około 08:00. AREX Express z Seoul Station na Terminal 1; LO100 startuje o 12:35.",
+          "title": "ICN → Warszawa · ważne: Terminal 1",
+          "text": "Wyjazd z noclegu około 08:00. ⚠️ LOT LO100 do Warszawy odlatuje z Incheon Terminal 1 (T1): jedziemy AREX Express z Seoul Station do stacji Incheon Airport Terminal 1. Lot startuje o 12:35.",
           "cost": "₩",
           "pace": "transfer",
           "details": {
