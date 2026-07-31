@@ -1,23 +1,79 @@
-(function () {
+(async function () {
   "use strict";
-  const data = window.TRIP_DATA;
+  const response = await fetch("trip-data.json", { cache: "no-store" });
+  if (!response.ok) throw new Error(`Nie udało się wczytać trip-data.json (${response.status})`);
+  const data = await response.json();
   const money = new Intl.NumberFormat("pl-PL", { style: "currency", currency: "PLN" });
-  const statusLabels = { paid: "opłacone", reserved: "rezerwacja", planned: "do kupienia", decision: "decyzja", confirmed: "potwierdzone" };
+  const compactNumber = new Intl.NumberFormat("pl-PL", { maximumFractionDigits: 2 });
+  const statusLabels = { paid: "opłacone", reserved: "zarezerwowane", planned: "do kupienia", decision: "decyzja", confirmed: "potwierdzone" };
   const mapInstances = {};
 
-  const sum = items => items.reduce((total, item) => total + item.amount, 0);
+  function getCost(ref) {
+    const cost = data.costs[ref];
+    if (!cost) throw new Error(`Brak ceny o identyfikatorze: ${ref}`);
+    return cost;
+  }
 
-  // Single Source of Truth: automatyczne zaciąganie cen noclegów z obiektu stays do budżetu
-  data.budget.fixed.splice(1, 0, 
-    { label: "Nocleg Tokio · " + data.stays.tokyo.nights + " noce", amount: data.stays.tokyo.price, status: "reserved" },
-    { label: "Nocleg Osaka · " + data.stays.kansai.nights + " nocy", amount: data.stays.kansai.price, status: "reserved" },
-    { label: "Nocleg Seul · " + data.stays.seoul.nights + " nocy", amount: data.stays.seoul.price, status: "reserved" }
-  );
+  function costPln(ref) {
+    const cost = getCost(ref);
+    if (cost.components) {
+      return cost.components.reduce((total, component) => total + costPln(component.costRef) * component.quantity, 0);
+    }
+    if (cost.currency === "PLN") {
+      if (Number.isFinite(cost.amount)) return cost.amount;
+      if (Number.isFinite(cost.unitAmount)) return cost.unitAmount * (cost.quantity || 1);
+    }
+    if (Number.isFinite(cost.estimatePln)) return cost.estimatePln;
+    if (Number.isFinite(cost.unitAmount) && Number.isFinite(cost.exchangeRatePln)) {
+      return cost.unitAmount * (cost.quantity || 1) * cost.exchangeRatePln;
+    }
+    throw new Error(`Cena ${ref} nie ma wartości budżetowej w PLN`);
+  }
 
-  const fixedTotal = sum(data.budget.fixed);
-  const envelopeTotal = sum(data.budget.envelopes);
+  function formatCurrencyValue(value, currency) {
+    return `${compactNumber.format(value)} ${currency === "PLN" ? "zł" : currency}`;
+  }
+
+  function formatCost(ref) {
+    const cost = getCost(ref);
+    if (cost.components) return formatCurrencyValue(costPln(ref), "PLN");
+    if (Number.isFinite(cost.unitAmount)) {
+      const quantity = cost.quantity || 1;
+      const total = cost.unitAmount * quantity;
+      const source = `${formatCurrencyValue(cost.unitAmount, cost.currency)} × ${quantity} = ${formatCurrencyValue(total, cost.currency)}`;
+      return Number.isFinite(cost.exchangeRatePln) ? `${source} (ok. ${formatCurrencyValue(costPln(ref), "PLN")})` : source;
+    }
+    if (Number.isFinite(cost.min) && Number.isFinite(cost.max)) {
+      const range = `${compactNumber.format(cost.min)}–${compactNumber.format(cost.max)} ${cost.currency === "PLN" ? "zł" : cost.currency}`;
+      if (cost.quantity && cost.quantity > 1) {
+        const totalRange = `${compactNumber.format(cost.min * cost.quantity)}–${compactNumber.format(cost.max * cost.quantity)} ${cost.currency === "PLN" ? "zł" : cost.currency}`;
+        return `${range}${cost.unitLabel ? ` ${cost.unitLabel}` : ""}; ${totalRange} łącznie`;
+      }
+      return `${range}${cost.unitLabel ? ` ${cost.unitLabel}` : ""}`;
+    }
+    const source = formatCurrencyValue(cost.amount, cost.currency);
+    if (Number.isFinite(cost.estimatePln)) return `${source} (ok. ${formatCurrencyValue(cost.estimatePln, "PLN")})`;
+    if (Number.isFinite(cost.estimatePlnMin) && Number.isFinite(cost.estimatePlnMax)) {
+      return `${source} (ok. ${compactNumber.format(cost.estimatePlnMin)}–${compactNumber.format(cost.estimatePlnMax)} zł)`;
+    }
+    return cost.estimate ? `ok. ${source}` : source;
+  }
+
+  function resolveCostTokens(value) {
+    if (typeof value !== "string") return value;
+    return value
+      .replace(/\{\{cost:([^}]+)\}\}/g, (_, ref) => formatCost(ref))
+      .replace(/\{\{discount:([^}]+)\}\}/g, (_, ref) => `${compactNumber.format(getCost(ref).discountPercent)}%`)
+      .replace(/\{\{count:([^:}]+):([^}]+)\}\}/g, (_, ref, field) => compactNumber.format(getCost(ref)[field]));
+  }
+
+  const fixedEntries = data.budget.fixedRefs.map(ref => ({ ref, cost: getCost(ref) }));
+  const envelopeEntries = data.budget.envelopeRefs.map(ref => ({ ref, cost: getCost(ref) }));
+  const fixedTotal = fixedEntries.reduce((total, entry) => total + costPln(entry.ref), 0);
+  const envelopeTotal = envelopeEntries.reduce((total, entry) => total + costPln(entry.ref), 0);
   const forecastTotal = fixedTotal + envelopeTotal;
-  const remaining = data.meta.budgetLimit - forecastTotal;
+  const budgetLimit = costPln(data.budget.limitRef);
+  const remaining = budgetLimit - forecastTotal;
 
   function renderCountdown() {
     const target = new Date(data.meta.start).getTime();
@@ -42,14 +98,14 @@
   }
 
   function renderOverview() {
-    const stayTotal = Object.values(data.stays).reduce((t, stay) => t + stay.price, 0);
+    const stayTotal = Object.values(data.stays).reduce((total, stay) => total + costPln(stay.costRef), 0);
     document.querySelector("#view-overview").innerHTML = `
       <div class="section-head"><div><span class="section-label">Plan w skrócie</span><h2>Cała podróż na jednej osi</h2><p>${data.meta.travelers} · 16 dni · 15 noclegów</p></div></div>
       <div class="grid grid-4">
         <article class="card stat-card"><span class="stat-icon">✈️</span><strong>6 etapów</strong><p>Samoloty, transport w Japonii i końcowy pociąg do Gdańska</p></article>
         <article class="card stat-card"><span class="stat-icon">🏠</span><strong>${money.format(stayTotal)}</strong><p>Wszystkie noclegi · 15 nocy</p></article>
         <article class="card stat-card"><span class="stat-icon">🎯</span><strong>${money.format(forecastTotal)}</strong><p>Aktualna prognoza całości</p></article>
-        <article class="card stat-card"><span class="stat-icon">🧳</span><strong>0 PC</strong><p>Brak bagażu rejestrowanego</p></article>
+        <article class="card stat-card"><span class="stat-icon">🧳</span><strong>LOT 0 PC · Peach 1 PC</strong><p>Do Peach jest wspólna walizka; do LOT możemy ją jeszcze dokupić</p></article>
       </div>
       ${routeMarkup()}
       <div class="section-head"><div><span class="section-label">3 bazy</span><h2>Gdzie jedziemy</h2></div></div>
@@ -59,14 +115,14 @@
         </button>`).join("")}</div>
       <div class="section-head" style="margin-top:50px"><div><span class="section-label">Noclegi</span><h2>Nasze trzy bazy</h2></div></div>
       <div class="grid grid-3">${Object.values(data.stays).map(stay => `
-        <article class="card hotel-card"><img src="${stay.image}" alt="${stay.name}" loading="lazy"><div class="hotel-card-copy"><span class="section-label">${stay.dates} · ${stay.nights} nocy${stay.rating ? ` · ⭐ ${stay.rating}` : ""}</span><h3>${stay.name}</h3><p>${stay.address}</p><strong>${money.format(stay.price)}</strong><div class="hotel-links"><a href="${stay.mapUrl}" target="_blank" rel="noopener">Mapa ↗</a><a href="${stay.bookingUrl}" target="_blank" rel="noopener">Zdjęcia i rezerwacja ↗</a></div></div></article>`).join("")}</div>
+        <article class="card hotel-card"><img src="${stay.image}" alt="${stay.name}" loading="lazy"><div class="hotel-card-copy"><span class="section-label">${stay.dates} · ${stay.nights} nocy${stay.rating ? ` · ⭐ ${stay.rating}` : ""}</span><h3>${stay.name}</h3><p>${stay.address}</p><strong>${money.format(costPln(stay.costRef))}</strong><div class="hotel-links"><a href="${stay.mapUrl}" target="_blank" rel="noopener">Mapa ↗</a><a href="${stay.bookingUrl}" target="_blank" rel="noopener">Zdjęcia i rezerwacja ↗</a></div></div></article>`).join("")}</div>
       <article class="card decision-banner">
         <div class="decision-title"><span class="section-label">Decyzja zamknięta</span><h3>Tokio → Osaka<br>25 sierpnia</h3><p>Aktualny plan to Shinkansen Nozomi; wariant lotniczy usunięty z dashboardu.</p></div>
-        <div class="decision-option"><strong>🚄 Shinkansen Nozomi</strong><ul><li>43 540 JPY za 2+2 z rezerwacją miejsc</li><li>około 1 012 zł po kursie NBP</li><li>centrum → centrum, około 2,5 godziny</li><li>zakup przez Smart EX</li></ul></div>
+        <div class="decision-option"><strong>🚄 Shinkansen Nozomi</strong><ul><li>${formatCost("shinkansen")} za 2+2 z rezerwacją miejsc</li><li>centrum → centrum, około 2,5 godziny</li><li>zakup przez Smart EX</li></ul></div>
       </article>
       <div class="section-head" style="margin-top:50px"><div><span class="section-label">Powrót i ochrona</span><h2>Ważne organizacyjnie</h2></div></div>
       <div class="grid grid-2">
-        <article class="card train-card"><span class="stat-icon">🚆</span><div><span class="section-label">05.09 · WAW → Gdańsk</span><h3>Cel: pociąg około 20:29/20:30</h3><p>Lądowanie z Seulu o 18:30. Bez bagażu rejestrowanego zakładamy, że dwie godziny wystarczą na przejście granicy i dojazd na dworzec. Późniejsze połączenie zostaje jako plan awaryjny.</p><small>${data.returnTrain.note}</small></div></article>
+        <article class="card train-card"><span class="stat-icon">🚆</span><div><span class="section-label">05.09 · Warszawa → Gdańsk</span><h3>Pociąg do Gdańska 20:29 · kupiony</h3><p>Lądowanie z Seulu o 18:30. Przy obecnym braku walizki rejestrowanej na LO100 mamy niespełna dwie godziny na kontrolę graniczną i dojazd na dworzec. Jeśli dokupimy bagaż do LOT, margines będzie mniejszy. Późniejsze połączenie zostaje planem awaryjnym.</p><small>${resolveCostTokens(data.returnTrain.note)}</small></div></article>
         <article class="card"><span class="section-label">Mamy</span><h3>Ubezpieczenia i Priority Pass</h3><div class="protection-list">${data.travelProtection.map(item => `<div class="protection-item"><span>${item.icon}</span><div><strong>${item.title}</strong><p>${item.detail}</p></div></div>`).join("")}</div></article>
       </div>`;
   }
@@ -82,15 +138,15 @@
         </div>
       </article>
       <div class="grid grid-2">
-        <article class="card stay-card stay-card-photo"><img src="${stay.image}" alt="${stay.name}" loading="lazy"><div class="stay-details"><span class="section-label">Nasza baza${stay.rating ? ` · ⭐ ${stay.rating}` : ""}</span><h3>${stay.name}</h3><p>${stay.address}</p><p>Zameldowanie / wymeldowanie: ${stay.check}</p><div class="hotel-links"><a href="${stay.mapUrl}" target="_blank" rel="noopener">Otwórz mapę ↗</a><a href="${stay.bookingUrl}" target="_blank" rel="noopener">Galeria obiektu ↗</a></div></div><div class="stay-price"><strong>${money.format(stay.price)}</strong><small>${money.format(stay.price / stay.nights)} / noc</small></div></article>
+        <article class="card stay-card stay-card-photo"><img src="${stay.image}" alt="${stay.name}" loading="lazy"><div class="stay-details"><span class="section-label">Nasza baza${stay.rating ? ` · ⭐ ${stay.rating}` : ""}</span><h3>${stay.name}</h3><p>${stay.address}</p><p>Zameldowanie / wymeldowanie: ${stay.check}</p><div class="hotel-links"><a href="${stay.mapUrl}" target="_blank" rel="noopener">Otwórz mapę ↗</a><a href="${stay.bookingUrl}" target="_blank" rel="noopener">Galeria obiektu ↗</a></div></div><div class="stay-price"><strong>${money.format(costPln(stay.costRef))}</strong><small>${money.format(costPln(stay.costRef) / stay.nights)} / noc</small></div></article>
         <article class="card"><span class="section-label">Założenie</span><h3>Jedna baza, zero przenoszenia walizek</h3><p>Plan jest elastyczny. Atrakcje opcjonalne można wymieniać bez zmiany noclegu.</p></article>
       </div>
       <div class="section-head" style="margin-top:48px"><div><span class="section-label">Dzień po dniu</span><h2>Plan pobytu</h2></div></div>
       <div class="timeline">${city.days.map((day, idx) => `
         <article class="day ${day.must ? "must" : ""} ${day.details ? "clickable" : ""}" data-city="${key}" data-day="${idx}" ${day.details ? 'tabindex="0" role="button" aria-label="Zobacz szczegóły dnia"' : ''}>
           <div class="day-date"><b>${day.date}</b><span>${day.day}</span></div><span class="day-dot"></span>
-          <div class="day-body"><h3>${day.title}</h3><p>${day.text}</p><div class="day-tags"><span class="pill">${day.pace}</span>${day.must ? '<span class="pill must">must-do</span>' : ""}</div></div>
-          <span class="day-cost">${day.cost}</span>
+          <div class="day-body"><h3>${day.title}</h3><p>${resolveCostTokens(day.text)}</p><div class="day-tags"><span class="pill">${day.pace}</span>${day.must ? '<span class="pill must">must-do</span>' : ""}</div></div>
+          <span class="day-cost">${day.priceRef ? formatCost(day.priceRef) : day.cost}</span>
         </article>`).join("")}</div>
       <div class="section-head" style="margin-top:48px"><div><span class="section-label">Polecane</span><h2>Tanie i świetne restauracje</h2><p>Miejsca z najlepszym stosunkiem jakości do ceny (oceny Google 4.0+).</p></div></div>
       <div class="grid grid-2 restaurants-grid">${city.restaurants.map(rest => `
@@ -103,12 +159,12 @@
           <p>${rest.desc}</p>
         </article>`).join("")}</div>
       ${city.shoppingTips ? city.shoppingTips.map(section => `
-      <div class="section-head" style="margin-top:48px"><div><span class="section-label">Zakupy</span><h2>${section.title}</h2><p>${section.intro}</p></div></div>
+      <div class="section-head" style="margin-top:48px"><div><span class="section-label">Zakupy</span><h2>${section.title}</h2><p>${resolveCostTokens(section.intro)}</p></div></div>
       <div class="grid grid-2">
         ${section.places.map(place => `
         <article class="card">
           <h3>${place.name}</h3>
-          <p style="margin-top: 10px; font-size: 14px; color: var(--text-muted);">${place.desc}</p>
+          <p style="margin-top: 10px; font-size: 14px; color: var(--text-muted);">${resolveCostTokens(place.desc)}</p>
         </article>`).join("")}
       </div>`).join("") : ''}
       ${city.trivia ? `
@@ -126,15 +182,15 @@
   }
 
   function renderBudget() {
-    const usedPercent = Math.min(100, forecastTotal / data.meta.budgetLimit * 100);
+    const usedPercent = Math.min(100, forecastTotal / budgetLimit * 100);
     document.querySelector("#view-budget").innerHTML = `
       <article class="card budget-hero">
-        <div class="budget-summary"><span class="section-label">Limit podróży</span><h2>${money.format(data.meta.budgetLimit)}</h2><p>Prognoza obejmuje znane rezerwacje, transport między miastami oraz realny budżet na miejscu.</p><div class="budget-meter ${remaining < 0 ? "over" : ""}"><span style="width:${usedPercent}%"></span></div><div class="budget-numbers"><span>Prognoza: ${money.format(forecastTotal)}</span><span>Zapas: ${money.format(remaining)}</span></div></div>
+        <div class="budget-summary"><span class="section-label">Limit podróży</span><h2>${money.format(budgetLimit)}</h2><p>Prognoza obejmuje znane rezerwacje, transport między miastami oraz realny budżet na miejscu.</p><div class="budget-meter ${remaining < 0 ? "over" : ""}"><span style="width:${usedPercent}%"></span></div><div class="budget-numbers"><span>Prognoza: ${money.format(forecastTotal)}</span><span>Zapas: ${money.format(remaining)}</span></div></div>
         <div class="currency-box"><span class="section-label">Kalkulator NBP</span><h3>Przelicz JPY / KRW na PLN</h3><p>Kurs średni pobierany automatycznie. Działa też awaryjnie offline.</p><div class="converter"><div class="field"><label for="currency-amount">Kwota</label><input id="currency-amount" type="number" min="0" value="1000" inputmode="decimal"></div><span class="converter-equals">×</span><div class="field"><label for="currency-code">Waluta</label><select id="currency-code"><option value="JPY">JPY · jen</option><option value="KRW">KRW · won</option></select></div></div><div class="converted" id="converted-value">—</div><p class="rate-note" id="rate-note">Pobieram kurs NBP…</p></div>
       </article>
       <div class="grid grid-2">
-        <article class="card"><span class="section-label">Koszty znane i planowane</span><h3>${money.format(fixedTotal)}</h3>${data.budget.fixed.map(item => `<div class="budget-row"><div><strong>${item.label}</strong>${item.note ? `<small>${item.note}</small>` : ""}</div><span class="amount">${money.format(item.amount)}</span><span class="status ${item.status}">${statusLabels[item.status]}</span></div>`).join("")}</article>
-        <div><article class="card"><span class="section-label">Budżet na miejscu</span><h3>${money.format(envelopeTotal)}</h3>${data.budget.envelopes.map(item => `<div class="budget-row envelope"><span>${item.icon}</span><div><strong>${item.label}</strong></div><b>${money.format(item.amount)}</b></div>`).join("")}</article><article class="card" style="margin-top:18px"><h3>Jak czytać liczby?</h3><p>Hotele, główne loty oraz przelot Peach do Seulu są ostateczne i opłacone. Shinkansen Tokio → Osaka jest przyjętym planem budżetowym. Zapas do 30 000 zł jest niewielki, więc warto trzymać dodatkowy bufor 1 500–2 500 zł poza limitem na kursy walut, Disneyland, walizkę, taksówki i atrakcje na miejscu.</p></article></div>
+        <article class="card"><span class="section-label">Koszty znane i planowane</span><h3>${money.format(fixedTotal)}</h3>${fixedEntries.map(({ ref, cost }) => `<div class="budget-row"><div><strong>${cost.label}</strong>${cost.note ? `<small>${resolveCostTokens(cost.note)}</small>` : ""}</div><span class="amount">${money.format(costPln(ref))}</span><span class="status ${cost.status}">${statusLabels[cost.status]}</span></div>`).join("")}</article>
+        <div><article class="card"><span class="section-label">Budżet na miejscu</span><h3>${money.format(envelopeTotal)}</h3>${envelopeEntries.map(({ ref, cost }) => `<div class="budget-row envelope"><span>${cost.icon}</span><div><strong>${cost.label}</strong>${cost.note ? `<small>${resolveCostTokens(cost.note)}</small>` : ""}</div><b>${money.format(costPln(ref))}</b></div>`).join("")}</article><article class="card" style="margin-top:18px"><h3>Jak czytać liczby?</h3><p>${resolveCostTokens(data.budget.explanation)}</p></article></div>
       </div>`;
   }
 
@@ -160,7 +216,7 @@
       <div class="section-head" style="margin-top:50px"><div><span class="section-label">Finanse i Gotówka</span><h2>Wypłaty z bankomatów i karty</h2><p>${data.finance.intro}</p></div></div>
       <article class="card">
         <ul class="packing-list" style="margin-top: 15px; gap: 10px;">
-          ${data.finance.tips.map(tip => `<li style="font-size:14px; line-height:1.4">${tip}</li>`).join("")}
+          ${data.finance.tips.map(tip => `<li style="font-size:14px; line-height:1.4">${resolveCostTokens(tip)}</li>`).join("")}
         </ul>
       </article>
 
@@ -169,13 +225,13 @@
         <article class="card">
           <span class="section-label">Prosty plan dla Was</span>
           <ul class="packing-list" style="margin-top: 15px;">
-            ${data.shopping.tips.map(tip => `<li>${tip}</li>`).join("")}
+            ${data.shopping.tips.map(tip => `<li>${resolveCostTokens(tip)}</li>`).join("")}
           </ul>
         </article>
         <article class="card">
           <span class="section-label">Too Good To Go & Zniżki</span>
           <ul class="packing-list" style="margin-top: 15px; gap: 10px;">
-            ${data.shopping.discounts.map(disc => `<li style="font-size:14px; line-height:1.4">${disc}</li>`).join("")}
+            ${data.shopping.discounts.map(disc => `<li style="font-size:14px; line-height:1.4">${resolveCostTokens(disc)}</li>`).join("")}
           </ul>
         </article>
       </div>
@@ -186,7 +242,7 @@
           <h3>${city.supermarkets.split(',')[0]} i inne</h3>
           <p style="margin-bottom:15px; font-size:13px; color:var(--text-muted);">${city.supermarkets}</p>
           <ul class="packing-list" style="gap:10px;">
-            ${city.details.map(det => `<li style="font-size:14px; line-height:1.4">${det}</li>`).join("")}
+            ${city.details.map(det => `<li style="font-size:14px; line-height:1.4">${resolveCostTokens(det)}</li>`).join("")}
           </ul>
         </article>`).join("")}
       </div>
@@ -196,19 +252,19 @@
         <article class="card">
           <span class="section-label">Japonia (Tokio) 🇯🇵</span>
           <ul class="packing-list" style="margin-top: 15px; gap: 10px;">
-            ${data.freeTours.tokyo.map(tour => `<li style="font-size:14px; line-height:1.4">${tour}</li>`).join("")}
+            ${data.freeTours.tokyo.map(tour => `<li style="font-size:14px; line-height:1.4">${resolveCostTokens(tour)}</li>`).join("")}
           </ul>
         </article>
         <article class="card">
           <span class="section-label">Korea Południowa (Seul) 🇰🇷</span>
           <ul class="packing-list" style="margin-top: 15px; gap: 10px;">
-            ${data.freeTours.seoul.map(tour => `<li style="font-size:14px; line-height:1.4">${tour}</li>`).join("")}
+            ${data.freeTours.seoul.map(tour => `<li style="font-size:14px; line-height:1.4">${resolveCostTokens(tour)}</li>`).join("")}
           </ul>
         </article>
       </div>
 
-      <div class="section-head" style="margin-top:50px"><div><span class="section-label">Bagaż</span><h2>Jak pakujemy 4 osoby</h2><p>${data.baggage.allowance}</p></div></div>
-      <article class="card baggage-hero"><div><span class="baggage-size">55<small>×</small>40<small>×</small>20</span><span>cm · rozważany plecak</span></div><div><h3>Tak, ten rozmiar pasuje do LOT</h3><p>Oficjalny limit LOT to 55×40×23 cm i 8 kg na osobę. Na Peach pilnujemy łącznego limitu kabinowego 7 kg na osobę oraz jednej opłaconej walizki rejestrowanej. Plecak będzie wygodniejszy na schodach i w transporcie, ale musi trzymać kształt po zapakowaniu.</p><p class="warning-note">${data.baggage.warning}</p></div></article>
+      <div class="section-head" style="margin-top:50px"><div><span class="section-label">Bagaż</span><h2>Jak pakujemy 4 osoby</h2><p>${resolveCostTokens(data.baggage.allowance)}</p></div></div>
+      <article class="card baggage-hero"><div><span class="baggage-size">55<small>×</small>40<small>×</small>20</span><span>cm · rozważany plecak</span></div><div><h3>Ten rozmiar pasuje do LOT</h3><p>Limit kabinowy LOT to 55×40×23 cm i 8 kg na osobę; bagażu rejestrowanego obecnie nie ma. ${formatCost("lotCheckedBag")}. Na Peach pilnujemy łącznego limitu kabinowego 7 kg na osobę, a jedna wspólna walizka rejestrowana jest już opłacona.</p><p class="warning-note">${resolveCostTokens(data.baggage.warning)}</p></div></article>
       <div class="grid grid-4 bag-grid">${data.baggage.bags.map(bag => `<article class="card bag-card"><span class="bag-icon">🎒</span><h3>${bag.name}</h3><p>${bag.load}</p><strong>${bag.target}</strong></article>`).join("")}</div>
       <div class="grid grid-2 packing-grid"><article class="card"><span class="section-label">Strategia</span><h3>${data.baggage.targetWeight}</h3><p>Pakujemy ubrania na 5–6 dni i korzystamy z prania. Cztery plecaki wypchane do 8 kg byłyby męczące przy zmianach transportu.</p></article><article class="card"><span class="section-label">Lista pakowania</span><ul class="packing-list">${data.baggage.checklist.map(item => `<li>${item}</li>`).join("")}</ul></article></div>`;
   }
@@ -260,7 +316,7 @@
     document.querySelector("#view-todo").innerHTML = `
       <div class="section-head"><div><span class="section-label">Lista działań</span><h2>Co jeszcze trzeba ogarnąć</h2><p>Stan odhaczania zapisuje się tylko w tej przeglądarce.</p></div></div>
       <div class="todo-controls"><button class="filter-button active" data-filter="all">Wszystko</button><button class="filter-button" data-filter="transport">Transport</button><button class="filter-button" data-filter="attractions">Atrakcje</button><button class="filter-button" data-filter="logistics">Logistyka</button></div>
-      <div class="todo-list">${data.todos.map((item, index) => `<article class="todo-item" data-category="${item.category}" data-todo="${index}"><input class="todo-check" type="checkbox" aria-label="Oznacz jako zrobione: ${item.title}"><div><h3>${item.title}</h3><p>${item.detail}</p></div><span class="priority ${item.priority}" title="Priorytet: ${item.priority}"></span></article>`).join("")}</div>
+      <div class="todo-list">${data.todos.map((item, index) => `<article class="todo-item" data-category="${item.category}" data-todo="${index}"><input class="todo-check" type="checkbox" aria-label="Oznacz jako zrobione: ${item.title}"><div><h3>${item.title}</h3><p>${resolveCostTokens(item.detail)}</p>${item.costRef ? `<p class="todo-cost"><strong>${formatCost(item.costRef)}</strong></p>` : ""}${item.url ? `<a href="${item.url}" target="_blank" rel="noopener">${item.linkLabel || "Otwórz link ↗"}</a>` : ""}</div><span class="priority ${item.priority}" title="Priorytet: ${item.priority}"></span></article>`).join("")}</div>
       <details class="card source-card"><summary>Źródła zdjęć i danych</summary><ul class="credits">${credits}<li>Zdjęcia noclegów i informacje o obiektach: strony obiektów w Booking.com.</li><li>Kursy: <a href="https://api.nbp.pl/" target="_blank" rel="noopener">API Narodowego Banku Polskiego</a></li><li>Shinkansen: <a href="https://smart-ex.jp/en/lp/app/" target="_blank" rel="noopener">oficjalny SmartEX / JR Central</a></li><li>Pogoda: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a></li><li>Mapy: © OpenStreetMap contributors</li></ul></details>`;
   }
 
@@ -423,7 +479,18 @@
       if (dayData && dayData.details) {
         document.querySelector("#modal-title").textContent = dayData.title;
         document.querySelector("#modal-date").textContent = `${dayData.date} · ${dayData.day}`;
-        document.querySelector("#modal-desc").textContent = dayData.details.desc;
+        document.querySelector("#modal-desc").textContent = resolveCostTokens(dayData.details.desc);
+        const modalLinkWrap = document.querySelector("#modal-link-wrap");
+        const modalLink = document.querySelector("#modal-link");
+        if (dayData.details.link) {
+          modalLink.href = dayData.details.link.url;
+          modalLink.textContent = dayData.details.link.label;
+          modalLinkWrap.hidden = false;
+        } else {
+          modalLink.removeAttribute("href");
+          modalLink.textContent = "";
+          modalLinkWrap.hidden = true;
+        }
         document.querySelector("#modal-image").src = dayData.details.image;
         document.querySelector("#modal-transport-text").textContent = dayData.details.transport;
         modal.showModal();
@@ -437,4 +504,10 @@
       document.querySelector(".menu-button").setAttribute("aria-expanded", "false");
     }
   });
-})();
+})().catch(error => {
+  console.error(error);
+  const shell = document.querySelector(".app-shell");
+  if (shell) {
+    shell.innerHTML = `<section class="view active"><article class="card"><h2>Nie udało się wczytać planu</h2><p>Sprawdź plik trip-data.json i odśwież stronę.</p></article></section>`;
+  }
+});

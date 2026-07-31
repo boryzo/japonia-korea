@@ -1,0 +1,1821 @@
+{
+  "meta": {
+    "title": "Japonia + Korea 2026",
+    "start": "2026-08-20T18:25:00+02:00",
+    "end": "2026-09-05T23:00:00+02:00",
+    "travelers": "2 dorosłych + dzieci 8 i 10 lat",
+    "history": {
+      "title": "Tło: Japonia a Korea",
+      "content": "<p>Japonia i Korea to kraje o fascynującej, ale bardzo skomplikowanej wspólnej historii. Japończycy to naród niezwykle uprzejmy, powściągliwy, w którym najważniejsza jest harmonia (<em>wa</em>) i dobro ogółu. Z kolei Koreańczycy z Południa słyną z kultury <em>palli-palli</em> (szybko-szybko) – są niezwykle dynamiczni, bardziej bezpośredni, a ich styl bycia jest pełen ekspresji.</p><p>Choć historyczne zaszłości bywały bardzo bolesne (w tym trudna japońska okupacja Półwyspu Koreańskiego w latach 1910–1945), dziś oba te rozwinięte technologicznie społeczeństwa wzajemnie napędzają się gospodarczo i fascynują swoją popkulturą.</p>"
+    },
+    "budgetLimitRef": "tripBudget"
+  },
+  "costs": {
+    "tripBudget": {
+      "label": "Limit całej podróży",
+      "kind": "limit",
+      "currency": "PLN",
+      "amount": 30000
+    },
+    "mainFlightsAdult": {
+      "label": "Bilet lotniczy · dorosły",
+      "kind": "component",
+      "currency": "PLN",
+      "amount": 3539.66
+    },
+    "mainFlightsChild": {
+      "label": "Bilet lotniczy · dziecko",
+      "kind": "component",
+      "currency": "PLN",
+      "amount": 3017.66
+    },
+    "mainFlights": {
+      "label": "Loty główne 2+2",
+      "kind": "fixed",
+      "status": "paid",
+      "components": [
+        {
+          "costRef": "mainFlightsAdult",
+          "quantity": 2
+        },
+        {
+          "costRef": "mainFlightsChild",
+          "quantity": 2
+        }
+      ],
+      "note": "Dorośli: 2 × {{cost:mainFlightsAdult}}; dzieci: 2 × {{cost:mainFlightsChild}}"
+    },
+    "stayTokyo": {
+      "label": "Nocleg Tokio · 4 noce",
+      "kind": "fixed",
+      "currency": "PLN",
+      "amount": 1462,
+      "status": "reserved"
+    },
+    "stayKansai": {
+      "label": "Nocleg Osaka · 5 nocy",
+      "kind": "fixed",
+      "currency": "PLN",
+      "amount": 680.27,
+      "status": "reserved"
+    },
+    "staySeoul": {
+      "label": "Nocleg Seul · 6 nocy",
+      "kind": "fixed",
+      "currency": "PLN",
+      "amount": 2154.02,
+      "status": "reserved"
+    },
+    "shinkansen": {
+      "label": "Tokio → Osaka",
+      "kind": "fixed",
+      "currency": "JPY",
+      "amount": 43540,
+      "estimatePln": 1012,
+      "status": "planned",
+      "note": "Shinkansen Nozomi (Smart EX): {{cost:shinkansen}} dla 2+2; decyzja zamknięta — bez wariantu lotniczego"
+    },
+    "peachFlight": {
+      "label": "KIX → GMP",
+      "kind": "fixed",
+      "currency": "PLN",
+      "amount": 1542,
+      "status": "paid",
+      "includedCheckedBags": 1,
+      "note": "Peach Aviation, opłacone dla 2+2; w cenie {{count:peachFlight:includedCheckedBags}} wspólna walizka rejestrowana"
+    },
+    "esim": {
+      "label": "3 × regionalna eSIM · Japonia + Korea",
+      "kind": "fixed",
+      "currency": "USD",
+      "unitAmount": 6,
+      "quantity": 3,
+      "exchangeRatePln": 3.7644,
+      "exchangeRateDate": "2026-07-30",
+      "status": "planned",
+      "discountPercent": 5,
+      "promoCode": "ESIMDB26",
+      "dataGb": 10,
+      "validityDays": 30,
+      "minimumRequiredDays": 16,
+      "throttledKbps": 128,
+      "network": "5G",
+      "note": "Potrzebujemy minimum 16 dni kalendarzowych (21.08–05.09). Najtańsza pasująca oferta: ASIMGO · {{cost:esim}} po kodzie ESIMDB26 ({{discount:esim}} rabatu) · każda: 10 GB / 30 dni / 5G, potem 128 kb/s · kurs NBP 3,7644 PLN/USD z 30.07.2026"
+    },
+    "returnTrain": {
+      "label": "Pociąg do Gdańska po powrocie",
+      "kind": "fixed",
+      "currency": "PLN",
+      "amount": 242.42,
+      "status": "paid",
+      "note": "Warszawa Centralna → Gdańsk Główny · 05.09 · odjazd 20:29"
+    },
+    "foodEnvelope": {
+      "label": "Jedzenie",
+      "kind": "envelope",
+      "currency": "PLN",
+      "amount": 4800,
+      "icon": "🍜"
+    },
+    "localTransportEnvelope": {
+      "label": "Transport lokalny",
+      "kind": "envelope",
+      "currency": "PLN",
+      "amount": 1300,
+      "icon": "🚇"
+    },
+    "attractionsEnvelope": {
+      "label": "Atrakcje",
+      "kind": "envelope",
+      "currency": "PLN",
+      "amount": 2000,
+      "icon": "🎟️",
+      "note": "W tym Disneyland: {{cost:disney}} bez zakładania niepewnego rabatu {{discount:disney}} oraz DMZ: {{cost:dmz}}; DMZ kupimy po dotarciu do Azji"
+    },
+    "souvenirsEnvelope": {
+      "label": "Pamiątki + 1 album K-pop",
+      "kind": "envelope",
+      "currency": "PLN",
+      "amount": 900,
+      "icon": "🛍️"
+    },
+    "disney": {
+      "label": "Tokyo Disneyland · bilety 2+2",
+      "kind": "covered",
+      "currency": "JPY",
+      "amount": 30000,
+      "estimatePln": 700,
+      "status": "planned",
+      "coveredBy": "attractionsEnvelope",
+      "discountPercent": 10,
+      "discountConfirmed": false
+    },
+    "dmz": {
+      "label": "DMZ i Most Wiszący · 2+2",
+      "kind": "covered",
+      "currency": "PLN",
+      "amount": 807,
+      "estimate": true,
+      "status": "planned",
+      "coveredBy": "attractionsEnvelope"
+    },
+    "lotCheckedBag": {
+      "label": "Walizka rejestrowana LOT",
+      "kind": "optional",
+      "currency": "PLN",
+      "min": 250,
+      "max": 310,
+      "quantity": 2,
+      "unitLabel": "w jedną stronę",
+      "status": "decision",
+      "includedInForecast": false
+    },
+    "kansaiMiniPass": {
+      "label": "WEST-QR Kansai Mini Pass · 2+2",
+      "kind": "covered",
+      "currency": "JPY",
+      "amount": 9000,
+      "status": "planned",
+      "coveredBy": "localTransportEnvelope"
+    },
+    "finalKbbq": {
+      "label": "Finałowa kolacja K-BBQ",
+      "kind": "covered",
+      "currency": "PLN",
+      "amount": 310,
+      "estimate": true,
+      "coveredBy": "foodEnvelope"
+    },
+    "aeonAtmFee": {
+      "label": "Prowizja bankomatu AEON",
+      "kind": "reference",
+      "currency": "JPY",
+      "amount": 0
+    },
+    "sevenAtmThreshold": {
+      "label": "Próg wypłaty Seven Bank",
+      "kind": "reference",
+      "currency": "JPY",
+      "amount": 10000
+    },
+    "sevenAtmFeeLow": {
+      "label": "Prowizja Seven Bank · niższa",
+      "kind": "reference",
+      "currency": "JPY",
+      "amount": 110,
+      "estimatePln": 3
+    },
+    "sevenAtmFeeHigh": {
+      "label": "Prowizja Seven Bank · wyższa",
+      "kind": "reference",
+      "currency": "JPY",
+      "amount": 220,
+      "estimatePln": 5.5
+    },
+    "revolutCashLimit": {
+      "label": "Miesięczny limit wypłat Revolut Metal",
+      "kind": "reference",
+      "currency": "PLN",
+      "amount": 3200
+    },
+    "zenCashLimit": {
+      "label": "Miesięczny limit wypłat ZEN Pro",
+      "kind": "reference",
+      "currency": "PLN",
+      "amount": 2600
+    },
+    "combinedCashLimit": {
+      "label": "Łączny orientacyjny limit wypłat",
+      "kind": "reference",
+      "components": [
+        {
+          "costRef": "revolutCashLimit",
+          "quantity": 1
+        },
+        {
+          "costRef": "zenCashLimit",
+          "quantity": 1
+        }
+      ]
+    },
+    "waterBottle": {
+      "label": "Duża butelka wody lub herbaty",
+      "kind": "reference",
+      "currency": "JPY",
+      "min": 100,
+      "max": 150
+    },
+    "freeTourTip": {
+      "label": "Napiwek za free walking tour",
+      "kind": "reference",
+      "currency": "USD",
+      "min": 10,
+      "max": 15,
+      "unitLabel": "od osoby"
+    },
+    "japanTaxFreeThreshold": {
+      "label": "Próg zakupów tax-free w Japonii",
+      "kind": "reference",
+      "currency": "JPY",
+      "amount": 5500
+    },
+    "jpyReference": {
+      "label": "Orientacyjne przeliczenie JPY",
+      "kind": "reference",
+      "currency": "JPY",
+      "amount": 1000,
+      "estimatePln": 23
+    },
+    "graniphTshirt": {
+      "label": "T-shirt Graniph",
+      "kind": "reference",
+      "currency": "JPY",
+      "amount": 2900,
+      "estimatePln": 67
+    },
+    "uniqloTshirt": {
+      "label": "T-shirt Uniqlo",
+      "kind": "reference",
+      "currency": "JPY",
+      "amount": 1990,
+      "estimatePln": 46
+    },
+    "guBasics": {
+      "label": "Podstawowe ubrania i czapki GU",
+      "kind": "reference",
+      "currency": "JPY",
+      "min": 590,
+      "max": 990
+    },
+    "japaneseSecondHand": {
+      "label": "Ubrania w japońskim second-handzie",
+      "kind": "reference",
+      "currency": "JPY",
+      "min": 300,
+      "max": 1000
+    },
+    "kpopAlbum": {
+      "label": "Album K-pop",
+      "kind": "reference",
+      "currency": "PLN",
+      "min": 43,
+      "max": 47
+    },
+    "kpopAlbumSmall": {
+      "label": "Mniejsza wersja albumu K-pop",
+      "kind": "reference",
+      "currency": "PLN",
+      "min": 25,
+      "max": 34
+    },
+    "kpopLightstick": {
+      "label": "Lightstick K-pop",
+      "kind": "reference",
+      "currency": "PLN",
+      "amount": 109
+    },
+    "krwReference": {
+      "label": "Orientacyjne przeliczenie KRW",
+      "kind": "reference",
+      "currency": "KRW",
+      "amount": 10000,
+      "estimatePlnMin": 24,
+      "estimatePlnMax": 25
+    }
+  },
+  "route": [
+    {
+      "code": "GDN",
+      "city": "Gdańsk",
+      "date": "20.08",
+      "time": "wylot 18:25",
+      "duration": "lot 0h 55m",
+      "status": "confirmed"
+    },
+    {
+      "code": "WAW",
+      "city": "Warszawa",
+      "date": "20.08",
+      "time": "wylot 22:50",
+      "duration": "lot 12h 35m",
+      "status": "confirmed"
+    },
+    {
+      "code": "NRT",
+      "city": "Tokio",
+      "date": "21.08",
+      "time": "przylot 18:25",
+      "duration": "",
+      "status": "confirmed"
+    },
+    {
+      "code": "TYO",
+      "city": "Tokio",
+      "date": "25.08",
+      "time": "odjazd ~10:00",
+      "duration": "pociąg ~2.5h",
+      "status": "planned"
+    },
+    {
+      "code": "OSA",
+      "city": "Osaka",
+      "date": "25.08",
+      "time": "przyjazd ~12:30",
+      "duration": "",
+      "status": "planned"
+    },
+    {
+      "code": "KIX",
+      "city": "Osaka",
+      "date": "30.08",
+      "time": "wylot 14:20",
+      "duration": "lot 1h 55m",
+      "status": "confirmed"
+    },
+    {
+      "code": "GMP",
+      "city": "Seul",
+      "date": "30.08",
+      "time": "przylot 16:15",
+      "duration": "",
+      "status": "confirmed"
+    },
+    {
+      "code": "ICN",
+      "city": "Seul",
+      "date": "05.09",
+      "time": "wylot 12:35",
+      "duration": "lot 12h 55m",
+      "status": "confirmed"
+    },
+    {
+      "code": "WAW",
+      "city": "Warszawa",
+      "date": "05.09",
+      "time": "odjazd 20:29",
+      "duration": "pociąg ~2.5h",
+      "status": "confirmed"
+    },
+    {
+      "code": "GDN",
+      "city": "Gdańsk",
+      "date": "05.09",
+      "time": "przyjazd ~23:00",
+      "duration": "",
+      "status": "confirmed"
+    }
+  ],
+  "flights": [
+    {
+      "date": "20.08",
+      "route": "GDN → WAW",
+      "number": "LO3816",
+      "time": "18:25–19:20",
+      "status": "confirmed"
+    },
+    {
+      "date": "20–21.08",
+      "route": "WAW → NRT",
+      "number": "LO79",
+      "time": "22:50–18:25 (+1)",
+      "status": "confirmed"
+    },
+    {
+      "date": "25.08",
+      "route": "Tokio → Osaka",
+      "number": "Shinkansen Nozomi",
+      "time": "~2.5h (Smart EX)",
+      "status": "planned"
+    },
+    {
+      "date": "30.08",
+      "route": "KIX → GMP",
+      "number": "Peach MM739",
+      "time": "14:20–16:15",
+      "status": "confirmed"
+    },
+    {
+      "date": "05.09",
+      "route": "ICN → WAW",
+      "number": "LO100",
+      "time": "12:35–18:30",
+      "status": "confirmed"
+    }
+  ],
+  "returnTrain": {
+    "date": "05.09",
+    "route": "Warszawa Centralna → Gdańsk Główny",
+    "recommended": "20:29 (kupiony)",
+    "alternative": "około 21:01 lub późniejszy — plan awaryjny",
+    "rejected": "",
+    "status": "paid",
+    "note": "Lądowanie o 18:30. Na rejsie LO100 obecnie nie ma bagażu rejestrowanego; {{cost:lotCheckedBag}}. Bilet na pociąg do Gdańska o 20:29 został zakupiony.",
+    "costRef": "returnTrain"
+  },
+  "travelProtection": [
+    {
+      "title": "Revolut Metal",
+      "detail": "Ubezpieczenie podróżne — potwierdzić zakres ochrony całej rodziny, limity i warunki aktywacji.",
+      "icon": "🛡️"
+    },
+    {
+      "title": "Karta ZEN Pro",
+      "detail": "Ochrona płatności (ZEN Care), brak prowizji na przewalutowania i bezprowizyjne wypłaty z bankomatów.",
+      "icon": "💎"
+    },
+    {
+      "title": "Karta kredytowa Żubr",
+      "detail": "Ubezpieczony właściciel karty + 1 osoba dodatkowa. Sprawdzić, kogo obejmuje oraz czy wymagane jest opłacenie podróży kartą.",
+      "icon": "💳"
+    },
+    {
+      "title": "Priority Pass",
+      "detail": "Dostęp do saloników. Przed podróżą sprawdzić dostępne lotniska, liczbę bezpłatnych wejść i zasady dla dzieci/gości.",
+      "icon": "✦"
+    }
+  ],
+  "weather": [
+    {
+      "key": "tokyo",
+      "city": "Tokio",
+      "coords": [
+        35.6762,
+        139.6503
+      ],
+      "stayStart": "2026-08-21",
+      "stayEnd": "2026-08-25",
+      "seasonal": "Zwykle bardzo ciepło i wilgotno: około 25–32°C. Możliwe ulewy i pogoda tajfunowa."
+    },
+    {
+      "key": "kansai",
+      "city": "Osaka / Kansai",
+      "coords": [
+        34.6937,
+        135.5023
+      ],
+      "stayStart": "2026-08-25",
+      "stayEnd": "2026-08-30",
+      "seasonal": "Zwykle gorąco i parno: około 26–33°C. Dużo słońca, ale możliwe gwałtowne opady."
+    },
+    {
+      "key": "seoul",
+      "city": "Seul",
+      "coords": [
+        37.5665,
+        126.978
+      ],
+      "stayStart": "2026-08-30",
+      "stayEnd": "2026-09-05",
+      "seasonal": "Zwykle ciepło i wilgotno: około 22–30°C. Wieczory mogą być łagodniejsze, nadal możliwy deszcz."
+    }
+  ],
+  "webcams": [
+    {
+      "city": "Tokio",
+      "title": "Shibuya Crossing",
+      "preview": "https://www.worldcam.pl/images/webcams/420x236/67877e6eacb47.jpg",
+      "fallback": "assets/images/tokyo.webp",
+      "provider": "WorldCam",
+      "url": "https://worldcam.eu/webcams/asia/japan/34844-tokyo-shibuya-scramble-crossing"
+    },
+    {
+      "city": "Osaka",
+      "title": "Dotonbori i Ebisu Bridge",
+      "preview": "https://cdn.skylinewebcams.com/social1858.jpg",
+      "fallback": "assets/images/osaka.webp",
+      "provider": "SkylineWebcams",
+      "url": "https://www.skylinewebcams.com/en/webcam/japan/kansai/osaka/osaka-dotonbori.html"
+    },
+    {
+      "city": "Seul",
+      "title": "Han River",
+      "preview": "https://cdn.skylinewebcams.com/social3140.jpg",
+      "fallback": "assets/images/seoul.webp",
+      "provider": "SkylineWebcams / TOPIS",
+      "url": "https://www.skylinewebcams.com/en/webcam/south-korea/seoul-capital/seoul/han-river.html",
+      "secondaryUrl": "https://topis.seoul.go.kr/map/openCctvMap.do"
+    }
+  ],
+  "baggage": {
+    "allowance": "LOT: 4 × bagaż kabinowy do 55×40×23 cm i 8 kg; obecnie 0 sztuk bagażu rejestrowanego. {{cost:lotCheckedBag}}",
+    "chosenSize": "Rozważane plecaki 55×40×20 cm — mieszczą się w limicie LOT",
+    "targetWeight": "Cel praktyczny: 22–26 kg łącznie, nie pełne 32 kg",
+    "warning": "Peach MM739 KIX → GMP: limit kabinowy to łącznie 2 sztuki na osobę do 7 kg. W rezerwacji Peach jest 1 bagaż rejestrowany; nadajemy jedną wspólną walizkę. LOT ma obecnie 0 sztuk bagażu rejestrowanego. Jeśli dokupimy jedną walizkę na oba kierunki, koszt wyniesie {{cost:lotCheckedBag}}.",
+    "bags": [
+      {
+        "name": "Plecak 1 · dorosły",
+        "load": "Ubrania dorosłego + część wspólnych rzeczy",
+        "target": "6–7 kg"
+      },
+      {
+        "name": "Plecak 2 · dorosły",
+        "load": "Ubrania dorosłego + kosmetyki i apteczka",
+        "target": "6–7 kg"
+      },
+      {
+        "name": "Plecak 3 · dziecko",
+        "load": "Własne lekkie ubrania + mała rzecz na drogę",
+        "target": "4–5 kg"
+      },
+      {
+        "name": "Plecak 4 · dziecko",
+        "load": "Własne lekkie ubrania + mała rzecz na drogę",
+        "target": "4–5 kg"
+      }
+    ],
+    "checklist": [
+      "5–6 lekkich koszulek na osobę",
+      "2–3 pary krótkich spodni + 1 para długich",
+      "6 kompletów bielizny; pranie co 4–5 dni",
+      "cienka bluza i lekka kurtka przeciwdeszczowa",
+      "wygodne, rozchodzone buty; opcjonalnie lekkie sandały",
+      "czapki, okulary, krem SPF i małe ręczniki/chusty chłodzące",
+      "leki, plastry i elektrolity",
+      "adaptery, ładowarki i przewody opisane właścicielem",
+      "powerbanki wyłącznie do kabiny",
+      "kosmetyki w pojemnikach do 100 ml",
+      "po jednym komplecie ubrań każdej osoby w innym plecaku"
+    ]
+  },
+  "travelApps": {
+    "japan": [
+      {
+        "name": "Google Maps",
+        "purpose": "Główna nawigacja, metro, pociągi i dojścia piesze.",
+        "priority": "must",
+        "url": "https://maps.google.com/"
+      },
+      {
+        "name": "Google Translate",
+        "purpose": "Aparat, tłumaczenie menu i pakiet japoński offline.",
+        "priority": "must",
+        "url": "https://translate.google.com/about/"
+      },
+      {
+        "name": "Tokyo Disney Resort App",
+        "purpose": "Mapa parku, kolejki, bilety, Premier Access i zamówienia w Disneylandzie.",
+        "priority": "must",
+        "url": "https://www.tokyodisneyresort.jp/en/tdr/app.html"
+      },
+      {
+        "name": "SmartEX",
+        "purpose": "Rezerwacja Shinkansenu Nozomi Tokio → Osaka.",
+        "priority": "must",
+        "url": "https://smart-ex.jp/en/lp/app/"
+      },
+      {
+        "name": "Suica / PASMO",
+        "purpose": "Transport i drobne płatności. Na iPhonie można dodać kartę do Wallet; inaczej kupić kartę fizyczną.",
+        "priority": "recommended",
+        "url": "https://www.jreast.co.jp/multi/en/welcomesuica/welcomesuica.html"
+      },
+      {
+        "name": "Japan Travel by NAVITIME",
+        "purpose": "Awaryjna druga nawigacja kolejowa i warianty tras.",
+        "priority": "optional",
+        "url": "https://japantravel.navitime.com/en/"
+      }
+    ],
+    "korea": [
+      {
+        "name": "Naver Map",
+        "purpose": "Podstawowa nawigacja piesza i transport publiczny; ustawić język angielski.",
+        "priority": "must",
+        "url": "https://map.naver.com/"
+      },
+      {
+        "name": "Papago",
+        "purpose": "Tłumaczenie koreańskiego, także ze zdjęcia i głosu.",
+        "priority": "must",
+        "url": "https://papago.naver.com/"
+      },
+      {
+        "name": "Kakao T",
+        "purpose": "Zamawianie taksówek i kontrola ceny przejazdu.",
+        "priority": "recommended",
+        "url": "https://www.kakaomobility.com/service-kakaot"
+      },
+      {
+        "name": "KakaoMap",
+        "purpose": "Druga mapa i wyszukiwanie lokalnych miejsc; Naver Map pozostaje podstawą.",
+        "priority": "optional",
+        "url": "https://map.kakao.com/"
+      },
+      {
+        "name": "Emergency Ready App",
+        "purpose": "Anglojęzyczne alerty kryzysowe i informacje bezpieczeństwa.",
+        "priority": "recommended",
+        "url": "https://www.safekorea.go.kr/idsiSFK/neo/main/main.html"
+      },
+      {
+        "name": "KorailTalk",
+        "purpose": "Tylko jeśli zdecydujemy się na daleki przejazd koleją poza Seul.",
+        "priority": "optional",
+        "url": "https://www.letskorail.com/"
+      }
+    ]
+  },
+  "finance": {
+    "intro": "Japonia i Korea w wielu miejscach (szczególnie małe świątynie, rynki i uliczny street food) nadal bywają mocno gotówkowe. Posiadanie zapasu lokalnej waluty (JPY/KRW) jest bardzo ważne.",
+    "tips": [
+      "<b>AEON Bank (najlepsza opcja):</b> Bankomaty AEON (znajdziesz je w marketach Aeon, MaxValu czy na stacjach) bardzo często nie pobierają prowizji: {{cost:aeonAtmFee}}.",
+      "<b>7-Eleven (Seven Bank):</b> Pobiera opłatę zależną od kwoty: {{cost:sevenAtmFeeLow}} przy wypłacie do {{cost:sevenAtmThreshold}} oraz {{cost:sevenAtmFeeHigh}} przy wyższych kwotach.",
+      "<b>Revolut Metal + ZEN Pro:</b> Revolut Metal daje {{cost:revolutCashLimit}} miesięcznego limitu wypłat bez prowizji fintechu, a ZEN Pro około {{cost:zenCashLimit}}. Razem to około {{cost:combinedCashLimit}}.",
+      "<b>Zasada DCC:</b> Zarówno na karcie Revolut, jak i ZEN – gdy bankomat zapyta o przewalutowanie (DCC) lub rozliczenie w PLN, ZAWSZE wybieraj walutę lokalną (JPY / KRW). Odrzucenie DCC gwarantuje przeliczenie po kursie wielowalutowym."
+    ]
+  },
+  "shopping": {
+    "intro": "Zasady zakupów: Japonia = Life/Gyomu/OK/Seiyu + konbini, Korea = No Brand/Lotte Mart/E-mart/Homeplus + CU/GS25.",
+    "tips": [
+      "Dzień przyjazdu: konbini — przekąski dla dzieci, śniadanie na rano.",
+      "Następnego dnia: normalny supermarket (np. Seiyu, E-mart) — kupuj duże, dwulitrowe butelki wody i herbaty za około {{cost:waterBottle}}, a następnie przelewaj do termosów. Automaty uliczne są zbyt drogie przy czteroosobowej rodzinie!",
+      "Wieczorem: supermarket po przecenione bento/sushi/gotowce (nawet 50% taniej ok. 19:30).",
+      "Przed wylotem z Seulu: Lotte Mart albo E-mart na rameny, słodycze, algi, kawy instant, przekąski do Polski."
+    ],
+    "discounts": [
+      "<b>Too Good To Go (Japonia):</b> Aplikacja wystartowała w Tokio w 2026 r. (działa m.in. w Shibuya/Shinjuku). Alternatywą jest popularna japońska aplikacja <b>TABETE</b> (pokazuje konkretne jedzenie, nie tylko niespodzianki).",
+      "<b>Aplikacje w Korei:</b> Użyj <b>Lucky Meal (럭키밀)</b> (odpowiednik TGTG dla piekarni/kawiarni) lub <b>Last Order (라스트오더)</b> z rabatami 30–70% na koniec dnia.",
+      "<b>Naklejki rabatowe (w obu krajach):</b> Prawdziwym hitem wciąż pozostają wieczorne wizyty (po 19:00-20:00) w supermarketach (i konbini). Pracownicy przyklejają naklejki z procentowym lub kwotowym rabatem (nawet 50%) na gotowe bento, sushi, kanapki, by sprzedać je przed zamknięciem."
+    ],
+    "equivalents": [
+      {
+        "pl": "Biedronka / Lidl",
+        "jp": "Gyomu Super, OK Store, Seiyu, czasem Aeon",
+        "kr": "No Brand, Lotte Mart, E-mart, Homeplus"
+      },
+      {
+        "pl": "Mercadona",
+        "jp": "Life, Maruetsu, KOHYO, Aeon, MaxValu",
+        "kr": "Lotte Super, GS The Fresh, E-mart Everyday"
+      },
+      {
+        "pl": "Żabka (konbini)",
+        "jp": "7-Eleven, Lawson, FamilyMart",
+        "kr": "CU, GS25, 7-Eleven, emart24"
+      },
+      {
+        "pl": "Tanie / Drogeria",
+        "jp": "Matsumoto Kiyoshi, Don Quijote, Daiso",
+        "kr": "Olive Young, Daiso, No Brand, Lotte Mart"
+      }
+    ],
+    "cities": {
+      "tokyo": {
+        "name": "Tokio",
+        "supermarkets": "Life supermarket, Maruetsu, Seiyu, OK Store, Gyomu Super, Aeon My Basket",
+        "details": [
+          "<b>Konbini:</b> 7-Eleven, Lawson, FamilyMart na szybkie śniadanie / wodę / onigiri / kawę.",
+          "<b>Koszyk rodzinny:</b> Life, Maruetsu, Seiyu, Aeon/MaxValu.",
+          "<b>Taniej:</b> Gyomu Super (dobre na mrożonki, napoje, makarony, duże paczki) albo OK Store.",
+          "<b>Gotowce:</b> Idź po 19:00-20:00. Bento i sushi mają naklejki z rabatami 20-50%."
+        ]
+      },
+      "kansai": {
+        "name": "Osaka",
+        "supermarkets": "Life, KOHYO, MaxValu, Aeon, Gyomu Super, Super Tamade",
+        "details": [
+          "<b>Codziennie:</b> Life (najbezpieczniejszy wybór), KOHYO (często przy stacjach), MaxValu / Aeon.",
+          "<b>Taniej pod rodzinę:</b> Gyomu Super, Super Tamade (bardzo osakowy, tani, lekki chaos).",
+          "<b>Pamiątki/Słodycze:</b> Don Quijote (świetny na nocne zakupy).",
+          "Wpisuj w mapy \"supermarket near me\". Konbini z 4-osobową rodziną wychodzi drogo."
+        ]
+      },
+      "seoul": {
+        "name": "Seul",
+        "supermarkets": "Lotte Mart, E-mart, Homeplus, No Brand",
+        "details": [
+          "<b>Duży market:</b> Lotte Mart (Zettaplex Seoul Station świetny pod zakupy do Polski - ma tax refund > 30k KRW), E-mart, Homeplus.",
+          "<b>Dyskonty:</b> No Brand (Lidl/Aldi vibes, np. w DOOTA Mall).",
+          "<b>Konbini:</b> CU, GS25, 7-Eleven (śniadania, woda, ramen, mleko bananowe).",
+          "<b>UWAGA:</b> Duże markety bywają obowiązkowo zamknięte (np. 2. i 4. środa/niedziela). Zawsze sprawdzaj hasło <em>휴무일</em> w Naver Map."
+        ]
+      }
+    }
+  },
+  "freeTours": {
+    "intro": "Zarówno w Tokio, jak i w Seulu można skorzystać z opcji darmowego zwiedzania z przewodnikami (najczęściej po angielsku).",
+    "tokyo": [
+      "<b>Wolontariusze (TFWT / TFG):</b> Organizacje takie jak <a href=\"https://www.tfwt.jp/\" target=\"_blank\" rel=\"noopener\" style=\"color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--accent);\">Tokyo Free Walking Tour</a> lub <a href=\"https://www.tokyofreeguide.org/\" target=\"_blank\" rel=\"noopener\" style=\"color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--accent);\">Tokyo Free Guide</a>. Prowadzane przez pasjonatów. Nie płacisz za samą usługę, ale dobrym tonem jest pokrycie kosztów przewodnika (np. jego bilety na przejazd, wejściówki czy ewentualny lunch).",
+      "<b>Tip-based (np. <a href=\"https://www.guruwalk.com/\" target=\"_blank\" rel=\"noopener\" style=\"color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--accent);\">GuruWalk</a>):</b> Klasyczne free walking tours. Rezerwujesz miejsce, a na końcu dajesz przewodnikowi napiwek (tip) zależny od tego, jak bardzo podobała Ci się wycieczka (np. Asakusa, Shibuya)."
+    ],
+    "seoul": [
+      "<b>Oficjalne zwiedzanie miasta:</b> Rządowy program (Seoul Cultural Tourism Volunteer Guides). Oferują około 40 tras (w tym pałace). Jest w 100% darmowy, płacisz tylko za swoje bilety wstępu. <b>Wymagana rezerwacja z min. 3-dniowym wyprzedzeniem</b> (<a href=\"https://dobo.visitseoul.net/\" target=\"_blank\" rel=\"noopener\" style=\"color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--accent);\">dobo.visitseoul.net</a>).",
+      "<b>Tip-based (np. <a href=\"https://www.guruwalk.com/\" target=\"_blank\" rel=\"noopener\" style=\"color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--accent);\">GuruWalk</a> / <a href=\"https://www.freetour.com/\" target=\"_blank\" rel=\"noopener\" style=\"color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--accent);\">Freetour</a>):</b> Wycieczki prowadzone przez lokalsów. Zazwyczaj zostawia się około {{cost:freeTourTip}} po zakończeniu spaceru."
+    ]
+  },
+  "stays": {
+    "tokyo": {
+      "name": "7House",
+      "dates": "21–25.08",
+      "nights": 4,
+      "rating": "8.6",
+      "area": "Adachi-ku, Tokio",
+      "address": "Adachi-ku · okolice stacji Gotanno (dokładny adres w prywatnej notatce)",
+      "check": "15:00 / 11:00",
+      "image": "assets/images/hotels/7house.webp",
+      "bookingUrl": "https://www.booking.com/hotel/jp/narita-haneda-airport-is-convenient-quiet-homestay.html",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Gotanno%20Station%20Tokyo",
+      "costRef": "stayTokyo"
+    },
+    "kansai": {
+      "name": "SunriseHouse TD501",
+      "dates": "25–30.08",
+      "nights": 5,
+      "rating": "8.7",
+      "area": "Teradacho, Tennoji-ku, Osaka",
+      "address": "Teradacho, Tennoji-ku · okolice stacji JR Teradacho (dokładny adres w prywatnej notatce)",
+      "check": "16:00 / 10:00",
+      "image": "assets/images/hotels/sunrisehouse.webp",
+      "bookingUrl": "https://www.booking.com/hotel/jp/nearest-jr-teradacho-station-3-minutes-on-foot-direct-access-to-umeda-osaka-cast.html",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Teradacho%20Station%20Osaka",
+      "costRef": "stayKansai"
+    },
+    "seoul": {
+      "name": "Soft Minimal 2BR Home near Dongdaemun",
+      "dates": "30.08–05.09",
+      "nights": 6,
+      "rating": "9.9",
+      "area": "Dongdaemun / Jung-gu, Seul",
+      "address": "Dongdaemun / Jung-gu · okolice Dongdaemun (dokładny adres w prywatnej notatce)",
+      "check": "16:00 / 11:00",
+      "image": "assets/images/hotels/seoul-home.webp",
+      "bookingUrl": "https://www.booking.com/hotel/kr/cozy-2br-home-near-ddp-myeongdong-dongdaemun.html",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Dongdaemun%20Seoul",
+      "costRef": "staySeoul"
+    }
+  },
+  "destinations": {
+    "tokyo": {
+      "name": "Tokio",
+      "kicker": "Neony, topki i Disney",
+      "dates": "21–25 sierpnia · 4 noce",
+      "image": "assets/images/tokyo.webp",
+      "color": "#ff5a68",
+      "history": {
+        "title": "Tło: Od wioski do giganta",
+        "content": "<p>Tokio, znane pierwotnie jako Edo, z małej wioski rybackiej przekształciło się w największą i najbardziej zamożną metropolię na świecie. Przez wieki było siedzibą szogunów Tokugawa, którzy w XVII wieku zjednoczyli i niemal całkowicie zamknęli Japonię przed światem (okres izolacji <em>Sakoku</em>).</p><p>Po restauracji Meiji w 1868 roku, cesarz przeniósł tu stolicę z Kioto, zmieniając nazwę na <strong>Tokio</strong> (Wschodnia Stolica). Miasto heroicznie podniosło się z popiołów trzęsienia ziemi w 1923 roku oraz zniszczeń z czasów II wojny światowej, stając się globalnym symbolem ultranowoczesności po Igrzyskach Olimpijskich w 1964 r.</p>"
+      },
+      "intro": "Cztery noce na klasyczne Tokio, jeden pełny dzień w Disneylandzie i spokojne wejście w podróż po długim locie.",
+      "map": {
+        "center": [
+          35.682,
+          139.75
+        ],
+        "zoom": 11
+      },
+      "places": [
+        {
+          "name": "Baza: 7House (orientacyjnie)",
+          "coords": [
+            35.75,
+            139.8
+          ],
+          "type": "stay"
+        },
+        {
+          "name": "Shibuya Crossing",
+          "coords": [
+            35.6595,
+            139.7005
+          ],
+          "type": "visit"
+        },
+        {
+          "name": "Meiji Jingu / Harajuku",
+          "coords": [
+            35.6764,
+            139.6993
+          ],
+          "type": "visit"
+        },
+        {
+          "name": "Sensō-ji, Asakusa",
+          "coords": [
+            35.7148,
+            139.7967
+          ],
+          "type": "visit"
+        },
+        {
+          "name": "Akihabara",
+          "coords": [
+            35.6984,
+            139.7731
+          ],
+          "type": "visit"
+        },
+        {
+          "name": "Tokyo Disneyland",
+          "coords": [
+            35.6329,
+            139.8804
+          ],
+          "type": "must"
+        }
+      ],
+      "days": [
+        {
+          "date": "21.08",
+          "day": "Piątek",
+          "title": "Lądowanie i miękki start",
+          "text": "NRT 18:25 → dojazd → zameldowanie → konbini lub ramen. Bez ambitnego zwiedzania.",
+          "cost": "¥",
+          "pace": "lekko",
+          "details": {
+            "image": "assets/images/tokyo_days/nrt.jpg",
+            "desc": "Przylot na lotnisko Narita (NRT) wieczorem. Po kontroli granicznej i ewentualnym odbiorze walizki, jeśli dokupimy bagaż rejestrowany do LOT, udamy się na pociąg. To będzie długi dzień w podróży, więc po zameldowaniu pójdziemy do najbliższego konbini (FamilyMart/7-Eleven) po gotowe bento na kolację i szybkie śniadanie.",
+            "transport": "Z Narity jedziemy budżetowo: pociągiem Keisei Main Line do stacji Keisei-Sekiya, tam krótki spacer na stację Ushida i 2 przystanki Tobu Skytree Line do Gotanno. Trasę sprawdzamy ponownie po wylądowaniu."
+          }
+        },
+        {
+          "date": "22.08",
+          "day": "Sobota",
+          "title": "Nowoczesne Tokio",
+          "text": "Shibuya Crossing, Hachikō, Harajuku, Takeshita Street, Meiji Jingu, Shinjuku po zmroku i darmowy punkt widokowy w Tokyo Metropolitan Government Building.",
+          "cost": "¥",
+          "pace": "dużo chodzenia",
+          "details": {
+            "image": "assets/images/tokyo_days/shibuya.jpg",
+            "desc": "Zanurzamy się w nowoczesne i szalone Tokio! Zaczniemy od słynnego skrzyżowania Shibuya Crossing i pomnika psa Hachiko. Następnie przejdziemy do Harajuku – przejdziemy przez kolorową Takeshita Street pełną crêpes i szalonej mody, a potem odpoczniemy w leśnym kompleksie świątyni Meiji Jingu. Wieczór spędzimy w rozświetlonym neonami Shinjuku i wjedziemy na darmowy punkt widokowy Tokyo Metropolitan Government Building.",
+            "transport": "Poruszamy się głównie linią JR Yamanote (zielona pętla), która łączy Shibuyę, Harajuku i Shinjuku."
+          }
+        },
+        {
+          "date": "23.08",
+          "day": "Niedziela",
+          "title": "Klasyka i popkultura",
+          "text": "Asakusa i Sensō-ji, Ueno oraz Akihabara — bez powrotu na zachodnią stronę miasta.",
+          "cost": "¥",
+          "pace": "średnio",
+          "details": {
+            "image": "assets/images/tokyo_days/asakusa.jpg",
+            "desc": "Dzień pełen kontrastów. Rano odwiedzimy najstarszą świątynię w Tokio – Sensō-ji w historycznej dzielnicy Asakusa. Przejdziemy przez bramę Kaminarimon i uliczkę Nakamise. Następnie udamy się przez Ueno do Akihabary – mekki elektroniki, anime i gier wideo. Wieczór zostaje na spokojny powrót lub dodatkowy czas w Akihabarze, bez cofania się do Shinjuku.",
+            "transport": "Do Asakusy dojedziemy metrem (linia Ginza lub Asakusa). Z Asakusy do Akihabary szybko dostaniemy się np. z przesiadką na stacji Ueno."
+          }
+        },
+        {
+          "date": "24.08",
+          "day": "Poniedziałek",
+          "title": "Tokyo Disneyland",
+          "text": "Cały dzień w parku. Możliwy rabat {{discount:disney}}, ale nie uwzględniamy go w budżecie, dopóki nie będzie pewny.",
+          "pace": "cały dzień",
+          "must": true,
+          "details": {
+            "image": "assets/images/tokyo_days/disney.jpg",
+            "desc": "Całodniowy pobyt w Tokyo Disneyland. Zakładamy cenę {{cost:disney}} za bilety dla całej rodziny; ewentualny rabat {{discount:disney}} traktujemy jako możliwą oszczędność, a nie pewnik. Jedzenie i przekąski w parku pokrywamy osobno z koperty żywieniowej.",
+            "transport": "Dojazd z Gotanno: Tobu Skytree do Kita-Senju, potem metro Hibiya do stacji Hatchobori i stamtąd linia JR Keiyo bezpośrednio pod stację Maihama."
+          },
+          "priceRef": "disney"
+        },
+        {
+          "date": "25.08",
+          "day": "Wtorek",
+          "title": "Tokio → Osaka",
+          "text": "Wymeldowanie, lekki poranek i przejazd na stację Shinkansenu.",
+          "cost": "¥¥¥",
+          "pace": "transfer",
+          "details": {
+            "image": "assets/images/tokyo_days/shinkansen.jpg",
+            "desc": "Opuszczamy Tokio i ruszamy na południe, do regionu Kansai. Trasę Tokio–Osaka pokonamy pociągiem Shinkansen Nozomi w około 2,5 godziny. Bilety nie są jeszcze kupione.",
+            "transport": "Shinkansen Nozomi do kupienia przez Smart EX: ze stacji Tokyo lub Shinagawa bezpośrednio do Shin-Osaka."
+          }
+        }
+      ],
+      "restaurants": [
+        {
+          "name": "Ichiran Shibuya",
+          "type": "Ramen",
+          "rating": "4.5",
+          "reviewCount": "7000+",
+          "desc": "Kultowy ramen jedzony w prywatnych boksach. Doświadczenie samo w sobie."
+        },
+        {
+          "name": "Harajuku Gyozaro",
+          "type": "Gyoza",
+          "rating": "4.3",
+          "reviewCount": "4000+",
+          "desc": "Jedne z najlepszych i najtańszych smażonych pierożków gyoza w Tokio."
+        },
+        {
+          "name": "Uobei Shibuya Dogenzaka",
+          "type": "Sushi",
+          "rating": "4.4",
+          "reviewCount": "10000+",
+          "desc": "Szybkie, tanie i pyszne sushi dostarczane ekspresowo taśmociągiem na Twoje miejsce."
+        },
+        {
+          "name": "Kikanbo Kanda",
+          "type": "Ramen",
+          "rating": "4.5",
+          "reviewCount": "5000+",
+          "desc": "Ekstremalnie pikantny i niezwykle aromatyczny ramen tylko dla odważnych."
+        },
+        {
+          "name": "Curry Station Niagara",
+          "type": "Curry",
+          "rating": "4.4",
+          "reviewCount": "1500+",
+          "desc": "Tanie japońskie curry dostarczane do stolika przez jeżdżący miniaturowy pociąg."
+        },
+        {
+          "name": "Gyukatsu Motomura",
+          "type": "Gyukatsu",
+          "rating": "4.6",
+          "reviewCount": "6000+",
+          "desc": "Smażona wołowina w panierce, którą dosmażasz samodzielnie na własnym gorącym kamieniu."
+        },
+        {
+          "name": "Nakiryu",
+          "type": "Ramen",
+          "rating": "4.2",
+          "reviewCount": "2000+",
+          "desc": "Wybitny Ramen odznaczony gwiazdką Michelin, a przy tym bardzo przyjazny dla portfela."
+        },
+        {
+          "name": "Katsukura Shinjuku",
+          "type": "Tonkatsu",
+          "rating": "4.4",
+          "reviewCount": "2500+",
+          "desc": "Znakomity i chrupiący panierowany kotlet wieprzowy (tonkatsu) w przystępnej cenie."
+        },
+        {
+          "name": "Fuunji Shinjuku",
+          "type": "Tsukemen",
+          "rating": "4.3",
+          "reviewCount": "4000+",
+          "desc": "Gęsty bulion rybno-wieprzowy, w którym macza się zimny makaron (tsukemen)."
+        },
+        {
+          "name": "Sometaro Asakusa",
+          "type": "Okonomiyaki",
+          "rating": "4.2",
+          "reviewCount": "1200+",
+          "desc": "Tradycyjne placki okonomiyaki przygotowywane w bardzo klimatycznym, starym drewnianym domu."
+        }
+      ],
+      "shoppingTips": [
+        {
+          "title": "Oryginalne japońskie ubrania i T-shirty",
+          "intro": "Zamiast tandetnych pamiątek z napisem 'I ❤️ Japan', warto kupić graficzne T-shirty lub rzeczy z japońskich sieciówek (szukajcie w okolicach Harajuku i Shibuya). <b>Ważne: noś paszport!</b> Zakupy powyżej {{cost:japanTaxFreeThreshold}} z podatkiem w jednym sklepie uprawniają do tax-free. Orientacyjnie: {{cost:jpyReference}}.",
+          "places": [
+            {
+              "name": "Graniph",
+              "desc": "Mój nr 1. Świetne grafiki, fajna jakość, kolaboracje z anime, popkulturą i artystami. T-shirt: około {{cost:graniphTshirt}}."
+            },
+            {
+              "name": "UNIQLO UT",
+              "desc": "Tanie, oficjalne koszulki z mangą, anime i popkulturą. Często około {{cost:uniqloTshirt}}."
+            },
+            {
+              "name": "GU",
+              "desc": "Tańsza siostra Uniqlo. Basicowe T-shirty i czapki unisex kosztują zwykle {{cost:guBasics}}. Dobra jakość za grosze."
+            },
+            {
+              "name": "WEGO",
+              "desc": "Ulubieniec młodzieży z Harajuku: czapki, streetwear, oversize, dużo tanich akcesoriów."
+            },
+            {
+              "name": "2nd Street / Vintage",
+              "desc": "Świetny japoński second-hand. Używane ubrania często są w bardzo dobrym stanie; typowe ceny to {{cost:japaneseSecondHand}}."
+            }
+          ]
+        },
+        {
+          "title": "Hypebeast & Premium Streetwear",
+          "intro": "Jeśli celujecie w autentyczną kulturę sneakersową i streetwearową, po prostu zgubcie się w bocznych uliczkach Harajuku (tzw. Cat Street i Ura-Hara) oraz w Shibuya.",
+          "places": [
+            {
+              "name": "KITH Tokyo",
+              "desc": "W centrum Miyashita Park (Shibuya). Piękny butik, który wygląda jak galeria sztuki. Często są tam limitowane dropy."
+            },
+            {
+              "name": "Dover Street Market Ginza",
+              "desc": "Wielopiętrowy dom handlowy (Comme des Garçons). Mieszanka wielkiej mody i najlepszego streetwearu."
+            },
+            {
+              "name": "SNKRDUNK (Harajuku / Shibuya)",
+              "desc": "Najlepsze miejsce, jeśli szukacie limitowanych, pożądanych sneakersów (od rzadkich Jordanów po New Balance)."
+            },
+            {
+              "name": "Sklepy w Ura-Harajuku (Ura-Hara)",
+              "desc": "Znajdziecie tu legendarne flagowe sklepy takie jak Supreme, A Bathing Ape (BAPE) czy japońskie Neighborhood."
+            },
+            {
+              "name": "Union Tokyo",
+              "desc": "Filia kultowego sklepu streetwearowego z Los Angeles zlokalizowana w Harajuku."
+            }
+          ]
+        }
+      ],
+      "trivia": {
+        "title": "Czy wiesz, że...?",
+        "intro": "Kilka fascynujących faktów, które ubarwią zwiedzanie.",
+        "facts": [
+          {
+            "name": "Tokyo Skytree",
+            "desc": "Mierzy 634 m, a jej stalowa konstrukcja ma nawet 10 cm grubości. Przed piorunami chroni ją cewka Rogowskiego zainstalowana na wysokości 497 m."
+          },
+          {
+            "name": "Shibuya Crossing i Hachiko",
+            "desc": "Przez skrzyżowanie przechodzą tysiące osób (choć z perspektywy przechodnia wydaje się mniejsze). Pomnik wiernego psa Hachiko to kopia z 1948 r. – oryginał przetopiono na wojnie."
+          },
+          {
+            "name": "Tajemnica Meiji Jingu",
+            "desc": "Zbudowana w 1920 r. świątynia otoczona jest wspaniałym, gęstym lasem. Nie jest on naturalny – to około 100 tysięcy drzew sprowadzonych i zasadzonych z całej Japonii."
+          },
+          {
+            "name": "teamLab Planets",
+            "desc": "Interaktywne muzeum, które zwiedza się na boso. Przechodzi się przez brodziki z wodą (z cyfrowymi karpiami) oraz niesamowity pływający ogród z żywych kwiatów."
+          },
+          {
+            "name": "Kawiarnie ze zwierzętami",
+            "desc": "W Harajuku znajdziesz kawiarnie z sowami, świnkami czy psami. Ze względów etycznych coraz więcej osób omija je, bo dzikie ptaki nie są zwierzętami domowymi."
+          },
+          {
+            "name": "Mekka driftu (Ebisu)",
+            "desc": "W Prefekturze Fukushima (północ Japonii) znajduje się Ebisu Circuit. To absolutna mekka driftu z torem naśladującym górskie serpentyny i dziesiątkami driftujących tam aut."
+          }
+        ]
+      },
+      "options": [
+        "teamLab Borderless",
+        "Odaiba",
+        "Tokyo Skytree",
+        "Ueno Zoo"
+      ]
+    },
+    "kansai": {
+      "name": "Osaka + Kansai",
+      "kicker": "Osaka, Kyoto, Nara i opcjonalnie Kobe",
+      "dates": "25–30 sierpnia · 5 nocy",
+      "image": "assets/images/osaka.webp",
+      "color": "#f6a23c",
+      "history": {
+        "title": "Tło: Kuchnia narodu",
+        "content": "<p>Region Kansai to historyczne i kulturowe serce Japonii. Przez ponad tysiąc lat (do 1868 r.) to właśnie <strong>Kioto</strong> było siedzibą cesarza. To tutaj wykształciła się klasyczna japońska estetyka, ceremonia parzenia herbaty, teatr kabuki oraz wyrafinowana kuchnia <em>kaiseki</em>.</p><p>Osaka, nazywana „kuchnią narodu”, od zawsze była centrum handlu i wolnej myśli. W przeciwieństwie do powściągliwego Tokio, mieszkańcy Osaki słyną ze swojego otwarcia, humoru i luźniejszego podejścia do życia. Region ten zachował najwięcej autentycznego ducha dawnej Japonii, mimo że jego nowoczesne metropolie dynamicznie parły naprzód.</p>"
+      },
+      "intro": "Jedna niedroga baza w Osace. Z niej robimy wycieczki do Kyoto i Nary, a wieczory zostają na jedzenie i neony.",
+      "map": {
+        "center": [
+          34.83,
+          135.55
+        ],
+        "zoom": 9
+      },
+      "places": [
+        {
+          "name": "Baza: Teradacho",
+          "coords": [
+            34.647,
+            135.523
+          ],
+          "type": "stay"
+        },
+        {
+          "name": "Dotonbori",
+          "coords": [
+            34.6687,
+            135.5013
+          ],
+          "type": "visit"
+        },
+        {
+          "name": "Fushimi Inari, Kyoto",
+          "coords": [
+            34.9671,
+            135.7727
+          ],
+          "type": "must"
+        },
+        {
+          "name": "Kiyomizu-dera / Gion",
+          "coords": [
+            34.9949,
+            135.785
+          ],
+          "type": "visit"
+        },
+        {
+          "name": "Nara Park",
+          "coords": [
+            34.6851,
+            135.843
+          ],
+          "type": "must"
+        },
+        {
+          "name": "Kobe Harborland / Meriken Park",
+          "coords": [
+            34.6826,
+            135.1877
+          ],
+          "type": "visit"
+        }
+      ],
+      "days": [
+        {
+          "date": "25.08",
+          "day": "Wtorek",
+          "title": "Przyjazd do Osaki",
+          "text": "Transfer do Teradacho, zameldowanie od 16:00 i pierwszy wieczór z jedzeniem w okolicy lub Dotonbori.",
+          "cost": "¥¥",
+          "pace": "transfer",
+          "details": {
+            "image": "assets/images/osaka_days/teradacho.jpg",
+            "desc": "Zmieniamy bazę z Tokio na Osakę. Po podróży Shinkansenem i dotarciu do naszego domu w dzielnicy Teradacho (okolice stacji Tennoji) odświeżymy się i udamy na spokojny obiad. Teradacho ma swój lokalny urok, idealny na odpoczynek przed jutrzejszym Kyoto.",
+            "transport": "Z Shin-Osaka dojazd pociągami JR (np. linia Osaka Loop) do stacji Teradacho. Dom znajduje się blisko stacji."
+          }
+        },
+        {
+          "date": "26.08",
+          "day": "Środa",
+          "title": "Kyoto: pocztówkowa Japonia",
+          "text": "Fushimi Inari wcześnie rano, Kiyomizu-dera, uliczki Higashiyamy i Gion wieczorem. Wypożyczenie tradycyjnych strojów dla 1 dorosłego i 2 dzieci.",
+          "cost": "¥¥",
+          "pace": "dużo chodzenia",
+          "must": true,
+          "details": {
+            "image": "assets/images/osaka_days/kyoto.jpg",
+            "desc": "Startujemy bardzo wcześnie! Kyoto to historyczna perła. Otwieramy też 3-dniowy bilet JR Kansai Mini Pass. Zaczniemy od szlaku tysięcy czerwonych bram torii w Fushimi Inari, potem świątynia Kiyomizu-dera i Gion. Wypożyczymy tradycyjne japońskie stroje dla 3 osób na zdjęcia.",
+            "transport": "Aktywujemy JR Kansai Mini Pass! Z Teradacho (przez Tennoji na Osaka Station) jedziemy szybkimi pociągami JR Special Rapid prosto do Kioto."
+          }
+        },
+        {
+          "date": "27.08",
+          "day": "Czwartek",
+          "title": "Nara i jelonki",
+          "text": "Nara Park, Todai-ji i spokojny rodzinny spacer. Karmimy jelonki wyłącznie specjalnymi krakersami.",
+          "cost": "¥¥",
+          "pace": "średnio",
+          "must": true,
+          "details": {
+            "image": "assets/images/osaka_days/nara.jpg",
+            "desc": "Wycieczka poza miasto do dawnej stolicy – Nary. Główną atrakcją jest ogromny park, po którym swobodnie wędrują setki oswojonych jelonków sika. Zobaczymy też olbrzymią świątynię Todai-ji z wielkim Buddą. Wykorzystujemy JR Kansai Mini Pass.",
+            "transport": "Ze stacji Tennoji łapiemy pociąg Yamatoji Rapid Service prosto do stacji JR Nara (około 40-50 min)."
+          }
+        },
+        {
+          "date": "28.08",
+          "day": "Piątek",
+          "title": "Kobe i spacer nad morzem",
+          "text": "Ostatni dzień JR Kansai Mini Pass: Kobe Harborland, Meriken Park i opcjonalny spacer na wybrzeżu Suma. Bez planowania kąpieli — oficjalny sezon kończy się 23.08.",
+          "cost": "¥",
+          "pace": "lekko",
+          "details": {
+            "image": "assets/images/osaka_days/castle.jpg",
+            "desc": "Spokojny dzień w Kobe: Harborland, Meriken Park, port i jedzenie. Jeśli pogoda będzie dobra, możemy dojechać na promenadę przy plaży Suma, ale nie zakładamy kąpieli, ponieważ oficjalny sezon kąpielowy będzie już zakończony. Przy deszczu wybieramy Osaka Aquarium Kaiyukan.",
+            "transport": "Z Teradacho jedziemy linią Osaka Loop do Osaka Station, a następnie pociągiem JR w kierunku Kobe. Do Suma potrzebna będzie dalsza jazda odpowiednim Rapid lub Local — nie ma bezpośredniego Special Rapid z Teradacho."
+          }
+        },
+        {
+          "date": "29.08",
+          "day": "Sobota",
+          "title": "Osaka: jedzenie i neony",
+          "text": "Okolice Namby, Dotonbori, jedzenie uliczne w południowej Osace (takoyaki, okonomiyaki).",
+          "cost": "¥¥¥",
+          "pace": "średnio",
+          "details": {
+            "image": "assets/images/osaka_days/dotonbori.jpg",
+            "desc": "Dzień pełen jedzenia i miejskiego zgiełku (tzw. Kuidaore - jedz aż padniesz). Eksploracja ulicznego jedzenia w południowej Osace. Zobaczymy słynny kanał Dotonbori, wielkiego kraba i neon Glico Man.",
+            "transport": "W obrębie Osaki opłacamy przejazdy czystymi potrąceniami z kart Suica. Z Teradacho do stacji Tennoji i węzłów miasta."
+          }
+        },
+        {
+          "date": "30.08",
+          "day": "Niedziela",
+          "title": "Osaka → Seul",
+          "text": "Wymeldowanie do ok. 10:00, pociąg na KIX i lot do Gimpo (GMP). Lot opłacony (Peach Aviation).",
+          "cost": "opłacone",
+          "pace": "transfer",
+          "details": {
+            "image": "assets/images/osaka_days/kix.jpg",
+            "desc": "Żegnamy się z Japonią. Rano spakujemy się i opuścimy dom w Teradacho. Z kierunku Tennoji udamy się bezpośrednim pociągiem na lotnisko Kansai (KIX). Pamiętajmy o dojeździe autobusem do T2.",
+            "transport": "Z pobliskiej stacji Tennoji bierzemy Kansai Airport Rapid Service bezpośrednio na KIX (ok. 50 minut jazdy). Omijamy drogie i wymagające rezerwacji pociągi typu Haruka."
+          }
+        }
+      ],
+      "restaurants": [
+        {
+          "name": "Okonomiyaki Mizuno",
+          "type": "Okonomiyaki",
+          "rating": "4.3",
+          "reviewCount": "3500+",
+          "desc": "Jedne z najstarszych i najlepszych okonomiyaki wprost na kultowym Dotonbori."
+        },
+        {
+          "name": "Takoyaki Doraku Wanaka",
+          "type": "Takoyaki",
+          "rating": "4.4",
+          "reviewCount": "5000+",
+          "desc": "Klasyczne, parzące język ośmiorniczki w cieście. Ulubieniec lokalsów z Namby."
+        },
+        {
+          "name": "Kushikatsu Daruma",
+          "type": "Kushikatsu",
+          "rating": "4.2",
+          "reviewCount": "4000+",
+          "desc": "Głęboko smażone japońskie szaszłyki (mięso i warzywa), wielka ikona dzielnicy Shinsekai."
+        },
+        {
+          "name": "Kinryu Ramen",
+          "type": "Ramen",
+          "rating": "4.0",
+          "reviewCount": "3000+",
+          "desc": "Kultowy ramen serwowany na ulicy, na matach tatami, pod wielkim rzeźbionym smokiem."
+        },
+        {
+          "name": "Rikuro Ojisan no Mise",
+          "type": "Deser",
+          "rating": "4.5",
+          "reviewCount": "8000+",
+          "desc": "Słynny, puszysty i niesamowicie trzęsący się sernik japoński (na wynos)."
+        },
+        {
+          "name": "551 Horai",
+          "type": "Bao",
+          "rating": "4.2",
+          "reviewCount": "2000+",
+          "desc": "Tanie, sycące i niesamowicie smaczne gorące bułeczki na parze z mięsem wieprzowym (Butaman)."
+        },
+        {
+          "name": "Ajinoya",
+          "type": "Okonomiyaki",
+          "rating": "4.2",
+          "reviewCount": "2500+",
+          "desc": "Znakomite miejsce z odznaczeniem Bib Gourmand za świetne omlety z kapustą."
+        },
+        {
+          "name": "Harukoma Sushi",
+          "type": "Sushi",
+          "rating": "4.4",
+          "reviewCount": "2000+",
+          "desc": "Bardzo lubiane lokalne sushi z wyjątkowo grubymi kawałkami ryb. Ulokowane przy handlowej ulicy Tenma."
+        },
+        {
+          "name": "Yakitori no Meimon Akiyoshi",
+          "type": "Yakitori",
+          "rating": "4.3",
+          "reviewCount": "1500+",
+          "desc": "Tanie i przepyszne szaszłyki z kurczaka, perfekcyjne jako przekąska do zimnego piwa."
+        },
+        {
+          "name": "Chibo Dotonbori",
+          "type": "Okonomiyaki",
+          "rating": "4.0",
+          "reviewCount": "3000+",
+          "desc": "Wielka, kilkupiętrowa restauracja serwująca okonomiyaki i yakisobę – klasyk Dotonbori."
+        }
+      ],
+      "shoppingTips": [
+        {
+          "title": "Oryginalne japońskie ubrania i T-shirty",
+          "intro": "Osaka może być nawet lepsza cenowo niż Tokio! Najlepszym rejonem na modowe zakupy jest Shinsaibashi oraz Amerikamura. <b>Pamiętaj o paszporcie</b> do zakupów tax-free powyżej {{cost:japanTaxFreeThreshold}} z podatkiem.",
+          "places": [
+            {
+              "name": "Graniph (Shinsaibashi)",
+              "desc": "Koszulki graficzne i anime z oryginalnym designem kosztują około {{cost:graniphTshirt}}."
+            },
+            {
+              "name": "WEGO (Amerikamura)",
+              "desc": "Ogromny wybór taniego streetwearu, czapek i oversize'owych ubrań dla nastolatków."
+            },
+            {
+              "name": "2nd Street (różne lokacje)",
+              "desc": "W Osace perełki vintage można wyłowić znacznie taniej niż w Tokio. Ceny mieszczą się często w zakresie {{cost:japaneseSecondHand}}."
+            },
+            {
+              "name": "UNIQLO / GU",
+              "desc": "Klasyki na szybkie zakupy basiców i tanich czapek: zwykle {{cost:guBasics}}."
+            }
+          ]
+        }
+      ],
+      "trivia": {
+        "title": "Mity, sekrety i historia",
+        "intro": "Kansai pełne jest niesamowitych historii i detali.",
+        "facts": [
+          {
+            "name": "Magia Fushimi Inari",
+            "desc": "Tysiące bram Torii ufundowały firmy w podziękowaniu za biznesowy sukces. Na miejscu jest też kamień 'Omokaru' – jeśli podnosząc go okaże się lekki, Twoje życzenie łatwo się spełni."
+          },
+          {
+            "name": "Kim są Gejsze?",
+            "desc": "W Kioto gejsze to Geiko i Maiko – wysoko wykwalifikowane artystki (taniec, śpiew, parzenie herbaty), a nie prostytutki. Przyjmują gości w herbaciarniach, do których wstęp mają tylko wybrani."
+          },
+          {
+            "name": "Kiyomizu-dera bez gwoździ",
+            "desc": "Nazwa oznacza 'czystą wodę'. Co ciekawe, jej olbrzymi drewniany taras, zawieszony kilkanaście metrów nad ziemią, został złożony bez użycia ani jednego gwoździa!"
+          },
+          {
+            "name": "Spalony Złoty Pawilon",
+            "desc": "Budynek Kinkaku-ji pokryty jest płatkami szczerego złota. Obecna forma to jednak rekonstrukcja – w 1950 roku zabytek został spalony przez chorego psychicznie mnicha."
+          },
+          {
+            "name": "Kryzys miedziany",
+            "desc": "Budowa gigantycznego posągu Wielkiego Buddy z brązu w świątyni Todai-ji w Narze w VIII wieku pochłonęła niemal 90% rezerw miedzi, powodując ogólnokrajowy kryzys gospodarczy."
+          },
+          {
+            "name": "Dawniej święte jelonki",
+            "desc": "Dzisiejsze jelonki w Narze uroczo kłaniają się za krakersy. W dawnej Japonii uważano je za święte wysłanniki bogów, a za ich skrzywdzenie lub zabicie groziła kara śmierci."
+          },
+          {
+            "name": "Otagi Nenbutsu-ji",
+            "desc": "Unikalna, mniej zatłoczona świątynia w Kioto, kryjąca 1200 małych, kamiennych posągów. Wyrzeźbili je lokalni amatorzy w latach 80., przez co każdy posąg ma inną, często zabawną twarz."
+          }
+        ]
+      },
+      "options": [
+        "Kobe Animal Kingdom",
+        "Osaka Aquarium Kaiyukan",
+        "Universal Studios Japan",
+        "drugi dzień w Kyoto"
+      ]
+    },
+    "seoul": {
+      "name": "Seul i okolice",
+      "kicker": "K-pop, technologia i pałace",
+      "dates": "30 sierpnia – 5 września (6 nocy)",
+      "intro": "Hipernowoczesna stolica Korei Południowej. Szybkie życie, przepyszne jedzenie, wszechobecna kultura k-popowa i doskonale zachowane pałace dynastii Joseon.",
+      "image": "assets/images/seoul.webp",
+      "color": "var(--brand-teal)",
+      "history": {
+        "title": "Tło: Cud nad rzeką Han",
+        "content": "<p>Seul to miasto-feniks. Przez 500 lat był potężną stolicą wielkiej dynastii <strong>Joseon</strong>, po której w samym sercu miasta zachowało się pięć wspaniałych pałaców królewskich (w tym słynny Gyeongbokgung). Na początku XX wieku miasto, jak i cała Korea, ucierpiało podczas ciężkiej japońskiej aneksji.</p><p>Prawdziwa tragedia nadeszła jednak w trakcie niszczycielskiej <strong>wojny koreańskiej</strong> (1950–1953). Seul został niemal całkowicie zrównany z ziemią, przechodząc z rąk do rąk walczących armii aż cztery razy. Od tego czasu Seul doświadczył tzw. <em>\"Cudu nad rzeką Han\"</em> – błyskawicznego, bezprecedensowego w skali świata wzrostu gospodarczego. Z wojennych zgliszcz narodziło się jedno z najbardziej technologicznie zaawansowanych, zamożnych i kulturotwórczych (K-Pop, K-Drama) miejsc na Ziemi.</p>"
+      },
+      "map": {
+        "center": [
+          37.5665,
+          126.992
+        ],
+        "zoom": 11
+      },
+      "places": [
+        {
+          "name": "Baza: Dongdaemun / Jung-gu",
+          "coords": [
+            37.565,
+            127.012
+          ],
+          "type": "stay"
+        },
+        {
+          "name": "Hongdae",
+          "coords": [
+            37.5563,
+            126.9236
+          ],
+          "type": "must"
+        },
+        {
+          "name": "Myeongdong",
+          "coords": [
+            37.5636,
+            126.9869
+          ],
+          "type": "visit"
+        },
+        {
+          "name": "Gyeongbokgung",
+          "coords": [
+            37.5796,
+            126.977
+          ],
+          "type": "visit"
+        },
+        {
+          "name": "N Seoul Tower",
+          "coords": [
+            37.5512,
+            126.9882
+          ],
+          "type": "visit"
+        },
+        {
+          "name": "COEX / Gangnam",
+          "coords": [
+            37.5125,
+            127.059
+          ],
+          "type": "visit"
+        },
+        {
+          "name": "Suwon i twierdza Hwaseong",
+          "coords": [
+            37.285,
+            127.01
+          ],
+          "type": "visit"
+        }
+      ],
+      "days": [
+        {
+          "date": "30.08",
+          "day": "Niedziela",
+          "title": "Pierwszy wieczór w Korei",
+          "text": "Przylot, transfer, karty T-Money dla dzieci. Krótki wieczór w Dongdaemun.",
+          "cost": "₩₩",
+          "pace": "lekko",
+          "details": {
+            "image": "assets/images/seoul_days/dongdaemun.jpg",
+            "desc": "Z lotniska Gimpo dojedziemy metrem lub AREX All-Stop w stronę centrum. Najważniejsze po wylądowaniu: idziemy do małego sklepu (CU/GS25) na lotnisku i pokazując paszporty, wyrabiamy zniżkowe karty T-Money dla dzieci! Potem zameldujemy się w hotelu i ruszymy na kolację.",
+            "transport": "Z GMP bierzemy metro/AREX All-Stop do centrum, dalej przesiadka w stronę Dongdaemun według Naver Map."
+          }
+        },
+        {
+          "date": "31.08",
+          "day": "Poniedziałek",
+          "title": "K-pop i Hongdae",
+          "text": "Sklepy albumowe, photo booths, street dance, Yeonnam-dong i wieczorne jedzenie.",
+          "cost": "₩₩",
+          "pace": "średnio",
+          "must": true,
+          "details": {
+            "image": "assets/images/seoul_days/hongdae.jpg",
+            "desc": "Dzień dedykowany młodzieżowej kulturze! W Hongdae skupimy się na k-popie: odwiedzimy sklepy z albumami muzycznymi, zrobimy pamiątkowe zdjęcia w koreańskich photo booths, a wieczorem posłuchamy i zobaczymy ulicznych artystów (busking i street dance). Możemy też zjeść popularne corndogi.",
+            "transport": "Dojazd metrem linią 2 (zielona), stacja Hongik University."
+          }
+        },
+        {
+          "date": "01.09",
+          "day": "Wtorek",
+          "title": "DMZ i Most Wiszący (kupimy w Azji)",
+          "text": "Całodniowa wycieczka trwająca około 9 godzin. Zbiórka: Myeongdong, wyjście 10, godz. 09:00. Po powrocie tylko spokojna kolacja.",
+          "pace": "cały dzień",
+          "must": true,
+          "details": {
+            "image": "assets/images/seoul_days/namsan.jpg",
+            "desc": "Wycieczka obejmuje DMZ, Trzeci Tunel, obserwatorium i most wiszący. Kupimy ją po dotarciu do Azji i wtedy sprawdzimy cenę końcową; obecne założenie to {{cost:dmz}}. Zabieramy paszporty, wodę i wygodne buty. Nie dokładamy Namsan — po około 9 godzinach zostaje tylko kolacja i odpoczynek.",
+            "link": {
+              "label": "Otwórz wycieczkę GetYourGuide ↗",
+              "url": "https://www.getyourguide.com/en-gb/seoul-l197/seoul-fantastic-night-view-tour-t63309/"
+            },
+            "transport": "Z Dongdaemun jedziemy linią 4 do stacji Myeongdong. Zbiórka o 09:00 przy wyjściu 10; warto być na miejscu 15 minut wcześniej."
+          },
+          "priceRef": "dmz"
+        },
+        {
+          "date": "02.09",
+          "day": "Środa",
+          "title": "Gangnam, COEX i Namsan",
+          "text": "Starfield Library i nowoczesna strona miasta, a później Namsan i widok na Seul. Wjazd na wieżę pozostaje opcjonalny.",
+          "cost": "₩₩",
+          "pace": "średnio",
+          "details": {
+            "image": "assets/images/seoul_days/gangnam.jpg",
+            "desc": "Najpierw odwiedzimy Gangnam i bibliotekę Starfield Library w COEX. Nie przeciągamy zakupów, aby późnym popołudniem lub wieczorem pojechać na wzgórze Namsan. Sam spacer i widoki są bezpłatne; płatny wjazd na N Seoul Tower pozostaje opcją.",
+            "transport": "Do COEX jedziemy linią 2 do Samseong. Następnie wracamy w stronę centrum zgodnie z Naver Map i podjeżdżamy pod Namsan; zakres spaceru dopasujemy do pogody i zmęczenia."
+          }
+        },
+        {
+          "date": "03.09",
+          "day": "Czwartek",
+          "title": "Tradycyjny Seul i Hanboki",
+          "text": "Gyeongbokgung, Bukchon Hanok Village i Insadong. Wypożyczamy tradycyjne Hanboki!",
+          "cost": "₩₩",
+          "pace": "dużo chodzenia",
+          "details": {
+            "image": "assets/images/seoul_days/gyeongbokgung.jpg",
+            "desc": "Odkrywamy historyczną stronę Korei. Zwiedzimy największy pałac Gyeongbokgung (w hanbokach wejście do pałacu jest darmowe!), zobaczymy tradycyjne domki w wiosce Bukchon Hanok oraz przespacerujemy się artystyczną ulicą Insadong. Zrobimy mnóstwo pamiątkowych zdjęć w tradycyjnych strojach.",
+            "transport": "Najlepiej podjechać metrem linii 3 (pomarańczowa) do stacji Gyeongbokgung (wyjście 5) lub Anguk."
+          }
+        },
+        {
+          "date": "04.09",
+          "day": "Piątek",
+          "title": "Suwon i K-BBQ",
+          "text": "Wycieczka do historycznej twierdzy Hwaseong w Suwon. Wieczorem uroczysta kolacja w formacie Korean BBQ.",
+          "cost": "₩₩₩",
+          "pace": "średnio",
+          "details": {
+            "image": "assets/images/seoul_days/hongdae.jpg",
+            "desc": "Ostatni pełny dzień zaczynamy od wycieczki do pobliskiego Suwon, by zobaczyć imponującą twierdzę Hwaseong (UNESCO). Po powrocie na finałową kolację K-BBQ odkładamy {{cost:finalKbbq}} z koperty żywieniowej.",
+            "transport": "Do Suwon dojeżdża bezpośrednio linia metra nr 1, podróż zajmuje ok. godziny. Koszty opłacane z zapasów T-Money."
+          }
+        },
+        {
+          "date": "05.09",
+          "day": "Sobota",
+          "title": "ICN → Warszawa",
+          "text": "Wyjazd z noclegu około 08:00. AREX Express z Seoul Station na Terminal 1; LO100 startuje o 12:35.",
+          "cost": "₩",
+          "pace": "transfer",
+          "details": {
+            "image": "assets/images/seoul_days/icn.jpg",
+            "desc": "Wymeldowanie jest możliwe do 11:00, ale wyjeżdżamy około 08:00, aby dotrzeć na lotnisko Incheon około 09:30–10:00. Lot LO100 startuje o 12:35.",
+            "transport": "Z noclegu jedziemy na Seoul Station, a następnie AREX Express na Incheon Terminal 1. Przed wyjazdem sprawdzamy rozkład i kupujemy miejsca na wybrany pociąg."
+          }
+        }
+      ],
+      "restaurants": [
+        {
+          "name": "Myeongdong Kyoja",
+          "type": "Kalguksu",
+          "rating": "4.4",
+          "reviewCount": "15000+",
+          "desc": "Legendarna zupa z domowym makaronem ciętym nożem i wspaniałymi pierożkami mandu."
+        },
+        {
+          "name": "Isaac Toast",
+          "type": "Śniadanie",
+          "rating": "4.5",
+          "reviewCount": "5000+",
+          "desc": "Kultowe i niezwykle tanie koreańskie tosty na słodko-słono. Idealne na pyszne śniadanie do ręki."
+        },
+        {
+          "name": "Gwangjang Market",
+          "type": "Street Food",
+          "rating": "4.3",
+          "reviewCount": "30000+",
+          "desc": "Hala pełna tanich i autentycznych stoisk. Warto spróbować placków z fasoli mung (Bindaetteok) i kimbap."
+        },
+        {
+          "name": "Jinokhwa Halmae",
+          "type": "Dakhanmari",
+          "rating": "4.2",
+          "reviewCount": "6000+",
+          "desc": "Pożywny, gotowany na środku stołu cały kurczak w aromatycznym rosole w sercu Dongdaemun."
+        },
+        {
+          "name": "Tosokchon Samgyetang",
+          "type": "Zupa z kurczaka",
+          "rating": "4.2",
+          "reviewCount": "8000+",
+          "desc": "Znana zupa z młodego kurczaka faszerowanego ryżem i żeń-szeniem, tuż obok pałacu Gyeongbokgung."
+        },
+        {
+          "name": "Kyochon Chicken",
+          "type": "Chimaek",
+          "rating": "4.3",
+          "reviewCount": "2500+",
+          "desc": "Koreański smażony kurczak i piwo (Chimaek). Kyochon to absolutny klasyk z pysznym miodowym sosem."
+        },
+        {
+          "name": "Hwangsaengga Kalguksu",
+          "type": "Kalguksu",
+          "rating": "4.1",
+          "reviewCount": "3000+",
+          "desc": "Nagrodzony przez Michelina pyszny i niedrogi domowy makaron oraz pierożki tuż przy wiosce Bukchon."
+        },
+        {
+          "name": "Sinseon Seolleongtang",
+          "type": "Zupa",
+          "rating": "4.1",
+          "reviewCount": "4000+",
+          "desc": "Kojący, kremowy wywar na kościach wołowych serwowany z cienkimi plasterkami pysznego mięsa."
+        },
+        {
+          "name": "Yoogane Dakgalbi",
+          "type": "Dakgalbi",
+          "rating": "4.1",
+          "reviewCount": "2500+",
+          "desc": "Smażony z ostrym sosem kurczak, kapusta i warzywa. Wymieszane na patelni i przykryte serem."
+        },
+        {
+          "name": "Wangbijib Myeongdong",
+          "type": "K-BBQ",
+          "rating": "4.4",
+          "reviewCount": "3500+",
+          "desc": "Wysokiej jakości koreański grill (K-BBQ) przyjazny obcokrajowcom. Warto zjeść tanie zestawy lunchowe."
+        }
+      ],
+      "shoppingTips": [
+        {
+          "title": "Gdzie po albumy K-pop (np. ILLIT)?",
+          "intro": "Wasza baza przy Dongdaemun to idealne miejsce wypadowe do Myeongdong – zagłębia k-popowego. Orientacyjne ceny: album {{cost:kpopAlbum}}, mniejsza wersja (np. GLLIT) {{cost:kpopAlbumSmall}}, lightstick około {{cost:kpopLightstick}}. Orientacyjnie: {{cost:krwReference}}.<br>W sklepie możesz zapytać: <b>'아일릿 앨범 있어요?'</b> (Czy macie album ILLIT?).",
+          "places": [
+            {
+              "name": "WITHMUU Myeongdong",
+              "desc": "Najlepszy pierwszy strzał (16 Myeongdong 7-gil). Zazwyczaj 11:00-21:00. Dużo albumów, oficjalne gadżety, czasem eventy i lucky draws."
+            },
+            {
+              "name": "MusicKorea Myeongdong 2nd Branch",
+              "desc": "Świetny sklep stricte z albumami. (134 Toegye-ro, blisko popularnego Daiso)."
+            },
+            {
+              "name": "Myeongdong Underground / C.T.Record / K-MECCA",
+              "desc": "Podziemia przy stacji Myeongdong to raj na tańsze albumy, breloczki i setki photocardów dla fanów."
+            },
+            {
+              "name": "Ktown4u COEX",
+              "desc": "Gigantyczny kompleks K-pop, jeśli akurat zwiedzacie Gangnam/COEX. Adres: 513 Yeongdong-daero."
+            }
+          ]
+        }
+      ],
+      "options": [
+        "Lotte World",
+        "płatny wjazd na N Seoul Tower"
+      ]
+    }
+  },
+  "budget": {
+    "limitRef": "tripBudget",
+    "fixedRefs": [
+      "mainFlights",
+      "stayTokyo",
+      "stayKansai",
+      "staySeoul",
+      "shinkansen",
+      "peachFlight",
+      "esim",
+      "returnTrain"
+    ],
+    "envelopeRefs": [
+      "foodEnvelope",
+      "localTransportEnvelope",
+      "attractionsEnvelope",
+      "souvenirsEnvelope"
+    ],
+    "explanation": "Noclegi są zarezerwowane i wliczone do prognozy w pełnej kwocie, ale nie są jeszcze opłacone. Loty główne, Peach i pociąg do Gdańska są opłacone; Shinkansen pozostaje do kupienia. Koperta atrakcji zawiera Disneyland za {{cost:disney}} oraz DMZ za {{cost:dmz}}, które kupimy po dotarciu do Azji. Niepewnego rabatu {{discount:disney}} na Disneyland nie odejmujemy. Opcjonalny bagaż LOT nie jest jeszcze w prognozie: {{cost:lotCheckedBag}}."
+  },
+  "todos": [
+    {
+      "title": "Kupić bilety Tokio → Osaka",
+      "detail": "25.08 · Shinkansen Nozomi (Smart EX)",
+      "priority": "high",
+      "category": "transport",
+      "costRef": "shinkansen"
+    },
+    {
+      "title": "Odprawa Peach (Osaka → Seul)",
+      "detail": "Lot MM739 z KIX (T2). Przyjechać odpowiednio wcześnie; w rezerwacji jest 1 wspólna walizka rejestrowana.",
+      "priority": "medium",
+      "category": "transport"
+    },
+    {
+      "title": "Kupić Tokyo Disneyland",
+      "detail": "24.08 · bilety 2+2; rabatu zapisanego przy cenie nie traktować jako pewnego",
+      "priority": "high",
+      "category": "attractions",
+      "costRef": "disney"
+    },
+    {
+      "title": "Zdecydować o bagażu rejestrowanym LOT",
+      "detail": "Obecnie LOT ma 0PC; Peach ma już 1 wspólną walizkę rejestrowaną.",
+      "priority": "high",
+      "category": "logistics",
+      "costRef": "lotCheckedBag"
+    },
+    {
+      "title": "Wybrać 4 plecaki kabinowe",
+      "detail": "Rozważany rozmiar 55×40×20 cm; zważyć każdy po próbnym pakowaniu",
+      "priority": "medium",
+      "category": "logistics"
+    },
+    {
+      "title": "Kupić i aktywować 3 regionalne eSIM ASIMGO",
+      "detail": "Internet jest potrzebny przez 16 dni kalendarzowych: 21.08–05.09. Najtańszy pasujący plan ma 30 dni: Japonia + Korea · 10 GB / 5G, potem 128 kb/s · kod ESIMDB26.",
+      "url": "https://esimdb.com/south-korea/asimgo",
+      "linkLabel": "Otwórz ofertę w eSIMDB ↗",
+      "priority": "medium",
+      "category": "logistics",
+      "costRef": "esim"
+    },
+    {
+      "title": "Potwierdzić ubezpieczenie całej rodziny",
+      "detail": "Japonia + Korea: Revolut Metal i karta Żubr — osoby objęte ochroną, koszty leczenia, assistance, warunki aktywacji i wyłączenia",
+      "priority": "high",
+      "category": "logistics"
+    },
+    {
+      "title": "Karty IC dla dzieci",
+      "detail": "Japonia: Welcome Suica Child można kupić w dedykowanym automacie na NRT, wpisując datę urodzenia; mieć paszporty dzieci. Korea: zniżkowe T-Money zarejestrować w CU/GS25.",
+      "priority": "high",
+      "category": "transport"
+    },
+    {
+      "title": "Kupić WEST-QR Kansai Mini Pass",
+      "detail": "3 kolejne dni: 26–28.08 · Kyoto, Nara i Kobe · dla 2 dorosłych + dzieci 8 i 10 lat; potrzebny telefon z internetem",
+      "priority": "high",
+      "category": "transport",
+      "costRef": "kansaiMiniPass"
+    },
+    {
+      "title": "Transfer NRT → 7House",
+      "detail": "Keisei Main Line do Keisei-Sekiya, przejście na Ushida i Tobu Skytree Line do Gotanno. Wariant budżetowy — sprawdzić po opóźnieniach i z dziećmi.",
+      "priority": "high",
+      "category": "transport"
+    },
+    {
+      "title": "Transfer Teradacho → KIX",
+      "detail": "Pociąg JR Kansai Airport Rapid Service bezpośrednio ze stacji Tennoji, unikać drogiego Haruka.",
+      "priority": "medium",
+      "category": "transport"
+    },
+    {
+      "title": "Transfer Seul → ICN",
+      "detail": "05.09 · wyjazd z noclegu około 08:00 · AREX Express z Seoul Station do Terminalu 1 · LO100 o 12:35",
+      "priority": "high",
+      "category": "transport"
+    },
+    {
+      "title": "Sprawdzić Priority Pass",
+      "detail": "Salony na trasie, wejścia dla dzieci i gości oraz ewentualne opłaty",
+      "priority": "low",
+      "category": "logistics"
+    },
+    {
+      "title": "Zainstalować aplikacje podróżne",
+      "detail": "Japonia: Maps, Translate, Disney; Korea: Naver Map, Papago, Kakao T",
+      "priority": "medium",
+      "category": "logistics"
+    },
+    {
+      "title": "Wypełnić Visit Japan Web",
+      "detail": "Przed wylotem: dane 4 osób, lot LO79, adres pierwszego noclegu i deklaracja celna; zapisać kody QR offline",
+      "priority": "high",
+      "category": "logistics"
+    },
+    {
+      "title": "Wypełnić Korea e-Arrival Card",
+      "detail": "Bezpłatnie na oficjalnej stronie w ciągu 3 dni przed przylotem 30.08; Polacy są zwolnieni z K-ETA w 2026 r.",
+      "priority": "high",
+      "category": "logistics"
+    },
+    {
+      "title": "Kupić wycieczkę DMZ po dotarciu do Azji",
+      "detail": "Kupić podczas pobytu w Japonii, przed przylotem do Seulu. Wycieczka 01.09 · około 9 godzin · Myeongdong wyjście 10, zbiórka 09:00 · paszporty obowiązkowe · sprawdzić cenę końcową",
+      "priority": "high",
+      "category": "attractions",
+      "costRef": "dmz"
+    },
+    {
+      "title": "Gotówka i wypłaty",
+      "detail": "Zasilić Revolut i pamiętać o odrzucaniu DCC w bankomatach (wypłacać z 7-Eleven).",
+      "priority": "high",
+      "category": "logistics"
+    },
+    {
+      "title": "Zarezerwować wypożyczalnię Hanboków",
+      "detail": "Poszukać rekomendowanej wypożyczalni przy pałacu Gyeongbokgung i ewentualnie zarezerwować.",
+      "priority": "medium",
+      "category": "attractions"
+    },
+    {
+      "title": "Pranie podczas podróży",
+      "detail": "Ważne przy małym bagażu i sierpniowym upale",
+      "priority": "low",
+      "category": "logistics"
+    }
+  ],
+  "photoCredits": [
+    {
+      "place": "Tokio",
+      "author": "Jorge Láscar",
+      "license": "CC BY 3.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Shibuya_at_dusk_-_Tokyo_-_Japan.jpg"
+    },
+    {
+      "place": "Osaka",
+      "author": "Martin Falbisoner",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Dotonbori,_Osaka,_at_night,_November_2016.jpg"
+    },
+    {
+      "place": "Seul",
+      "author": "Jimmy McIntyre",
+      "license": "CC BY-SA 2.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Seoul_Skyline_from_Namsan_(6907572103).jpg"
+    }
+  ]
+}

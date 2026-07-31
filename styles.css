@@ -338,8 +338,10 @@ h1 span { color: #ff7581; }
 .modal-title-box h2 { font-size: 24px; margin: 0; }
 .modal-body { padding: 24px; }
 .modal-body p { line-height: 1.6; color: rgba(255,255,255,0.7); margin-bottom: 24px; }
-.modal-transport { background: rgba(91, 140, 255, 0.15); border-left: 3px solid #5b8cff; padding: 16px; border-radius: 0 8px 8px 0; }
-.modal-transport h3 { font-size: 13px; color: #8cb1ff; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 8px 0; }
-.modal-transport p { margin: 0; font-size: 14px; color: rgba(255,255,255,0.9); }
+.modal-body p[hidden] { display: none; }
+.modal-day-link { color: #8cb1ff; font-weight: 800; text-decoration: none; border-bottom: 1px solid currentColor; }
+.modal-details { background: rgba(91, 140, 255, 0.15); border-left: 3px solid #5b8cff; padding: 16px; border-radius: 0 8px 8px 0; }
+.modal-details h4 { font-size: 13px; color: #8cb1ff; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 8px 0; }
+.modal-details p { margin: 0; font-size: 14px; color: rgba(255,255,255,0.9); }
 .day.clickable { cursor: pointer; transition: transform 0.2s, background 0.2s; border-radius: 8px; padding: 12px; margin: -12px; width: calc(100% + 24px); }
 .day.clickable:hover { background: rgba(0,0,0,0.03); transform: translateX(4px); }
