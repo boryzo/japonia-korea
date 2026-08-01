@@ -1165,55 +1165,55 @@
         {
           "date": "26.08",
           "day": "Środa",
-          "title": "Kyoto: pocztówkowa Japonia",
-          "text": "Fushimi Inari wcześnie rano, Kiyomizu-dera, uliczki Higashiyamy i Gion wieczorem. Wypożyczenie tradycyjnych strojów dla 1 dorosłego i 2 dzieci.",
+          "title": "Kyoto: świątynie, Hanboki i Gion",
+          "text": "Fushimi Inari wcześnie rano, potem Tōfuku-ji, Sanjūsangen-dō, Kiyomizu-dera, Hanboki, uliczki Higashiyamy i Gion wieczorem.",
           "cost": "¥¥",
           "pace": "dużo chodzenia",
           "must": true,
           "details": {
             "image": "assets/images/osaka_days/kyoto.jpg",
-            "desc": "Startujemy bardzo wcześnie! Kyoto to historyczna perła. Otwieramy też 3-dniowy bilet JR Kansai Mini Pass. Zaczniemy od szlaku tysięcy czerwonych bram torii w Fushimi Inari, potem świątynia Kiyomizu-dera i Gion. Wypożyczymy tradycyjne japońskie stroje dla 3 osób na zdjęcia.",
+            "desc": "Startujemy bardzo wcześnie i otwieramy 3-dniowy bilet JR Kansai Mini Pass. Fushimi Inari jest shintō, nie buddyjskie, ale warto zobaczyć je przed tłumami. Potem jedziemy do Tōfuku-ji (zen), Sanjūsangen-dō z tysiącem figur Kannon i Kiyomizu-dera. Po południu wypożyczamy Hanboki dla 1 dorosłego i 2 dzieci, spacerujemy przez Higashiyamę, Ninenzaka i Sannenzaka, a wieczór kończymy w Gion.",
             "transport": "Aktywujemy JR Kansai Mini Pass! Z Teradacho (przez Tennoji na Osaka Station) jedziemy szybkimi pociągami JR Special Rapid prosto do Kioto."
           }
         },
         {
           "date": "27.08",
           "day": "Czwartek",
-          "title": "Nara i jelonki",
-          "text": "Nara Park, Todai-ji i spokojny rodzinny spacer. Karmimy jelonki wyłącznie specjalnymi krakersami.",
+          "title": "Nara: stare świątynie i jelonki",
+          "text": "Kōfuku-ji, Tōdai-ji, Nigatsu-dō i Hokke-dō, a potem Nara Park. Przy dobrej energii: Shin-Yakushi-ji. Karmimy jelonki wyłącznie specjalnymi krakersami.",
           "cost": "¥¥",
           "pace": "średnio",
           "must": true,
           "details": {
             "image": "assets/images/osaka_days/nara.jpg",
-            "desc": "Wycieczka poza miasto do dawnej stolicy – Nary. Główną atrakcją jest ogromny park, po którym swobodnie wędrują setki oswojonych jelonków sika. Zobaczymy też olbrzymią świątynię Todai-ji z wielkim Buddą. Wykorzystujemy JR Kansai Mini Pass.",
+            "desc": "Wycieczka do dawnej stolicy i jej buddyjskich korzeni. Od strony stacji zaczynamy od Kōfuku-ji i Muzeum Skarbów Narodowych, potem idziemy przez Nara Park do Tōdai-ji z Wielkim Buddą. Dalej odwiedzamy Nigatsu-dō i Hokke-dō; jeśli dzieci zachowają energię, dokładamy Shin-Yakushi-ji z Dwunastoma Strażnikami. Jelonki są finałem spokojnego spaceru, nie jedynym celem dnia. Wykorzystujemy JR Kansai Mini Pass.",
             "transport": "Ze stacji Tennoji łapiemy pociąg Yamatoji Rapid Service prosto do stacji JR Nara (około 40-50 min)."
           }
         },
         {
           "date": "28.08",
           "day": "Piątek",
-          "title": "Kobe i spacer nad morzem",
-          "text": "Ostatni dzień JR Kansai Mini Pass: Kobe Harborland, Meriken Park i opcjonalny spacer na wybrzeżu Suma. Bez planowania kąpieli — oficjalny sezon kończy się 23.08.",
-          "cost": "¥",
-          "pace": "lekko",
+          "title": "Kyoto: Shingon i buddyzm ezoteryczny",
+          "text": "Daigo-ji rano, Tō-ji po południu. Dzień poświęcony Shingon — japońskiej tradycji buddyzmu ezoterycznego.",
+          "cost": "¥¥",
+          "pace": "średnio",
           "details": {
-            "image": "assets/images/osaka_days/castle.jpg",
-            "desc": "Spokojny dzień w Kobe: Harborland, Meriken Park, port i jedzenie. Jeśli pogoda będzie dobra, możemy dojechać na promenadę przy plaży Suma, ale nie zakładamy kąpieli, ponieważ oficjalny sezon kąpielowy będzie już zakończony. Przy deszczu wybieramy Osaka Aquarium Kaiyukan.",
-            "transport": "Z Teradacho jedziemy linią Osaka Loop do Osaka Station, a następnie pociągiem JR w kierunku Kobe. Do Suma potrzebna będzie dalsza jazda odpowiednim Rapid lub Local — nie ma bezpośredniego Special Rapid z Teradacho."
+            "image": "assets/images/osaka_days/kyoto.jpg",
+            "desc": "Rano jedziemy do Daigo-ji i zwiedzamy dolną część Shimo-Daigo: Garan, Sanbō-in oraz Reihōkan, jeśli będzie otwarte. Nie dokładamy górskiego Kami-Daigo — zostawiamy przestrzeń na spokojne doświadczenie świątyni z dziećmi. Po lunchu odwiedzamy Tō-ji: Kondō, Kōdō z figurami ezoterycznymi oraz pięciokondygnacyjną pagodę. To kluczowy dzień dla poznania Shingon, japońskiej wadżrajany związanej z Kūkaiem.",
+            "transport": "Z Teradacho jedziemy JR do Kyoto Station. Do Daigo-ji kontynuujemy metrem: Karasuma Line do Karasuma Oike, następnie Tozai Line do Daigo. Po powrocie do Kyoto Station Tō-ji leży około 15 minut pieszo od wyjścia Hachijo; powrót do Teradacho pociągami JR."
           }
         },
         {
           "date": "29.08",
           "day": "Sobota",
-          "title": "Osaka: jedzenie i neony",
-          "text": "Okolice Namby, Dotonbori, jedzenie uliczne w południowej Osace (takoyaki, okonomiyaki).",
+          "title": "Osaka: świątynia, jedzenie i neony",
+          "text": "Rano Shitennō-ji; opcjonalnie bardzo bliskie Tennoji Zoo. Potem Namba, Dotonbori i jedzenie uliczne w południowej Osace.",
           "cost": "¥¥¥",
           "pace": "średnio",
           "details": {
             "image": "assets/images/osaka_days/dotonbori.jpg",
-            "desc": "Dzień pełen jedzenia i miejskiego zgiełku (tzw. Kuidaore - jedz aż padniesz). Eksploracja ulicznego jedzenia w południowej Osace. Zobaczymy słynny kanał Dotonbori, wielkiego kraba i neon Glico Man.",
-            "transport": "W obrębie Osaki opłacamy przejazdy czystymi potrąceniami z kart Suica. Z Teradacho do stacji Tennoji i węzłów miasta."
+            "desc": "Rano odwiedzamy Shitennō-ji, jedną z najstarszych świątyń buddyjskich Japonii. Tennoji Zoo zostaje opcją — blisko noclegu, tanie i wygodne, ale bez obowiązku zmieniania dnia w wyprawę do zoo. Po południu skupiamy się na Osace: Kuromon Market, Namba, kanał Dotonbori, wielki krab, neon Glico Man oraz takoyaki i okonomiyaki.",
+            "transport": "Rano z Teradacho do Shitennō-ji / Tennoji; potem jedziemy metrem lub JR w stronę Namby. Przejazdy opłacamy potrąceniami z kart IC."
           }
         },
         {
@@ -1362,6 +1362,7 @@
       },
       "options": [
         "Kobe Animal Kingdom",
+        "Tennoji Zoo w Osace (opcjonalnie 29.08)",
         "Osaka Aquarium Kaiyukan",
         "Universal Studios Japan",
         "drugi dzień w Kyoto"
