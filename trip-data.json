@@ -156,15 +156,21 @@
       "coveredBy": "attractionsEnvelope"
     },
     "lotCheckedBag": {
-      "label": "Walizka rejestrowana LOT",
-      "kind": "optional",
+      "label": "Bagaż rejestrowany LOT · ICN → WAW",
+      "kind": "fixed",
       "currency": "PLN",
-      "min": 250,
-      "max": 310,
-      "quantity": 2,
-      "unitLabel": "w jedną stronę",
-      "status": "decision",
-      "includedInForecast": false
+      "amount": 261,
+      "status": "paid",
+      "note": "1 wspólna walizka rejestrowana, opłacona wyłącznie na rejsie LO100 ICN → WAW"
+    },
+    "japanSuitcase": {
+      "label": "Walizka kupiona w Japonii",
+      "kind": "fixed",
+      "currency": "PLN",
+      "amount": 200,
+      "estimate": true,
+      "status": "planned",
+      "note": "Planowany zakup taniej walizki w Osace; zamiast bagażu rejestrowanego na WAW → NRT"
     },
     "kansaiMiniPass": {
       "label": "WEST-QR Kansai Mini Pass · 2+2",
@@ -445,7 +451,7 @@
     "alternative": "około 21:01 lub późniejszy — plan awaryjny",
     "rejected": "",
     "status": "paid",
-    "note": "Lądowanie o 18:30. Na rejsie LO100 obecnie nie ma bagażu rejestrowanego; {{cost:lotCheckedBag}}. Bilet na pociąg do Gdańska o 20:29 został zakupiony.",
+    "note": "Lądowanie o 18:30. Na rejsie LO100 jest już opłacona 1 wspólna walizka rejestrowana: {{cost:lotCheckedBag}}. Bilet na pociąg do Gdańska o 20:29 został zakupiony — zostaje napięty czasowo.",
     "costRef": "returnTrain"
   },
   "travelProtection": [
@@ -533,10 +539,10 @@
     }
   ],
   "baggage": {
-    "allowance": "LOT: 4 × bagaż kabinowy do 55×40×23 cm i 8 kg; obecnie 0 sztuk bagażu rejestrowanego. {{cost:lotCheckedBag}}",
+    "allowance": "LOT: WAW → NRT tylko 4 × bagaż kabinowy do 55×40×23 cm i 8 kg; ICN → WAW ma 1 opłaconą walizkę rejestrowaną ({{cost:lotCheckedBag}}).",
     "chosenSize": "Rozważane plecaki 55×40×20 cm — mieszczą się w limicie LOT",
     "targetWeight": "Cel praktyczny: 22–26 kg łącznie, nie pełne 32 kg",
-    "warning": "Peach MM739 KIX → GMP: limit kabinowy to łącznie 2 sztuki na osobę do 7 kg. W rezerwacji Peach jest 1 bagaż rejestrowany; nadajemy jedną wspólną walizkę. LOT ma obecnie 0 sztuk bagażu rejestrowanego. Jeśli dokupimy jedną walizkę na oba kierunki, koszt wyniesie {{cost:lotCheckedBag}}.",
+    "warning": "Peach MM739 KIX → GMP: limit kabinowy to łącznie 2 sztuki na osobę do 7 kg. W rezerwacji Peach jest 1 bagaż rejestrowany. Do Japonii lecimy bez walizki rejestrowanej LOT; plan to kupić tanią walizkę w Osace za {{cost:japanSuitcase}}, a następnie nadać ją na opłaconym odcinku LOT ICN → WAW.",
     "bags": [
       {
         "name": "Plecak 1 · dorosły",
@@ -1654,6 +1660,8 @@
       "staySeoul",
       "shinkansen",
       "peachFlight",
+      "lotCheckedBag",
+      "japanSuitcase",
       "esim",
       "returnTrain"
     ],
@@ -1663,7 +1671,7 @@
       "attractionsEnvelope",
       "souvenirsEnvelope"
     ],
-    "explanation": "Noclegi są zarezerwowane i wliczone do prognozy w pełnej kwocie, ale nie są jeszcze opłacone. Loty główne, Peach, eSIM i pociąg do Gdańska są opłacone; Shinkansen pozostaje do kupienia. Koperta atrakcji zawiera Disneyland za {{cost:disney}} oraz DMZ za {{cost:dmz}}, które kupimy po dotarciu do Azji. Niepewnego rabatu {{discount:disney}} na Disneyland nie odejmujemy. Opcjonalny bagaż LOT nie jest jeszcze w prognozie: {{cost:lotCheckedBag}}."
+    "explanation": "Noclegi są zarezerwowane i wliczone do prognozy w pełnej kwocie, ale nie są jeszcze opłacone. Loty główne, Peach, eSIM, bagaż LOT z ICN do WAW i pociąg do Gdańska są opłacone; Shinkansen i planowana walizka z Osaki pozostają do kupienia. Koperta atrakcji zawiera Disneyland za {{cost:disney}} oraz DMZ za {{cost:dmz}}, które kupimy po dotarciu do Azji. Niepewnego rabatu {{discount:disney}} na Disneyland nie odejmujemy."
   },
   "todos": [
     {
@@ -1687,11 +1695,11 @@
       "costRef": "disney"
     },
     {
-      "title": "Zdecydować o bagażu rejestrowanym LOT",
-      "detail": "Obecnie LOT ma 0PC; Peach ma już 1 wspólną walizkę rejestrowaną.",
+      "title": "Kupić tanią walizkę w Osace",
+      "detail": "Plan: około {{cost:japanSuitcase}}; bez walizki rejestrowanej LOT na WAW → NRT. Walizkę nadajemy potem na opłaconym LO100 ICN → WAW.",
       "priority": "high",
       "category": "logistics",
-      "costRef": "lotCheckedBag"
+      "costRef": "japanSuitcase"
     },
     {
       "title": "Wybrać 4 plecaki kabinowe",

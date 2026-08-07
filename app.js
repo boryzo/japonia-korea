@@ -105,7 +105,7 @@
         <article class="card stat-card"><span class="stat-icon">✈️</span><strong>6 etapów</strong><p>Samoloty, transport w Japonii i końcowy pociąg do Gdańska</p></article>
         <article class="card stat-card"><span class="stat-icon">🏠</span><strong>${money.format(stayTotal)}</strong><p>Wszystkie noclegi · 15 nocy</p></article>
         <article class="card stat-card"><span class="stat-icon">🎯</span><strong>${money.format(forecastTotal)}</strong><p>Aktualna prognoza całości</p></article>
-        <article class="card stat-card"><span class="stat-icon">🧳</span><strong>LOT 0 PC · Peach 1 PC</strong><p>Do Peach jest wspólna walizka; do LOT możemy ją jeszcze dokupić</p></article>
+        <article class="card stat-card"><span class="stat-icon">🧳</span><strong>LOT: 0 PC tam · 1 PC powrót</strong><p>Peach ma 1 wspólną walizkę; LOT ICN → WAW jest już opłacony</p></article>
       </div>
       ${routeMarkup()}
       <div class="section-head"><div><span class="section-label">3 bazy</span><h2>Gdzie jedziemy</h2></div></div>
@@ -122,7 +122,7 @@
       </article>
       <div class="section-head" style="margin-top:50px"><div><span class="section-label">Powrót i ochrona</span><h2>Ważne organizacyjnie</h2></div></div>
       <div class="grid grid-2">
-        <article class="card train-card"><span class="stat-icon">🚆</span><div><span class="section-label">05.09 · Warszawa → Gdańsk</span><h3>Pociąg do Gdańska 20:29 · kupiony</h3><p>Lądowanie z Seulu o 18:30. Przy obecnym braku walizki rejestrowanej na LO100 mamy niespełna dwie godziny na kontrolę graniczną i dojazd na dworzec. Jeśli dokupimy bagaż do LOT, margines będzie mniejszy. Późniejsze połączenie zostaje planem awaryjnym.</p><small>${resolveCostTokens(data.returnTrain.note)}</small></div></article>
+        <article class="card train-card"><span class="stat-icon">🚆</span><div><span class="section-label">05.09 · Warszawa → Gdańsk</span><h3>Pociąg do Gdańska 20:29 · kupiony</h3><p>Lądowanie z Seulu o 18:30. Odbiór opłaconej walizki rejestrowanej na LO100, kontrola graniczna i dojazd na dworzec zostawiają mały margines. Późniejsze połączenie zostaje planem awaryjnym.</p><small>${resolveCostTokens(data.returnTrain.note)}</small></div></article>
         <article class="card"><span class="section-label">Mamy</span><h3>Ubezpieczenia i Priority Pass</h3><div class="protection-list">${data.travelProtection.map(item => `<div class="protection-item"><span>${item.icon}</span><div><strong>${item.title}</strong><p>${item.detail}</p></div></div>`).join("")}</div></article>
       </div>`;
   }
@@ -264,7 +264,7 @@
       </div>
 
       <div class="section-head" style="margin-top:50px"><div><span class="section-label">Bagaż</span><h2>Jak pakujemy 4 osoby</h2><p>${resolveCostTokens(data.baggage.allowance)}</p></div></div>
-      <article class="card baggage-hero"><div><span class="baggage-size">55<small>×</small>40<small>×</small>20</span><span>cm · rozważany plecak</span></div><div><h3>Ten rozmiar pasuje do LOT</h3><p>Limit kabinowy LOT to 55×40×23 cm i 8 kg na osobę; bagażu rejestrowanego obecnie nie ma. ${formatCost("lotCheckedBag")}. Na Peach pilnujemy łącznego limitu kabinowego 7 kg na osobę, a jedna wspólna walizka rejestrowana jest już opłacona.</p><p class="warning-note">${resolveCostTokens(data.baggage.warning)}</p></div></article>
+      <article class="card baggage-hero"><div><span class="baggage-size">55<small>×</small>40<small>×</small>20</span><span>cm · rozważany plecak</span></div><div><h3>Do Japonii z plecakami, z Korei z walizką</h3><p>Na WAW → NRT lecimy wyłącznie z bagażem kabinowym LOT. Jedna walizka rejestrowana na ICN → WAW jest już opłacona: ${formatCost("lotCheckedBag")}. Na Peach pilnujemy łącznego limitu kabinowego 7 kg na osobę; jedna wspólna walizka rejestrowana jest tam już opłacona.</p><p class="warning-note">${resolveCostTokens(data.baggage.warning)}</p></div></article>
       <div class="grid grid-4 bag-grid">${data.baggage.bags.map(bag => `<article class="card bag-card"><span class="bag-icon">🎒</span><h3>${bag.name}</h3><p>${bag.load}</p><strong>${bag.target}</strong></article>`).join("")}</div>
       <div class="grid grid-2 packing-grid"><article class="card"><span class="section-label">Strategia</span><h3>${data.baggage.targetWeight}</h3><p>Pakujemy ubrania na 5–6 dni i korzystamy z prania. Cztery plecaki wypchane do 8 kg byłyby męczące przy zmianach transportu.</p></article><article class="card"><span class="section-label">Lista pakowania</span><ul class="packing-list">${data.baggage.checklist.map(item => `<li>${item}</li>`).join("")}</ul></article></div>`;
   }

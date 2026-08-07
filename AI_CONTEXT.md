@@ -24,7 +24,7 @@ Aplikacja została napisana całkowicie w czystym frontendzie (Vanilla HTML, CSS
 *   Trasa prowadzi przez Tokio, Osakę i region Kansai oraz Seul. Przejazd Tokio–Osaka odbędzie się Shinkansenem, a trzy kolejne dni Kyoto–Nara–Kobe obejmuje planowany WEST-QR Kansai Mini Pass.
 *   Noclegi są zarezerwowane, jeszcze nieopłacone i uwzględnione w prognozie budżetu w pełnej wysokości.
 *   Loty główne, lot Peach, 3 regionalne eSIM oraz powrotny pociąg z Warszawy do Gdańska są opłacone. Shinkansen, Disneyland, DMZ i Kansai Mini Pass pozostają do kupienia.
-*   Rezerwacja Peach zawiera jedną wspólną walizkę rejestrowaną. LOT ma obecnie 0 PC; jedna walizka na oba kierunki pozostaje opcjonalna i nie jest doliczona do podstawowej prognozy.
+*   Rezerwacja Peach zawiera jedną wspólną walizkę rejestrowaną. LOT WAW → NRT pozostaje bez bagażu rejestrowanego; jedna walizka na LO100 ICN → WAW została opłacona. Plan zakłada zakup taniej walizki w Osace; jest wliczony do prognozy jako planowany wydatek.
 *   Plan zakłada trzy regionalne eSIM Japonia + Korea o ważności 30 dni. Dokładna cena i parametry oferty znajdują się wyłącznie w rekordzie `costs.esim`.
 *   Wszystkie aktualne kwoty, kursy, rabaty i status wliczenia do prognozy należy odczytywać z `trip-data.json`, nie z dokumentacji Markdown.
 
