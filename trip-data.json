@@ -165,11 +165,12 @@
     },
     "japanSuitcase": {
       "label": "Walizka kupiona w Japonii",
-      "kind": "fixed",
+      "kind": "personal_asset",
       "currency": "PLN",
       "amount": 200,
       "estimate": true,
       "status": "planned",
+      "includedInForecast": false,
       "note": "Planowany zakup taniej walizki w Osace; zamiast bagażu rejestrowanego na WAW → NRT"
     },
     "kansaiMiniPass": {
@@ -1661,7 +1662,6 @@
       "shinkansen",
       "peachFlight",
       "lotCheckedBag",
-      "japanSuitcase",
       "esim",
       "returnTrain"
     ],
@@ -1671,7 +1671,7 @@
       "attractionsEnvelope",
       "souvenirsEnvelope"
     ],
-    "explanation": "Noclegi są zarezerwowane i wliczone do prognozy w pełnej kwocie, ale nie są jeszcze opłacone. Loty główne, Peach, eSIM, bagaż LOT z ICN do WAW i pociąg do Gdańska są opłacone; Shinkansen i planowana walizka z Osaki pozostają do kupienia. Koperta atrakcji zawiera Disneyland za {{cost:disney}} oraz DMZ za {{cost:dmz}}, które kupimy po dotarciu do Azji. Niepewnego rabatu {{discount:disney}} na Disneyland nie odejmujemy."
+    "explanation": "Noclegi są zarezerwowane i wliczone do prognozy w pełnej kwocie, ale nie są jeszcze opłacone. Loty główne, Peach, eSIM, bagaż LOT z ICN do WAW i pociąg do Gdańska są opłacone; Shinkansen pozostaje do kupienia. Planowana walizka z Osaki jest prywatnym zakupem do późniejszego wykorzystania i nie wchodzi do budżetu podróży. Koperta atrakcji zawiera Disneyland za {{cost:disney}} oraz DMZ za {{cost:dmz}}, które kupimy po dotarciu do Azji. Niepewnego rabatu {{discount:disney}} na Disneyland nie odejmujemy."
   },
   "todos": [
     {
