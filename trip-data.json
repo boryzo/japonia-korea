@@ -56,8 +56,8 @@
       "label": "Nocleg Osaka · 5 nocy",
       "kind": "fixed",
       "currency": "PLN",
-      "amount": 680.27,
-      "status": "reserved"
+      "amount": 692,
+      "status": "paid"
     },
     "staySeoul": {
       "label": "Nocleg Seul · 6 nocy",
