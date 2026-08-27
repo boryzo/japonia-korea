@@ -49,31 +49,31 @@
       "label": "Nocleg Tokio · 4 noce",
       "kind": "fixed",
       "currency": "PLN",
-      "amount": 1504,
-      "status": "reserved"
+      "amount": 1462,
+      "status": "paid"
     },
     "stayKansai": {
       "label": "Nocleg Osaka · 5 nocy",
       "kind": "fixed",
       "currency": "PLN",
-      "amount": 692,
+      "amount": 680,
       "status": "paid"
     },
     "staySeoul": {
       "label": "Nocleg Seul · 6 nocy",
       "kind": "fixed",
       "currency": "PLN",
-      "amount": 2154.02,
-      "status": "reserved"
+      "amount": 1981,
+      "status": "paid"
     },
     "shinkansen": {
       "label": "Tokio → Osaka",
       "kind": "fixed",
       "currency": "JPY",
-      "amount": 43540,
+      "amount": 42940,
       "estimatePln": 1012,
-      "status": "planned",
-      "note": "Shinkansen Nozomi (Smart EX): {{cost:shinkansen}} dla 2+2; decyzja zamknięta — bez wariantu lotniczego"
+      "status": "paid",
+      "note": "Shinkansen Nozomi 393 (Smart EX): Tokio 12:24 → Shin-Osaka 14:54 · opłacone {{cost:shinkansen}} dla 2+2"
     },
     "peachFlight": {
       "label": "KIX → GMP",
@@ -126,7 +126,7 @@
       "currency": "PLN",
       "amount": 2000,
       "icon": "🎟️",
-      "note": "W tym Disneyland: {{cost:disney}} bez zakładania niepewnego rabatu {{discount:disney}} oraz DMZ: {{cost:dmz}}; DMZ kupimy po dotarciu do Azji"
+      "note": "W tym opłacony Disneyland: {{cost:disney}} oraz planowane DMZ: {{cost:dmz}}"
     },
     "souvenirsEnvelope": {
       "label": "Pamiątki + 1 album K-pop",
@@ -141,7 +141,7 @@
       "currency": "JPY",
       "amount": 30000,
       "estimatePln": 700,
-      "status": "planned",
+      "status": "paid",
       "coveredBy": "attractionsEnvelope",
       "discountPercent": 10,
       "discountConfirmed": false
@@ -178,7 +178,7 @@
       "kind": "covered",
       "currency": "JPY",
       "amount": 9000,
-      "status": "planned",
+      "status": "paid",
       "coveredBy": "localTransportEnvelope"
     },
     "finalKbbq": {
@@ -1671,7 +1671,7 @@
       "attractionsEnvelope",
       "souvenirsEnvelope"
     ],
-    "explanation": "Noclegi są zarezerwowane i wliczone do prognozy w pełnej kwocie, ale nie są jeszcze opłacone. Loty główne, Peach, eSIM, bagaż LOT z ICN do WAW i pociąg do Gdańska są opłacone; Shinkansen pozostaje do kupienia. Planowana walizka z Osaki jest prywatnym zakupem do późniejszego wykorzystania i nie wchodzi do budżetu podróży. Koperta atrakcji zawiera Disneyland za {{cost:disney}} oraz DMZ za {{cost:dmz}}, które kupimy po dotarciu do Azji. Niepewnego rabatu {{discount:disney}} na Disneyland nie odejmujemy."
+    "explanation": "Wszystkie trzy noclegi są opłacone. Loty główne, Peach, eSIM, bagaż LOT z ICN do WAW, pociąg do Gdańska i Shinkansen są opłacone. Disneyland mieści się w kopercie atrakcji, a WEST-QR Kansai Mini Pass w kopercie transportu lokalnego — oba są już opłacone i nie są doliczane drugi raz. DMZ pozostaje planowane. Koperty na jedzenie, transport lokalny, atrakcje i pamiątki pozostają prognozą. Walizka kupowana w Japonii jest prywatnym zakupem i nie wchodzi do budżetu podróży."
   },
   "todos": [
     {
