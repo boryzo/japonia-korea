@@ -126,7 +126,7 @@
       "currency": "PLN",
       "amount": 2000,
       "icon": "🎟️",
-      "note": "W tym opłacony Disneyland: {{cost:disney}} oraz planowane DMZ: {{cost:dmz}}"
+      "note": "W tym opłacony Disneyland: {{cost:disney}} oraz opłacone DMZ: {{cost:dmz}}"
     },
     "souvenirsEnvelope": {
       "label": "Pamiątki + 1 album K-pop",
@@ -150,11 +150,10 @@
       "label": "DMZ i Most Wiszący · 2+2",
       "kind": "covered",
       "currency": "PLN",
-      "amount": 807,
-      "estimate": true,
-      "status": "planned",
+      "amount": 806,
+      "status": "paid",
       "coveredBy": "attractionsEnvelope",
-      "note": "Plan na czwartek 03.09; bilety nie są jeszcze kupione."
+      "note": "Kupione i opłacone na czwartek 03.09."
     },
     "lotCheckedBag": {
       "label": "Bagaż rejestrowany LOT · ICN → WAW",
@@ -1511,14 +1510,14 @@
         {
           "date": "03.09",
           "day": "Czwartek",
-          "title": "DMZ i Most Wiszący — bilety niekupione",
-          "text": "Czwartek przeznaczamy na całodniową wycieczkę do DMZ. Bilety nie są jeszcze kupione; po wyborze wycieczki trzeba potwierdzić program, godzinę i miejsce zbiórki.",
+          "title": "DMZ i Most Wiszący — bilety kupione",
+          "text": "Całodniowa wycieczka do DMZ na czwartek 03.09 jest kupiona i opłacona: {{cost:dmz}} dla 2+2.",
           "cost": "₩₩",
           "pace": "cały dzień",
           "details": {
             "image": "assets/images/seoul_days/namsan.jpg",
-            "desc": "Plan obejmuje DMZ, Trzeci Tunel, obserwatorium i wariant z mostem wiszącym. Bilety nadal są niekupione. Po wyborze operatora potwierdzamy dokładny program i zasady; zabieramy paszporty, wodę i wygodne buty.",
-            "transport": "Miejsce i godzina zbiórki zależą od wybranej wycieczki — uzupełnić po zakupie biletów."
+            "desc": "Kupiona całodniowa wycieczka obejmująca DMZ i wariant z mostem wiszącym. Bilety dla 2 dorosłych i 2 dzieci są opłacone; zabieramy paszporty, wodę i wygodne buty.",
+            "transport": "Godzinę i miejsce zbiórki sprawdzić w potwierdzeniu rezerwacji."
           },
           "must": true,
           "priceRef": "dmz"
@@ -1671,7 +1670,7 @@
       "attractionsEnvelope",
       "souvenirsEnvelope"
     ],
-    "explanation": "Wszystkie trzy noclegi są opłacone. Loty główne, Peach, eSIM, bagaż LOT z ICN do WAW, pociąg do Gdańska i Shinkansen są opłacone. Disneyland mieści się w kopercie atrakcji, a WEST-QR Kansai Mini Pass w kopercie transportu lokalnego — oba są już opłacone i nie są doliczane drugi raz. DMZ pozostaje planowane. Koperty na jedzenie, transport lokalny, atrakcje i pamiątki pozostają prognozą. Walizka kupowana w Japonii jest prywatnym zakupem i nie wchodzi do budżetu podróży."
+    "explanation": "Wszystkie trzy noclegi są opłacone. Loty główne, Peach, eSIM, bagaż LOT z ICN do WAW, pociąg do Gdańska i Shinkansen są opłacone. Disneyland i DMZ mieszczą się w kopercie atrakcji, a WEST-QR Kansai Mini Pass w kopercie transportu lokalnego — wszystkie są już opłacone i nie są doliczane drugi raz. Koperty na jedzenie, transport lokalny, atrakcje i pamiątki pozostają prognozą. Walizka kupowana w Japonii jest prywatnym zakupem i nie wchodzi do budżetu podróży."
   },
   "todos": [
     {
@@ -1778,8 +1777,8 @@
       "category": "logistics"
     },
     {
-      "title": "Kupić wycieczkę DMZ na czwartek",
-      "detail": "03.09 · bilety jeszcze niekupione · około 9 godzin · wybrać wariant z Mostem Wiszącym · potwierdzić program, godzinę i miejsce zbiórki · paszporty obowiązkowe",
+      "title": "DMZ — sprawdzić zbiórkę",
+      "detail": "03.09 · bilety kupione i opłacone: {{cost:dmz}} · sprawdzić godzinę i miejsce zbiórki w rezerwacji · paszporty obowiązkowe",
       "priority": "high",
       "category": "attractions",
       "costRef": "dmz"
