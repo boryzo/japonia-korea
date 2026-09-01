@@ -153,7 +153,8 @@
       "amount": 807,
       "estimate": true,
       "status": "planned",
-      "coveredBy": "attractionsEnvelope"
+      "coveredBy": "attractionsEnvelope",
+      "note": "Plan na czwartek 03.09; bilety nie są jeszcze kupione."
     },
     "lotCheckedBag": {
       "label": "Bagaż rejestrowany LOT · ICN → WAW",
@@ -1455,10 +1456,10 @@
         {
           "date": "30.08",
           "day": "Niedziela",
-          "title": "Pierwszy wieczór w Korei",
-          "text": "Przylot → zwykła kolejka do kontroli granicznej dla całej rodziny → transfer metrem i karty T-Money dla dzieci. Krótki wieczór w Dongdaemun.",
+          "title": "Przylot i pierwszy wieczór w Dongdaemun — zrobione",
+          "text": "Przylot na Gimpo, karty T-Money, dojazd do noclegu i pierwszy wieczór w okolicy Dongdaemun.",
           "cost": "₩₩",
-          "pace": "lekko",
+          "pace": "zrobione",
           "details": {
             "image": "assets/images/seoul_days/dongdaemun.jpg",
             "desc": "Po przylocie cała rodzina idzie do zwykłej kolejki dla paszportów zagranicznych — nie planujemy bramek SES/e-gates. Z oficjalnych zasad wynika, że zagraniczni użytkownicy SES muszą mieć co najmniej 17 lat i spełniać warunki rejestracji; dzieci w wieku 8 i 10 lat nie mogą z niej skorzystać. Przygotowujemy paszport każdego podróżnego oraz dane e-Arrival Card (jeśli nie mamy ważnej K-ETA): adres i kontakt do noclegu, numery lotów oraz termin wyjazdu z Korei. Po kontroli i odbiorze bagażu idziemy do CU/GS25 na lotnisku i, pokazując paszporty, wyrabiamy zniżkowe karty T-Money dla dzieci. Potem jedziemy do noclegu i ruszamy na kolację.",
@@ -1468,60 +1469,59 @@
         {
           "date": "31.08",
           "day": "Poniedziałek",
-          "title": "K-pop i Hongdae",
-          "text": "Sklepy albumowe, photo booths, street dance, Yeonnam-dong i wieczorne jedzenie.",
+          "title": "Muzeum Narodowe, COEX i Lotte — zrobione",
+          "text": "Muzeum Narodowe Korei, Starfield Library w COEX oraz Lotte — dzień zrealizowany pod dachem.",
           "cost": "₩₩",
-          "pace": "średnio",
-          "must": true,
+          "pace": "zrobione",
+          "must": false,
           "details": {
-            "image": "assets/images/seoul_days/hongdae.jpg",
-            "desc": "Dzień dedykowany młodzieżowej kulturze! W Hongdae skupimy się na k-popie: odwiedzimy sklepy z albumami muzycznymi, zrobimy pamiątkowe zdjęcia w koreańskich photo booths, a wieczorem posłuchamy i zobaczymy ulicznych artystów (busking i street dance). Możemy też zjeść popularne corndogi.",
-            "transport": "Dojazd metrem linią 2 (zielona), stacja Hongik University."
+            "image": "assets/images/seoul_days/gangnam.jpg",
+            "desc": "Zrealizowany dzień: bezpłatne Muzeum Narodowe Korei, następnie COEX ze Starfield Library i później kompleks Lotte.",
+            "transport": "Dzień zakończony."
           }
         },
         {
           "date": "01.09",
           "day": "Wtorek",
-          "title": "DMZ i Most Wiszący (kupimy w Azji)",
-          "text": "Całodniowa wycieczka trwająca około 9 godzin. Zbiórka: Myeongdong, wyjście 10, godz. 09:00. Po powrocie tylko spokojna kolacja.",
-          "pace": "cały dzień",
-          "must": true,
+          "title": "Myeongdong: K-pop i katedra — zrobione",
+          "text": "K-MECCA i zakupy K-pop, katedra Myeongdong oraz spokojniejszy plan pod dachem z powodu ulewy.",
+          "pace": "zrobione",
+          "must": false,
           "details": {
-            "image": "assets/images/seoul_days/namsan.jpg",
-            "desc": "Wycieczka obejmuje DMZ, Trzeci Tunel, obserwatorium i most wiszący. Kupimy ją po dotarciu do Azji i wtedy sprawdzimy cenę końcową; obecne założenie to {{cost:dmz}}. Zabieramy paszporty, wodę i wygodne buty. Nie dokładamy Namsan — po około 9 godzinach zostaje tylko kolacja i odpoczynek.",
-            "link": {
-              "label": "Otwórz wycieczkę GetYourGuide ↗",
-              "url": "https://www.getyourguide.com/en-gb/seoul-l197/seoul-fantastic-night-view-tour-t63309/"
-            },
-            "transport": "Z Dongdaemun jedziemy linią 4 do stacji Myeongdong. Zbiórka o 09:00 przy wyjściu 10; warto być na miejscu 15 minut wcześniej."
+            "image": "assets/images/seoul_days/hongdae.jpg",
+            "desc": "Zrealizowany deszczowy dzień w Myeongdong: sklep K-MECCA i albumy ILLIT, katedra Myeongdong oraz zakupy i przerwa w McDonald’s.",
+            "transport": "Myeongdong i okolice — dzień zakończony."
           },
-          "priceRef": "dmz"
+          "cost": "₩₩"
         },
         {
           "date": "02.09",
           "day": "Środa",
-          "title": "Gangnam, COEX i Namsan",
-          "text": "Starfield Library i nowoczesna strona miasta, a później Namsan i widok na Seul. Wjazd na wieżę pozostaje opcjonalny.",
+          "title": "Gyeongbokgung i ulica z zabawkami",
+          "text": "Najpierw pałac Gyeongbokgung; potem Dongdaemun Stationery & Toy Street. Bukchon i Insadong tylko jeśli wystarczy czasu i sił.",
           "cost": "₩₩",
           "pace": "średnio",
           "details": {
-            "image": "assets/images/seoul_days/gangnam.jpg",
-            "desc": "Najpierw odwiedzimy Gangnam i bibliotekę Starfield Library w COEX. Nie przeciągamy zakupów, aby późnym popołudniem lub wieczorem pojechać na wzgórze Namsan. Sam spacer i widoki są bezpłatne; płatny wjazd na N Seoul Tower pozostaje opcją.",
-            "transport": "Do COEX jedziemy linią 2 do Samseong. Następnie wracamy w stronę centrum zgodnie z Naver Map i podjeżdżamy pod Namsan; zakres spaceru dopasujemy do pogody i zmęczenia."
-          }
+            "image": "assets/images/seoul_days/gyeongbokgung.jpg",
+            "desc": "Nadrabiamy najważniejszy brak: pałac Gyeongbokgung, który we wtorek był zamknięty. Potem jedziemy na Dongdaemun Stationery & Toy Street po zabawki i squishy. Bukchon Hanok Village i Insadong zostają dodatkiem, jeśli dzieci będą miały jeszcze energię.",
+            "transport": "Do Gyeongbokgung linią 3, stacja Gyeongbokgung (wyjście 5). Później do Dongdaemun Stationery & Toy Street według Naver Map."
+          },
+          "must": true
         },
         {
           "date": "03.09",
           "day": "Czwartek",
-          "title": "Tradycyjny Seul i Hanboki",
-          "text": "Gyeongbokgung, Bukchon Hanok Village i Insadong. Wypożyczamy tradycyjne Hanboki!",
+          "title": "DMZ i Most Wiszący — bilety niekupione",
+          "text": "Czwartek przeznaczamy na całodniową wycieczkę do DMZ. Bilety nie są jeszcze kupione; po wyborze wycieczki trzeba potwierdzić program, godzinę i miejsce zbiórki.",
           "cost": "₩₩",
-          "pace": "dużo chodzenia",
+          "pace": "cały dzień",
           "details": {
-            "image": "assets/images/seoul_days/gyeongbokgung.jpg",
-            "desc": "Odkrywamy historyczną stronę Korei. Zwiedzimy największy pałac Gyeongbokgung (w hanbokach wejście do pałacu jest darmowe!), zobaczymy tradycyjne domki w wiosce Bukchon Hanok oraz przespacerujemy się artystyczną ulicą Insadong. Zrobimy mnóstwo pamiątkowych zdjęć w tradycyjnych strojach.",
-            "transport": "Najlepiej podjechać metrem linii 3 (pomarańczowa) do stacji Gyeongbokgung (wyjście 5) lub Anguk."
-          }
+            "image": "assets/images/seoul_days/namsan.jpg",
+            "desc": "Plan obejmuje DMZ, Trzeci Tunel, obserwatorium i wariant z mostem wiszącym. Bilety nadal są niekupione. Po wyborze operatora potwierdzamy dokładny program i zasady; zabieramy paszporty, wodę i wygodne buty.",
+            "transport": "Miejsce i godzina zbiórki zależą od wybranej wycieczki — uzupełnić po zakupie biletów."
+          },
+          "must": true,
+          "priceRef": "dmz"
         },
         {
           "date": "04.09",
@@ -1778,8 +1778,8 @@
       "category": "logistics"
     },
     {
-      "title": "Kupić wycieczkę DMZ po dotarciu do Azji",
-      "detail": "Kupić podczas pobytu w Japonii, przed przylotem do Seulu. Wycieczka 01.09 · około 9 godzin · Myeongdong wyjście 10, zbiórka 09:00 · paszporty obowiązkowe · sprawdzić cenę końcową",
+      "title": "Kupić wycieczkę DMZ na czwartek",
+      "detail": "03.09 · bilety jeszcze niekupione · około 9 godzin · wybrać wariant z Mostem Wiszącym · potwierdzić program, godzinę i miejsce zbiórki · paszporty obowiązkowe",
       "priority": "high",
       "category": "attractions",
       "costRef": "dmz"
