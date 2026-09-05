@@ -72,6 +72,7 @@
       "currency": "JPY",
       "amount": 42940,
       "estimatePln": 1012,
+      "settlementPln": 1000.76,
       "status": "paid",
       "note": "Shinkansen Nozomi 393 (Smart EX): Tokio 12:24 → Shin-Osaka 14:54 · opłacone {{cost:shinkansen}} dla 2+2"
     },
@@ -106,6 +107,23 @@
       "status": "paid",
       "note": "Warszawa Centralna → Gdańsk Główny · 05.09 · odjazd 20:29"
     },
+    "uberWawAirport": {
+      "label": "Uber · Lotnisko Chopina → Warszawa Centralna",
+      "kind": "fixed",
+      "currency": "PLN",
+      "amount": 67,
+      "status": "paid",
+      "note": "Dojazd po przylocie z Seulu"
+    },
+    "uberGdanskStation": {
+      "label": "Uber · Gdańsk Główny → dom",
+      "kind": "fixed",
+      "currency": "PLN",
+      "amount": 30,
+      "estimate": true,
+      "status": "paid",
+      "note": "Kwota orientacyjna po powrocie"
+    },
     "foodEnvelope": {
       "label": "Jedzenie",
       "kind": "envelope",
@@ -126,7 +144,7 @@
       "currency": "PLN",
       "amount": 2000,
       "icon": "🎟️",
-      "note": "W tym opłacony Disneyland: {{cost:disney}} oraz opłacone DMZ: {{cost:dmz}}"
+      "note": "W realizacji znalazły się Disneyland: {{cost:disney}}, DMZ: {{cost:dmz}} oraz N Seoul Tower: {{cost:nSeoulTower}}"
     },
     "souvenirsEnvelope": {
       "label": "Pamiątki + 1 album K-pop",
@@ -141,6 +159,7 @@
       "currency": "JPY",
       "amount": 30000,
       "estimatePln": 700,
+      "settlementPln": 696.44,
       "status": "paid",
       "coveredBy": "attractionsEnvelope",
       "discountPercent": 10,
@@ -150,7 +169,7 @@
       "label": "DMZ i Most Wiszący · 2+2",
       "kind": "covered",
       "currency": "PLN",
-      "amount": 806,
+      "amount": 805,
       "status": "paid",
       "coveredBy": "attractionsEnvelope",
       "note": "Kupione i opłacone na czwartek 03.09."
@@ -178,8 +197,32 @@
       "kind": "covered",
       "currency": "JPY",
       "amount": 9000,
+      "settlementPln": 208.26,
       "status": "paid",
       "coveredBy": "localTransportEnvelope"
+    },
+    "nSeoulTower": {
+      "label": "N Seoul Tower · bilety 2+2",
+      "kind": "actual",
+      "currency": "PLN",
+      "amount": 210.5,
+      "status": "paid",
+      "note": "Klook · 440,30 HKD po rabacie"
+    },
+    "onSiteActual": {
+      "label": "Wydatki na miejscu · Japonia i Korea",
+      "kind": "actual",
+      "currency": "PLN",
+      "amount": 7500.96,
+      "status": "paid",
+      "note": "Łączna suma po usunięciu duplikatów; dane źródłowe pozostają prywatne"
+    },
+    "childrenReimbursement": {
+      "label": "Zwrot od dzieci za ich zakupy",
+      "kind": "reimbursement",
+      "currency": "PLN",
+      "amount": 238,
+      "status": "paid"
     },
     "finalKbbq": {
       "label": "Finałowa kolacja K-BBQ",
@@ -188,58 +231,6 @@
       "amount": 310,
       "estimate": true,
       "coveredBy": "foodEnvelope"
-    },
-    "aeonAtmFee": {
-      "label": "Prowizja bankomatu AEON",
-      "kind": "reference",
-      "currency": "JPY",
-      "amount": 0
-    },
-    "sevenAtmThreshold": {
-      "label": "Próg wypłaty Seven Bank",
-      "kind": "reference",
-      "currency": "JPY",
-      "amount": 10000
-    },
-    "sevenAtmFeeLow": {
-      "label": "Prowizja Seven Bank · niższa",
-      "kind": "reference",
-      "currency": "JPY",
-      "amount": 110,
-      "estimatePln": 3
-    },
-    "sevenAtmFeeHigh": {
-      "label": "Prowizja Seven Bank · wyższa",
-      "kind": "reference",
-      "currency": "JPY",
-      "amount": 220,
-      "estimatePln": 5.5
-    },
-    "revolutCashLimit": {
-      "label": "Miesięczny limit wypłat Revolut Metal",
-      "kind": "reference",
-      "currency": "PLN",
-      "amount": 3200
-    },
-    "zenCashLimit": {
-      "label": "Miesięczny limit wypłat ZEN Pro",
-      "kind": "reference",
-      "currency": "PLN",
-      "amount": 2600
-    },
-    "combinedCashLimit": {
-      "label": "Łączny orientacyjny limit wypłat",
-      "kind": "reference",
-      "components": [
-        {
-          "costRef": "revolutCashLimit",
-          "quantity": 1
-        },
-        {
-          "costRef": "zenCashLimit",
-          "quantity": 1
-        }
-      ]
     },
     "waterBottle": {
       "label": "Duża butelka wody lub herbaty",
@@ -457,23 +448,13 @@
   },
   "travelProtection": [
     {
-      "title": "Revolut Metal",
-      "detail": "Ubezpieczenie podróżne — potwierdzić zakres ochrony całej rodziny, limity i warunki aktywacji.",
+      "title": "Ubezpieczenie podróżne",
+      "detail": "Ochrona całej rodziny na czas podróży.",
       "icon": "🛡️"
     },
     {
-      "title": "Karta ZEN Pro",
-      "detail": "Ochrona płatności (ZEN Care), brak prowizji na przewalutowania i bezprowizyjne wypłaty z bankomatów.",
-      "icon": "💎"
-    },
-    {
-      "title": "Karta kredytowa Żubr",
-      "detail": "Ubezpieczony właściciel karty + 1 osoba dodatkowa. Sprawdzić, kogo obejmuje oraz czy wymagane jest opłacenie podróży kartą.",
-      "icon": "💳"
-    },
-    {
-      "title": "Priority Pass",
-      "detail": "Dostęp do saloników. Przed podróżą sprawdzić dostępne lotniska, liczbę bezpłatnych wejść i zasady dla dzieci/gości.",
+      "title": "Dostęp do saloników",
+      "detail": "Uprawnienia podróżne sprawdzone przed wyjazdem.",
       "icon": "✦"
     }
   ],
@@ -659,12 +640,10 @@
     ]
   },
   "finance": {
-    "intro": "Japonia i Korea w wielu miejscach (szczególnie małe świątynie, rynki i uliczny street food) nadal bywają mocno gotówkowe. Posiadanie zapasu lokalnej waluty (JPY/KRW) jest bardzo ważne.",
+    "intro": "Rozliczenie po podróży jest publikowane wyłącznie w postaci zbiorczych sum.",
     "tips": [
-      "<b>AEON Bank (najlepsza opcja):</b> Bankomaty AEON (znajdziesz je w marketach Aeon, MaxValu czy na stacjach) bardzo często nie pobierają prowizji: {{cost:aeonAtmFee}}.",
-      "<b>7-Eleven (Seven Bank):</b> Pobiera opłatę zależną od kwoty: {{cost:sevenAtmFeeLow}} przy wypłacie do {{cost:sevenAtmThreshold}} oraz {{cost:sevenAtmFeeHigh}} przy wyższych kwotach.",
-      "<b>Revolut Metal + ZEN Pro:</b> Revolut Metal daje {{cost:revolutCashLimit}} miesięcznego limitu wypłat bez prowizji fintechu, a ZEN Pro około {{cost:zenCashLimit}}. Razem to około {{cost:combinedCashLimit}}.",
-      "<b>Zasada DCC:</b> Zarówno na karcie Revolut, jak i ZEN – gdy bankomat zapyta o przewalutowanie (DCC) lub rozliczenie w PLN, ZAWSZE wybieraj walutę lokalną (JPY / KRW). Odrzucenie DCC gwarantuje przeliczenie po kursie wielowalutowym."
+      "<b>Zakres:</b> wydatki na miejscu, zwroty oraz koszty całej podróży.",
+      "<b>Prywatność:</b> dane źródłowe i pojedyncze operacje nie są częścią publicznej strony."
     ]
   },
   "shopping": {
@@ -1646,8 +1625,7 @@
         }
       ],
       "options": [
-        "Lotte World",
-        "płatny wjazd na N Seoul Tower"
+        "Lotte World"
       ]
     }
   },
@@ -1662,7 +1640,9 @@
       "peachFlight",
       "lotCheckedBag",
       "esim",
-      "returnTrain"
+      "returnTrain",
+      "uberWawAirport",
+      "uberGdanskStation"
     ],
     "envelopeRefs": [
       "foodEnvelope",
@@ -1670,7 +1650,20 @@
       "attractionsEnvelope",
       "souvenirsEnvelope"
     ],
-    "explanation": "Wszystkie trzy noclegi są opłacone. Loty główne, Peach, eSIM, bagaż LOT z ICN do WAW, pociąg do Gdańska i Shinkansen są opłacone. Disneyland i DMZ mieszczą się w kopercie atrakcji, a WEST-QR Kansai Mini Pass w kopercie transportu lokalnego — wszystkie są już opłacone i nie są doliczane drugi raz. Koperty na jedzenie, transport lokalny, atrakcje i pamiątki pozostają prognozą. Walizka kupowana w Japonii jest prywatnym zakupem i nie wchodzi do budżetu podróży."
+    "actual": {
+      "asOf": "2026-09-05",
+      "spendRefs": [
+        "onSiteActual"
+      ],
+      "reimbursementRefs": [
+        "childrenReimbursement"
+      ],
+      "returnTransferRefs": [
+        "uberWawAirport",
+        "uberGdanskStation"
+      ]
+    },
+    "explanation": "Rozliczenie po podróży pokazuje wyłącznie zbiorcze sumy. Wydatki na miejscu obejmują Japonię i Koreę po usunięciu duplikatów. Shinkansen oraz przejazdy po powrocie w Polsce są kosztami stałymi poza kopertą 9 000 zł. Zwrot 238 zł od dzieci pomniejsza koszt netto."
   },
   "todos": [
     {
@@ -1708,7 +1701,7 @@
     },
     {
       "title": "Przed wyjazdem: zainstalować 3 regionalne eSIM ASIMGO",
-      "detail": "Karty są opłacone. Zainstalować eSIM na telefonach przed wyjazdem; pakiet Japonia + Korea obejmuje 10 GB / 30 dni / 5G, potem 128 kb/s.",
+      "detail": "Pakiety są opłacone. Zainstalować eSIM na telefonach przed wyjazdem; pakiet Japonia + Korea obejmuje 10 GB / 30 dni / 5G, potem 128 kb/s.",
       "url": "https://esimdb.com/south-korea/asimgo",
       "linkLabel": "Otwórz ofertę w eSIMDB ↗",
       "priority": "medium",
@@ -1717,7 +1710,7 @@
     },
     {
       "title": "Potwierdzić ubezpieczenie całej rodziny",
-      "detail": "Japonia + Korea: Revolut Metal i karta Żubr — osoby objęte ochroną, koszty leczenia, assistance, warunki aktywacji i wyłączenia",
+      "detail": "Japonia + Korea: osoby objęte ochroną, koszty leczenia, assistance, warunki aktywacji i wyłączenia",
       "priority": "high",
       "category": "logistics"
     },
@@ -1784,8 +1777,8 @@
       "costRef": "dmz"
     },
     {
-      "title": "Gotówka i wypłaty",
-      "detail": "Zasilić Revolut i pamiętać o odrzucaniu DCC w bankomatach (wypłacać z 7-Eleven).",
+      "title": "Rozliczenie wydatków",
+      "detail": "Zakończone; na stronie publikowane są wyłącznie zbiorcze sumy.",
       "priority": "high",
       "category": "logistics"
     },
