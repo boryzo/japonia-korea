@@ -19,6 +19,7 @@
     if (cost.components) {
       return cost.components.reduce((total, component) => total + costPln(component.costRef) * component.quantity, 0);
     }
+    if (Number.isFinite(cost.settlementPln)) return cost.settlementPln;
     if (cost.currency === "PLN") {
       if (Number.isFinite(cost.amount)) return cost.amount;
       if (Number.isFinite(cost.unitAmount)) return cost.unitAmount * (cost.quantity || 1);
@@ -52,6 +53,7 @@
       return `${range}${cost.unitLabel ? ` ${cost.unitLabel}` : ""}`;
     }
     const source = formatCurrencyValue(cost.amount, cost.currency);
+    if (Number.isFinite(cost.settlementPln)) return `${source} (rozliczono ${formatCurrencyValue(cost.settlementPln, "PLN")})`;
     if (Number.isFinite(cost.estimatePln)) return `${source} (ok. ${formatCurrencyValue(cost.estimatePln, "PLN")})`;
     if (Number.isFinite(cost.estimatePlnMin) && Number.isFinite(cost.estimatePlnMax)) {
       return `${source} (ok. ${compactNumber.format(cost.estimatePlnMin)}–${compactNumber.format(cost.estimatePlnMax)} zł)`;
@@ -74,6 +76,19 @@
   const forecastTotal = fixedTotal + envelopeTotal;
   const budgetLimit = costPln(data.budget.limitRef);
   const remaining = budgetLimit - forecastTotal;
+  const actualBudget = data.budget.actual || null;
+  const actualSpendEntries = actualBudget ? actualBudget.spendRefs.map(ref => ({ ref, cost: getCost(ref) })) : [];
+  const actualReimbursementEntries = actualBudget ? actualBudget.reimbursementRefs.map(ref => ({ ref, cost: getCost(ref) })) : [];
+  const outsideOnSiteRefs = new Set(actualBudget?.outsideOnSiteRefs || []);
+  const actualOnSiteEntries = actualSpendEntries.filter(entry => !outsideOnSiteRefs.has(entry.ref));
+  const actualOnSiteGross = actualOnSiteEntries.reduce((total, entry) => total + costPln(entry.ref), 0);
+  const actualReimbursements = actualReimbursementEntries.reduce((total, entry) => total + costPln(entry.ref), 0);
+  const actualOnSiteNet = actualOnSiteGross - actualReimbursements;
+  const actualTripGross = fixedTotal + actualOnSiteGross;
+  const actualTripNet = actualTripGross - actualReimbursements;
+  const actualTripRemaining = budgetLimit - actualTripNet;
+  const actualOnSiteRemaining = envelopeTotal - actualOnSiteNet;
+  const returnTransferTotal = (actualBudget?.returnTransferRefs || []).reduce((total, ref) => total + costPln(ref), 0);
 
   function renderCountdown() {
     const target = new Date(data.meta.start).getTime();
@@ -104,7 +119,7 @@
       <div class="grid grid-4">
         <article class="card stat-card"><span class="stat-icon">✈️</span><strong>6 etapów</strong><p>Samoloty, transport w Japonii i końcowy pociąg do Gdańska</p></article>
         <article class="card stat-card"><span class="stat-icon">🏠</span><strong>${money.format(stayTotal)}</strong><p>Wszystkie noclegi · 15 nocy</p></article>
-        <article class="card stat-card"><span class="stat-icon">🎯</span><strong>${money.format(forecastTotal)}</strong><p>Aktualna prognoza całości</p></article>
+        <article class="card stat-card"><span class="stat-icon">🎯</span><strong>${money.format(actualBudget ? actualTripNet : forecastTotal)}</strong><p>${actualBudget ? "Faktyczny koszt netto całej podróży" : "Aktualna prognoza całości"}</p></article>
         <article class="card stat-card"><span class="stat-icon">🧳</span><strong>LOT: 0 PC tam · 1 PC powrót</strong><p>Peach ma 1 wspólną walizkę; LOT ICN → WAW jest już opłacony</p></article>
       </div>
       ${routeMarkup()}
@@ -182,15 +197,24 @@
   }
 
   function renderBudget() {
-    const usedPercent = Math.min(100, forecastTotal / budgetLimit * 100);
+    const displayedTotal = actualBudget ? actualTripNet : forecastTotal;
+    const displayedRemaining = actualBudget ? actualTripRemaining : remaining;
+    const usedPercent = Math.min(100, displayedTotal / budgetLimit * 100);
     document.querySelector("#view-budget").innerHTML = `
       <article class="card budget-hero">
-        <div class="budget-summary"><span class="section-label">Limit podróży</span><h2>${money.format(budgetLimit)}</h2><p>Prognoza obejmuje znane rezerwacje, transport między miastami oraz realny budżet na miejscu.</p><div class="budget-meter ${remaining < 0 ? "over" : ""}"><span style="width:${usedPercent}%"></span></div><div class="budget-numbers"><span>Prognoza: ${money.format(forecastTotal)}</span><span>Zapas: ${money.format(remaining)}</span></div></div>
+        <div class="budget-summary"><span class="section-label">${actualBudget ? "Rozliczenie po podróży" : "Limit podróży"}</span><h2>${money.format(displayedTotal)}</h2><p>${actualBudget ? `Faktyczny koszt netto po zwrocie ${money.format(actualReimbursements)} od dzieci. Limit całej podróży: ${money.format(budgetLimit)}.` : "Prognoza obejmuje znane rezerwacje, transport między miastami oraz realny budżet na miejscu."}</p><div class="budget-meter ${displayedRemaining < 0 ? "over" : ""}"><span style="width:${usedPercent}%"></span></div><div class="budget-numbers"><span>${actualBudget ? `Przed zwrotem: ${money.format(actualTripGross)}` : `Prognoza: ${money.format(forecastTotal)}`}</span><span>Zapas: ${money.format(displayedRemaining)}</span></div></div>
         <div class="currency-box"><span class="section-label">Kalkulator NBP</span><h3>Przelicz JPY / KRW na PLN</h3><p>Kurs średni pobierany automatycznie. Działa też awaryjnie offline.</p><div class="converter"><div class="field"><label for="currency-amount">Kwota</label><input id="currency-amount" type="number" min="0" value="1000" inputmode="decimal"></div><span class="converter-equals">×</span><div class="field"><label for="currency-code">Waluta</label><select id="currency-code"><option value="JPY">JPY · jen</option><option value="KRW">KRW · won</option></select></div></div><div class="converted" id="converted-value">—</div><p class="rate-note" id="rate-note">Pobieram kurs NBP…</p></div>
       </article>
+      ${actualBudget ? `<div class="grid grid-4 actual-budget-grid">
+        <article class="card actual-budget-card"><span class="section-label">Na miejscu · netto</span><h3>${money.format(actualOnSiteNet)}</h3><p>Z koperty ${money.format(envelopeTotal)} na Japonię i Koreę.</p><strong>${money.format(actualOnSiteRemaining)} zostało</strong></article>
+        <article class="card actual-budget-card"><span class="section-label">Na miejscu · brutto</span><h3>${money.format(actualOnSiteGross)}</h3><p>Łączna suma przed odjęciem zwrotu.</p></article>
+        <article class="card actual-budget-card"><span class="section-label">Zwrot od dzieci</span><h3>−${money.format(actualReimbursements)}</h3><p>Ich zakupy zostały odjęte od Twojego kosztu.</p></article>
+        <article class="card actual-budget-card"><span class="section-label">Dojazdy po powrocie</span><h3>${money.format(returnTransferTotal)}</h3><p>Łączna suma dwóch przejazdów. Poza kopertą na miejscu.</p></article>
+      </div>
+      <article class="card actual-breakdown"><span class="section-label">Zakres rozliczenia</span><h3>Tylko sumy</h3><p>Dane źródłowe pozostają prywatne. Shinkansen jest kosztem stałym poza kopertą na miejscu.</p></article>` : ""}
       <div class="grid grid-2">
-        <article class="card"><span class="section-label">Koszty znane i planowane</span><h3>${money.format(fixedTotal)}</h3>${fixedEntries.map(({ ref, cost }) => `<div class="budget-row"><div><strong>${cost.label}</strong>${cost.note ? `<small>${resolveCostTokens(cost.note)}</small>` : ""}</div><span class="amount">${money.format(costPln(ref))}</span><span class="status ${cost.status}">${statusLabels[cost.status]}</span></div>`).join("")}</article>
-        <div><article class="card"><span class="section-label">Budżet na miejscu</span><h3>${money.format(envelopeTotal)}</h3>${envelopeEntries.map(({ ref, cost }) => `<div class="budget-row envelope"><span>${cost.icon}</span><div><strong>${cost.label}</strong>${cost.note ? `<small>${resolveCostTokens(cost.note)}</small>` : ""}</div><b>${money.format(costPln(ref))}</b></div>`).join("")}</article><article class="card" style="margin-top:18px"><h3>Jak czytać liczby?</h3><p>${resolveCostTokens(data.budget.explanation)}</p></article></div>
+        <article class="card"><span class="section-label">Koszty stałe${actualBudget ? " · wykonanie" : ""}</span><h3>${money.format(fixedTotal)}</h3>${fixedEntries.map(({ ref, cost }) => `<div class="budget-row"><div><strong>${cost.label}</strong>${cost.note ? `<small>${resolveCostTokens(cost.note)}</small>` : ""}</div><span class="amount">${money.format(costPln(ref))}</span><span class="status ${cost.status}">${statusLabels[cost.status]}</span></div>`).join("")}</article>
+        <div><article class="card"><span class="section-label">Planowana koperta na miejscu</span><h3>${money.format(envelopeTotal)}</h3>${envelopeEntries.map(({ ref, cost }) => `<div class="budget-row envelope"><span>${cost.icon}</span><div><strong>${cost.label}</strong>${cost.note ? `<small>${resolveCostTokens(cost.note)}</small>` : ""}</div><b>${money.format(costPln(ref))}</b></div>`).join("")}</article><article class="card" style="margin-top:18px"><h3>Jak czytać liczby?</h3><p>${resolveCostTokens(data.budget.explanation)}</p></article></div>
       </div>`;
   }
 
@@ -213,7 +237,7 @@
         <article class="card"><span class="section-label">🇰🇷 Korea</span><h3>Aplikacje na Seul</h3><div class="app-list">${data.travelApps.korea.map(app => `<a class="app-item" href="${app.url}" target="_blank" rel="noopener"><span class="app-letter">${app.name[0]}</span><span><strong>${app.name}</strong><small>${app.purpose}</small></span><em class="app-priority ${app.priority}">${app.priority === "must" ? "konieczna" : app.priority === "recommended" ? "warto" : "opcjonalna"}</em></a>`).join("")}</div></article>
       </div>
 
-      <div class="section-head" style="margin-top:50px"><div><span class="section-label">Finanse i Gotówka</span><h2>Wypłaty z bankomatów i karty</h2><p>${data.finance.intro}</p></div></div>
+      <div class="section-head" style="margin-top:50px"><div><span class="section-label">Finanse</span><h2>Zakres publicznego rozliczenia</h2><p>${data.finance.intro}</p></div></div>
       <article class="card">
         <ul class="packing-list" style="margin-top: 15px; gap: 10px;">
           ${data.finance.tips.map(tip => `<li style="font-size:14px; line-height:1.4">${resolveCostTokens(tip)}</li>`).join("")}
