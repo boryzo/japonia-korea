@@ -17,19 +17,20 @@ Aplikacja została napisana całkowicie w czystym frontendzie (Vanilla HTML, CSS
 ## 3. Żelazne zasady zarządzania danymi
 1.  **Single Source of Truth (SSOT) dla cen:** Każda cena jest przechowywana wyłącznie w `trip-data.json`, w obiekcie `costs`. Noclegi, dni, zadania i budżet wskazują ceny przez `costRef`, a teksty używają znaczników `{{cost:id}}`. Nigdy nie wpisuj tej samej kwoty ponownie w opisie ani w `app.js`.
 2.  **Kalkulacja wydatków:** `budget.fixedRefs` i `budget.envelopeRefs` zawierają wyłącznie identyfikatory rekordów z `costs`. Całkowity koszt podróży jest zawsze wyliczany matematycznie w `app.js`; pozycje z `kind: "covered"` mieszczą się w kopertach i nie mogą być dodawane drugi raz.
-3.  **Ciekawostki i lore:** Każde miasto posiada obiekt `trivia` (wewnątrz `destinations`), w którym trzymane są głębokie informacje kulturowe dodane po to, by urozmaicić eksplorację.
+3.  **Rozliczenie po podróży i prywatność:** `budget.actual` przechowuje zbiorczą kwotę wydatków na miejscu, zwroty i dojazdy po powrocie. `app.js` wylicza koszt brutto, koszt netto po zwrotach, wykorzystanie koperty 9 000 PLN oraz faktyczny koszt całej podróży. Publiczny plik nie może zawierać nazw użytych kart, wypłat, sprzedawców ani pojedynczych transakcji. `settlementPln` służy wyłącznie do rozliczenia wcześniej publicznych pozycji planu, np. Shinkansenu lub biletów.
+4.  **Ciekawostki i lore:** Każde miasto posiada obiekt `trivia` (wewnątrz `destinations`), w którym trzymane są głębokie informacje kulturowe dodane po to, by urozmaicić eksplorację.
 
 ## 4. Aktualny stan planu
-*   Podróż trwa od 20 sierpnia do 5 września 2026 r.; internet mobilny jest potrzebny przez 16 dni kalendarzowych od przylotu do Japonii do wylotu z Korei.
-*   Trasa prowadzi przez Tokio, Osakę i region Kansai oraz Seul. Przejazd Tokio–Osaka odbędzie się Shinkansenem, a trzy kolejne dni Kyoto–Nara–Kobe obejmuje planowany WEST-QR Kansai Mini Pass.
-*   Noclegi są zarezerwowane, jeszcze nieopłacone i uwzględnione w prognozie budżetu w pełnej wysokości.
-*   Loty główne, lot Peach, 3 regionalne eSIM oraz powrotny pociąg z Warszawy do Gdańska są opłacone. Shinkansen, Disneyland, DMZ i Kansai Mini Pass pozostają do kupienia.
+*   Podróż odbyła się od 20 sierpnia do 5 września 2026 r.; dashboard zawiera teraz także rozliczenie po powrocie.
+*   Trasa prowadziła przez Tokio, Osakę i region Kansai oraz Seul. Przejazd Tokio–Osaka odbył się Shinkansenem, a transport regionalny obejmował WEST-QR Kansai Mini Pass.
+*   Noclegi, loty, Shinkansen, Disneyland, DMZ, Kansai Mini Pass, N Seoul Tower, bagaż i pociąg powrotny są opłacone. Dwa przejazdy Uberem po powrocie w Polsce są kosztami stałymi poza kopertą 9 000 PLN.
+*   Faktyczne wydatki na miejscu są publikowane wyłącznie jako jedna zbiorcza suma, bez nazw kart, wypłat i pojedynczych transakcji. Zwrot 238 PLN od dzieci jest opisany oddzielnie; duplikaty przepływów zostały usunięte przed agregacją.
 *   Rezerwacja Peach zawiera jedną wspólną walizkę rejestrowaną. LOT WAW → NRT pozostaje bez bagażu rejestrowanego; jedna walizka na LO100 ICN → WAW została opłacona. Plan zakłada zakup taniej walizki w Osace jako prywatnego przedmiotu do późniejszego użycia; nie jest ona wliczona do prognozy podróży.
 *   Plan zakłada trzy regionalne eSIM Japonia + Korea o ważności 30 dni. Dokładna cena i parametry oferty znajdują się wyłącznie w rekordzie `costs.esim`.
 *   Wszystkie aktualne kwoty, kursy, rabaty i status wliczenia do prognozy należy odczytywać z `trip-data.json`, nie z dokumentacji Markdown.
 
 ## 5. Walidacja i uruchamianie lokalne
-*   Po zmianie danych sprawdź poprawność JSON-a oraz to, czy wszystkie `costRef`, `fixedRefs`, `envelopeRefs` i znaczniki `{{cost:id}}` wskazują istniejące rekordy w `costs`.
+*   Po zmianie danych sprawdź poprawność JSON-a oraz to, czy wszystkie `costRef`, `fixedRefs`, `envelopeRefs`, listy w `budget.actual` i znaczniki `{{cost:id}}` wskazują istniejące rekordy w `costs`.
 *   Aplikację uruchamiaj przez lokalny serwer HTTP, ponieważ `app.js` pobiera `trip-data.json` przez `fetch`; samo otwarcie `index.html` z dysku nie jest miarodajnym testem.
 *   Przed publikacją sprawdź obliczoną prognozę, pozycje pokrywane przez koperty oraz zachowanie aplikacji przy niedostępnym API kursów lub pogody.
 
